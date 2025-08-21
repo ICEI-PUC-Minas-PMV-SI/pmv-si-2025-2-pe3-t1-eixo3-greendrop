@@ -1,4 +1,4 @@
-# Título do Projeto
+# GreenDrop
 
 `CURSO: Sistemas de Informação`
 
@@ -6,20 +6,31 @@
 
 `SEMESTRE: 3º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+
+Projeto para software de geo-localização de locais corretos para descartes de recicláveis e materiais especiais.
+
+Este trabalho tem como objetivo geral desenvolver um sistema web voltado para a conscientização dos usuários acerca da importância do descarte adequado de resíduos, bem como para a disponibilização de informações sobre pontos de coleta existentes, de forma a contribuir para a redução do descarte irregular e para o fortalecimento da sustentabilidade ambiental.
+Como objetivos específicos, o projeto propõe-se a: 
+* Implementar uma ferramenta de busca que possibilite a identificação de pontos de coleta conforme o tipo de resíduo e a localização geográfica do usuário;
+* Fornecer conteúdos educativos que promovam a conscientização sobre práticas adequadas de descarte e seus impactos socioambientais;
+* Estimular a adoção de hábitos sustentáveis por meio do uso da plataforma;
+* Facilitar a integração entre usuários e pontos de coleta, fortalecendo a cadeia de reciclagem;
+* Contribuir para mitigação dos impactos ambientais decorrentes do descarte inadequado de resíduos em espaços públicos.
+
+
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Joseph Bessa Pereira da Costa
+* Lucas Alcolea Oue
+* Lucas Israel França Gontijo
+* Matheus Rodrigues Bon
+* Marcos Martins dos Santos
+* Yuri Geovane Martiniano dos Santos
 
 ## Orientador
 
-* Nome completo do professor 
+* Fábio Martins de Oliveira
 
 # Planejamento
 
