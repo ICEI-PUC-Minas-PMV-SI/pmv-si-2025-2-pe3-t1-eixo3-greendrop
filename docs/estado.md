@@ -10,7 +10,7 @@
 
   Cheema, Hannan e Pires (2022) propuseram um sistema chamado SWMACM-CA, usando IoT e redes neurais convolucionais (VGG16) para classificação em tempo real de resíduos em pilhas. A precisão superior a 90% indica potencial para implantações eficientes em ambientes urbanos inteligentes.
 
-  Estudos recentes Cheema, Hannan e Pires (2022), demonstram que a combinação de Modelos de Decisão Multicritério (MCDM) com GIS é cada vez mais adotada para seleção de locais de aterro. Esse método permite considerar aspectos ecológicos, sociais, políticos e tecnológicos, gerando decisões mais balanceadas e eficazes.
+  Estudos recentes de Cheema, Hannan e Pires (2022), demonstram que a combinação de Modelos de Decisão Multicritério (MCDM) com GIS é cada vez mais adotada para seleção de locais de aterro. Esse método permite considerar aspectos ecológicos, sociais, políticos e tecnológicos, gerando decisões mais balanceadas e eficazes.
 
   De acordo com informações divulgadas pela Ecube Labs em seu site, a empresa desenvolveu o CleanCUBE, um contêiner compactador movido a energia solar, equipado com sensores que monitoram em tempo real o nível de resíduos. Esses dados são enviados para uma plataforma de gestão, permitindo a otimização das rotas de coleta e maior eficiência operacional. Já presente em mais de 100 cidades ao redor do mundo, a solução evidencia o potencial da Internet das Coisas (IoT) na transformação da infraestrutura urbana e na promoção de cidades mais inteligentes e sustentáveis.
 
