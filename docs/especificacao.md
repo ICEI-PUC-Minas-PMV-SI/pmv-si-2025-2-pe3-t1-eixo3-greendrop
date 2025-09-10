@@ -5,53 +5,69 @@ Nesta parte do trabalho você deve detalhar a documentação dos requisitos do s
 ## 3.1 Objetivos deste documento
 Descrever e especificar as necessidades da Coordenação do Curso de Sistemas de Informação da PUC Minas que devem ser atendidas pelo projeto SCCA – Sistema de Cadastro de Cursos de Aperfeiçoamento.
 
-## 3.2 Escopo do produto
+## 3.2 Escopo do Produto  
 
-### 3.2.1 Nome do produto e seus componentes principais
-O produto será denominado SCCA – Sistema de Cadastro de Cursos de Aperfeiçoamento. Ele terá somente um componente (módulo) com os devidos elementos necessários à gestão de cursos.
+### 3.2.1 Nome do produto e seus componentes principais  
+O produto será denominado **GreenDrop – Plataforma de Conexão para Descarte de Resíduos**.  
+Ele será composto por um **módulo principal web** que integra:  
+- Cadastro e gerenciamento de pontos de coleta  
+- Cadastro de usuários (indivíduos e organizações)  
+- Mecanismo de busca de pontos de coleta por localização e tipo de resíduo  
+- Módulo educativo com conteúdos sobre práticas corretas de descarte  
+- Comunicação básica entre usuários e pontos de coleta  
 
-### 3.2.2 Missão do produto
-Gerenciar informações sobre a oferta de cursos de aperfeiçoamento, gerenciar a composição das turmas, alunos, professores e matrículas. 
+### 3.2.2 Missão do produto  
+Facilitar o acesso à informação sobre pontos de coleta de resíduos recicláveis e especiais, promovendo a conscientização ambiental e incentivando o descarte correto, de forma a reduzir o impacto socioambiental do descarte inadequado.  
 
-### 3.2.3 Limites do produto
-O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcelas do curso, pagamento a professore e agendamentos. O SCCA não contempla o atendimento a vários cursos de Sistemas de Informação de outras unidades da PUC Minas.
+### 3.2.3 Limites do produto  
+O **GreenDrop** não realizará:  
+- Processamento de pagamentos ou transações financeiras  
+- Gestão logística de transporte de resíduos  
+- Controle operacional direto sobre cooperativas de reciclagem  
+- Avaliação de impacto ambiental em tempo real  
+- Atendimento a usuários fora do território nacional (escopo limitado ao Brasil)  
 
-### 3.2.4 Benefícios do produto
+### 3.2.4 Benefícios do produto  
 
-| # | Benefício | Valor para o Cliente |
-|--------------------|------------------------------------|----------------------------------------|
-|1	| Facilidade no cadastro de dados |	Essencial |
-|2 | Facilidade na recuperação de informações | Essencial | 
-|3 | Segurança no cadastro de matrículas | Essencial | 
-|4	| Melhoria na comunicação com os alunos	| Recomendável | 
+| #  | Benefício                                    | Valor para o Cliente |
+|----|----------------------------------------------|----------------------|
+| 1  | Facilidade em localizar pontos de coleta     | Essencial            |
+| 2  | Acesso a informações sobre descarte correto  | Essencial            |
+| 3  | Contribuição para redução do descarte irregular | Essencial         |
+| 4  | Comunicação e integração com pontos de coleta | Recomendável       |
+| 5  | Estímulo à educação ambiental                | Recomendável         |
 
-## 3.3 Descrição geral do produto
+---
 
-### 3.3.1 Requisitos Funcionais
+## 3.3 Descrição geral do produto  
 
-| Código | Requisito Funcional (Funcionalidade) | Descrição |
-|--------------------|------------------------------------|----------------------------------------|
-| RF1 | Gerenciar Curso de Aperfeiçoamento |	Processamento de Inclusão, Alteração, Exclusão e Consulta de Cursos de Aperfeiçoamento |
-| RF2 |	Gerenciar Professor	| Processamento de Inclusão, Alteração, Exclusão e Consulta de professores |
-| RF3	| Gerenciar Matrícula |	Processamento de Inclusão, Alteração, Exclusão e Consulta de Matrículas de alunos em Cursos de Aperfeiçoamento |
-| ... |	...	| ... |
+### 3.3.1 Requisitos Funcionais  
 
-### 3.3.2 Requisitos Não Funcionais
+| Código | Requisito Funcional (Funcionalidade)       | Descrição |
+|--------|---------------------------------------------|-----------|
+| RF1    | Gerenciar Pontos de Coleta                 | Inclusão, Alteração, Exclusão e Consulta de pontos de coleta cadastrados |
+| RF2    | Gerenciar Usuários                         | Cadastro e manutenção de perfis de usuários (indivíduos e empresas) |
+| RF3    | Buscar Pontos de Coleta                    | Localização de pontos de coleta com base no tipo de resíduo e localização geográfica |
+| RF4    | Disponibilizar Conteúdos Educativos        | Exibição de materiais informativos sobre descarte correto e impactos ambientais |
+| RF5    | Facilitar Comunicação com Pontos de Coleta | Canal de contato entre usuários e pontos de coleta (mensagens ou notificações básicas) |
+
+### 3.3.2 Requisitos Não Funcionais  
 
 | Código | Requisito Não Funcional (Restrição) |
-|--------------------|------------------------------------|
-| RNF1 | O ambiente operacional a ser utilizado é o Windows XP. |
-| RNF2 | O sistema deverá executar em um computador configurado com uma impressora de tecnologia laser ou de jato de tinta, a ser usada para impressão dos relatórios. |
-| RNF3 |	Segurança	O produto deve restringir o acesso por meio de senhas individuais para o usuário. |
-| ... |	... |	... |
+|--------|--------------------------------------|
+| RNF1   | O ambiente operacional será baseado em plataforma web responsiva (desktop e mobile). |
+| RNF2   | O sistema deverá estar disponível em ambiente de nuvem com alta disponibilidade. |
+| RNF3   | O produto deve restringir o acesso por meio de autenticação individual (login e senha). |
+| RNF4   | Os dados dos usuários devem ser armazenados de acordo com boas práticas de segurança da informação (LGPD). |
+| RNF5   | A interface deve priorizar acessibilidade e usabilidade, com design centrado no usuário. |
 
-### 3.3.3 Usuários 
+### 3.3.3 Usuários  
 
-| Ator | Descrição |
-|--------------------|------------------------------------|
-| Coordenador |	Usuário gerente do sistema responsável pelo cadastro e manutenção de cursos de aperfeiçoamento. Possui acesso geral ao sistema. |
-| Secretaria |	Usuário responsável por registros de alunos, professores, turmas e gerência de matrículas. |
-| ... |	... |	... |
+| Ator                     | Descrição |
+|---------------------------|-----------|
+| **Administrador**         | Responsável pela gestão geral da plataforma (cadastro de pontos, usuários e conteúdos educativos). |
+| **Organização/Ponto de Coleta** | Entidades que cadastram seus pontos de coleta, atualizam informações e interagem com usuários. |
+| **Usuário Final (Indivíduo)**   | Cidadão que busca pontos de coleta, acessa informações educativas e pode interagir com pontos de coleta. |
 
 ## 3.4 Modelagem do Sistema
 
