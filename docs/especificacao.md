@@ -57,6 +57,7 @@ O **GreenDrop** não realizará:
 | RF10   | Sistema de Avaliação de Pontos de Coleta   | Usuários podem avaliar e comentar pontos de coleta, contribuindo com feedback para outros cidadãos.                                 |
 | RF11   | Sistema de Pontuação                       | Cada descarte validado em um ponto de coleta gera pontos para o usuário.                                                            |
 | RF12   | Resgate de Recompensas                     | Usuários podem utilizar pontos acumulados para concorrer a prêmios ou resgatar recompensas.                                         |
+| RF13   | O produto deve restringir o acesso por meio de autenticação individual (login e senha).                                    |
 
 
 ### 3.3.2 Requisitos Não Funcionais  
@@ -65,16 +66,15 @@ O **GreenDrop** não realizará:
 |--------|----------------------------------------------------------------------------------------------------------------------------|
 | RNF1   | O ambiente operacional será baseado em plataforma web responsiva (desktop e mobile).                                       |
 | RNF2   | O sistema deverá estar disponível em ambiente de nuvem com alta disponibilidade.                                           |
-| RNF3   | O produto deve restringir o acesso por meio de autenticação individual (login e senha).                                    |
-| RNF4   | Os dados dos usuários devem ser armazenados de acordo com boas práticas de segurança da informação (LGPD).                 |
-| RNF5   | A interface deve priorizar acessibilidade e usabilidade, com design centrado no usuário.                                   |
-| RNF6   | O sistema deve ser compatível com os principais navegadores (Chrome, Firefox, Edge, Safari).                               |
-| RNF7   | O sistema deverá permitir integração com APIs externas (Google Maps, órgãos ambientais, prefeituras).                      |
-| RNF8   | A comunicação entre cliente e servidor deve ser criptografada (HTTPS/TLS)                                                  |
-| RNF9   | A base de dados deve contar com rotinas de backup periódico, prevenindo perda de informações em caso de falha do sistema.  |
-| RNF10  | O tempo de resposta para consultas de pontos de coleta não deve ultrapassar 3 segundos em condições normais de uso.        |
-| RNF11  | O sistema de pontos deve ser atualizado em tempo real após o registro de um descarte.                                      |
-| RNF12  | O ranking de usuários deve ser protegido contra fraudes, garantindo que apenas descartes validados gerem pontos.           |
+| RNF3   | Os dados dos usuários devem ser armazenados de acordo com boas práticas de segurança da informação (LGPD).                 |
+| RNF4   | A interface deve priorizar acessibilidade e usabilidade, com design centrado no usuário.                                   |
+| RNF5   | O sistema deve ser compatível com os principais navegadores (Chrome, Firefox, Edge, Safari).                               |
+| RNF6   | O sistema deverá permitir integração com APIs externas (Google Maps, órgãos ambientais, prefeituras).                      |
+| RNF7   | A comunicação entre cliente e servidor deve ser criptografada (HTTPS/TLS)                                                  |
+| RNF8   | A base de dados deve contar com rotinas de backup periódico, prevenindo perda de informações em caso de falha do sistema.  |
+| RNF9  | O tempo de resposta para consultas de pontos de coleta não deve ultrapassar 3 segundos em condições normais de uso.        |
+| RNF10  | O sistema de pontos deve ser atualizado em tempo real após o registro de um descarte.                                      |
+| RNF11  | O ranking de usuários deve ser protegido contra fraudes, garantindo que apenas descartes validados gerem pontos.           |
 
 ### 3.3.3 Usuários  
 
