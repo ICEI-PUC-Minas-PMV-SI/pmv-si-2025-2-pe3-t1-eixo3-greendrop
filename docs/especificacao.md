@@ -57,7 +57,7 @@ O **GreenDrop** não realizará:
 | RF10   | Sistema de Avaliação de Pontos de Coleta   | Usuários podem avaliar e comentar pontos de coleta, contribuindo com feedback para outros cidadãos.                                 |
 | RF11   | Sistema de Pontuação                       | Cada descarte validado em um ponto de coleta gera pontos para o usuário.                                                            |
 | RF12   | Resgate de Recompensas                     | Usuários podem utilizar pontos acumulados para concorrer a prêmios ou resgatar recompensas.                                         |
-| RF13   | O produto deve restringir o acesso por meio de autenticação individual (login e senha).                                    |
+| RF13   | Login e Senha | O produto deve restringir o acesso por meio de autenticação individual.                                    |
 
 
 ### 3.3.2 Requisitos Não Funcionais  
