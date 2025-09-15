@@ -43,23 +43,38 @@ O **GreenDrop** não realizará:
 
 ### 3.3.1 Requisitos Funcionais  
 
-| Código | Requisito Funcional (Funcionalidade)       | Descrição |
-|--------|---------------------------------------------|-----------|
-| RF1    | Gerenciar Pontos de Coleta                 | Inclusão, Alteração, Exclusão e Consulta de pontos de coleta cadastrados |
-| RF2    | Gerenciar Usuários                         | Cadastro e manutenção de perfis de usuários (indivíduos e empresas) |
-| RF3    | Buscar Pontos de Coleta                    | Localização de pontos de coleta com base no tipo de resíduo e localização geográfica |
-| RF4    | Disponibilizar Conteúdos Educativos        | Exibição de materiais informativos sobre descarte correto e impactos ambientais |
-| RF5    | Facilitar Comunicação com Pontos de Coleta | Canal de contato entre usuários e pontos de coleta (mensagens ou notificações básicas) |
+| Código | Requisito Funcional (Funcionalidade)       | Descrição                                                                                                                           |
+|--------|--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| RF1    | Gerenciar Pontos de Coleta                 | Inclusão, Alteração, Exclusão e Consulta de pontos de coleta cadastrados                                                            |
+| RF2    | Gerenciar Usuários                         | Cadastro e manutenção de perfis de usuários (indivíduos e empresas)                                                                 |
+| RF3    | Buscar Pontos de Coleta                    | Localização de pontos de coleta com base no tipo de resíduo e localização geográfica                                                |
+| RF4    | Disponibilizar Conteúdos Educativos        | Exibição de materiais informativos sobre descarte correto e impactos ambientais                                                     |
+| RF5    | Facilitar Comunicação com Pontos de Coleta | Canal de contato entre usuários e pontos de coleta (mensagens ou notificações básicas)                                              |
+| RF6    | Integração com Mapas                       | Exibir os pontos de coleta em mapas interativos                                                                                     |
+| RF7    | Geolocalização Automática                  | O sistema identifica automaticamente a localização do usuário (com permissão) para sugerir os pontos de coleta mais próximos.       |
+| RF8    | Filtro Avançado de Busca                   | Permitir filtros como tipo de resíduo, distância, horário de funcionamento e acessibilidade do ponto.                               |
+| RF9    | Notificações de Atualização                | O sistema envia notificações sobre novos pontos de coleta ou conteúdos educativos relevantes para o usuário.                        |
+| RF10   | Sistema de Avaliação de Pontos de Coleta   | Usuários podem avaliar e comentar pontos de coleta, contribuindo com feedback para outros cidadãos.                                 |
+| RF11   | Sistema de Pontuação                       | Cada descarte validado em um ponto de coleta gera pontos para o usuário.                                                            |
+| RF12   | Resgate de Recompensas                     | Usuários podem utilizar pontos acumulados para concorrer a prêmios ou resgatar recompensas.                                         |
+
 
 ### 3.3.2 Requisitos Não Funcionais  
 
-| Código | Requisito Não Funcional (Restrição) |
-|--------|--------------------------------------|
-| RNF1   | O ambiente operacional será baseado em plataforma web responsiva (desktop e mobile). |
-| RNF2   | O sistema deverá estar disponível em ambiente de nuvem com alta disponibilidade. |
-| RNF3   | O produto deve restringir o acesso por meio de autenticação individual (login e senha). |
-| RNF4   | Os dados dos usuários devem ser armazenados de acordo com boas práticas de segurança da informação (LGPD). |
-| RNF5   | A interface deve priorizar acessibilidade e usabilidade, com design centrado no usuário. |
+| Código | Requisito Não Funcional (Restrição)                                                                                        |
+|--------|----------------------------------------------------------------------------------------------------------------------------|
+| RNF1   | O ambiente operacional será baseado em plataforma web responsiva (desktop e mobile).                                       |
+| RNF2   | O sistema deverá estar disponível em ambiente de nuvem com alta disponibilidade.                                           |
+| RNF3   | O produto deve restringir o acesso por meio de autenticação individual (login e senha).                                    |
+| RNF4   | Os dados dos usuários devem ser armazenados de acordo com boas práticas de segurança da informação (LGPD).                 |
+| RNF5   | A interface deve priorizar acessibilidade e usabilidade, com design centrado no usuário.                                   |
+| RNF6   | O sistema deve ser compatível com os principais navegadores (Chrome, Firefox, Edge, Safari).                               |
+| RNF7   | O sistema deverá permitir integração com APIs externas (Google Maps, órgãos ambientais, prefeituras).                      |
+| RNF8   | A comunicação entre cliente e servidor deve ser criptografada (HTTPS/TLS)                                                  |
+| RNF9   | A base de dados deve contar com rotinas de backup periódico, prevenindo perda de informações em caso de falha do sistema.  |
+| RNF10  | O tempo de resposta para consultas de pontos de coleta não deve ultrapassar 3 segundos em condições normais de uso.        |
+| RNF11  | O sistema de pontos deve ser atualizado em tempo real após o registro de um descarte.                                      |
+| RNF12  | O ranking de usuários deve ser protegido contra fraudes, garantindo que apenas descartes validados gerem pontos.           |
 
 ### 3.3.3 Usuários  
 
