@@ -46,6 +46,21 @@ Como objetivos específicos, o projeto propõe-se a:
 
   Portanto, o sistema proposto justifica-se por unir benefícios ambientais e econômicos, funcionando como um facilitador entre empresas que desejam descartar resíduos e pontos de coleta interessados, incentivando a prática correta do descarte e contribuindo para um ciclo sustentável e financeiramente viável.
 
+  ---
+
+#### Alinhamento com os ODS da ONU
+
+O **GreenDrop** está diretamente alinhado aos **Objetivos de Desenvolvimento Sustentável (ODS)**:
+
+- **ODS 11 – Cidades e comunidades sustentáveis:** ao apoiar práticas corretas de descarte e ampliar a infraestrutura de pontos de coleta.  
+- **ODS 12 – Consumo e produção responsáveis:** ao incentivar a reciclagem, a logística reversa e a redução de resíduos em aterros.  
+- **ODS 13 – Ação contra a mudança global do clima:** ao reduzir os impactos ambientais do descarte inadequado.  
+
+---
+
+#### Slogan do Projeto
+
+> **“Descarte certo, planeta limpo.”**
 
 ## 1.4. Público alvo
   Ficou estabelecido, como público alvo deste projeto, todos os indivíduos e organizações presentes no Brasil que sejam elegíveis a realizar descartes de materiais recicláveis e ou especiais em pontos de coleta apropriados. A proposta do sistema é alcançar o maior número de consumidores, ampliando o efeito social e ambiental que este projeto se destina a cumprir. O projeto tem ainda a possibilidade de atrair e disseminar informações corretas sobre o tema e facilitar o acesso ao descarte correto de materiais de forma ampla.
