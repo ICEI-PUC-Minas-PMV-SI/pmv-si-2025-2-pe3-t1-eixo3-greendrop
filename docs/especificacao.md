@@ -65,15 +65,14 @@ O **GreenDrop** não realizará:
 
 ### 3.3.2 Requisitos Não Funcionais  
 
-| Código | Requisito Não Funcional (Restrição)                                                                 |
-|--------|-----------------------------------------------------------------------------------------------------|
-| RNF1   | O sistema deve garantir tempo de resposta inferior a 2 segundos em todas as operações principais.    |
-| RNF2   | O sistema deve ser responsivo, funcionando corretamente em desktops, tablets e dispositivos móveis. |
-| RNF3   | O sistema deve permitir autenticação de usuários através de credenciais (login e senha).            |
-| RNF4   | O sistema deve registrar logs de acesso com data, hora e identificação do usuário.                  |
-| RNF5   | O sistema deve suportar no mínimo 50 usuários simultâneos sem perda perceptível de desempenho.      |
-| RNF6   | O sistema deve estar disponível 99% do tempo, considerando o período mensal.                        |
-
+| Código | Requisito Não Funcional (Restrição) |
+|--------|-------------------------------------|
+| RNF1   | O sistema deve garantir tempo de resposta inferior a 3 segundos nas operações mais frequentes. |
+| RNF2   | O sistema deve ser responsivo, adaptando-se corretamente a diferentes tamanhos de tela (desktop, tablet, dispositivos móveis). |
+| RNF3   | O sistema deve ser compatível com os principais navegadores (Chrome, Firefox, Edge). |
+| RNF4   | Um usuário que não conhecer o sistema deve ser capaz de localizar um ponto de descarte específico em menos de 5 minutos. |
+| RNF5   | O sistema deve seguir padrões de segurança reconhecidos para proteção de dados em trânsito e em repouso (ex.: criptografia ou protocolo seguro padrão da indústria). |
+| RNF6   | O sistema deve suportar no mínimo 50 usuários simultâneos sem degradação perceptível de desempenho. |
 
 ### 3.3.3 Usuários  
 
