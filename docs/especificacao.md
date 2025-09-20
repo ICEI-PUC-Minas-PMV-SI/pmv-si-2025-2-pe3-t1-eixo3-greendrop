@@ -43,38 +43,37 @@ O **GreenDrop** não realizará:
 
 ### 3.3.1 Requisitos Funcionais  
 
-| Código | Requisito Funcional (Funcionalidade)       | Descrição                                                                                                                           |
-|--------|--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| RF1    | Gerenciar Pontos de Coleta                 | Inclusão, Alteração, Exclusão e Consulta de pontos de coleta cadastrados                                                            |
-| RF2    | Gerenciar Usuários                         | Cadastro e manutenção de perfis de usuários (indivíduos e empresas)                                                                 |
-| RF3    | Buscar Pontos de Coleta                    | Localização de pontos de coleta com base no tipo de resíduo e localização geográfica                                                |
-| RF4    | Disponibilizar Conteúdos Educativos        | Exibição de materiais informativos sobre descarte correto e impactos ambientais                                                     |
-| RF5    | Facilitar Comunicação com Pontos de Coleta | Canal de contato entre usuários e pontos de coleta (mensagens ou notificações básicas)                                              |
-| RF6    | Integração com Mapas                       | Exibir os pontos de coleta em mapas interativos                                                                                     |
-| RF7    | Geolocalização Automática                  | O sistema identifica automaticamente a localização do usuário (com permissão) para sugerir os pontos de coleta mais próximos.       |
-| RF8    | Filtro Avançado de Busca                   | Permitir filtros como tipo de resíduo, distância, horário de funcionamento e acessibilidade do ponto.                               |
-| RF9    | Notificações de Atualização                | O sistema envia notificações sobre novos pontos de coleta ou conteúdos educativos relevantes para o usuário.                        |
-| RF10   | Sistema de Avaliação de Pontos de Coleta   | Usuários podem avaliar e comentar pontos de coleta, contribuindo com feedback para outros cidadãos.                                 |
-| RF11   | Sistema de Pontuação                       | Cada descarte validado em um ponto de coleta gera pontos para o usuário.                                                            |
-| RF12   | Resgate de Recompensas                     | Usuários podem utilizar pontos acumulados para concorrer a prêmios ou resgatar recompensas.                                         |
-| RF13   | Login e Senha | O produto deve restringir o acesso por meio de autenticação individual.                                    |
+| Código | Requisito Funcional | Descrição |
+|--------|---------------------|-----------|
+| RF1    | Gerenciar Pontos de Coleta | Incluir, alterar, excluir e consultar pontos de coleta cadastrados. |
+| RF2    | Gerenciar Usuários | Incluir, alterar, excluir e consultar perfis de usuários (indivíduos e organizações). |
+| RF3    | Gerenciar Autenticação | Restringir o acesso por meio de login e senha individual. |
+| RF4    | Gerenciar Conteúdos Educativos | Disponibilizar e organizar materiais informativos sobre descarte correto e impactos ambientais. |
+| RF5    | Buscar Pontos de Coleta | Localizar pontos de coleta com base no tipo de resíduo e na localização geográfica. |
+| RF6    | Exibir Pontos de Coleta em Mapas | Apresentar pontos de coleta em mapas interativos. |
+| RF7    | Sugerir Pontos de Coleta por Geolocalização | Identificar automaticamente a localização do usuário (com permissão) e sugerir pontos próximos. |
+| RF8    | Filtrar Busca de Pontos de Coleta | Permitir filtros por tipo de resíduo, distância, horário de funcionamento e acessibilidade. |
+| RF9    | Gerenciar Comunicação com Pontos de Coleta | Permitir que usuários enviem e recebam mensagens básicas dos pontos de coleta. |
+| RF10   | Responder Dúvidas via Bot de Mensagens | Fornecer respostas automáticas a dúvidas sobre descarte e indicar pontos de coleta mais próximos em mapa. |
+| RF11   | Gerenciar Notificações | Enviar notificações sobre novos pontos de coleta ou conteúdos educativos relevantes. |
+| RF12   | Gerenciar Avaliações de Pontos de Coleta | Permitir que usuários avaliem e comentem pontos de coleta. |
+| RF13   | Gerenciar Sistema de Pontuação | Registrar pontos para usuários a cada descarte validado em pontos de coleta. |
+| RF14   | Gerenciar Resgate de Recompensas | Permitir que usuários utilizem pontos acumulados para concorrer a prêmios ou resgatar recompensas. |
+
+---                                    |
 
 
 ### 3.3.2 Requisitos Não Funcionais  
 
-| Código | Requisito Não Funcional (Restrição)                                                                                        |
-|--------|----------------------------------------------------------------------------------------------------------------------------|
-| RNF1   | O ambiente operacional será baseado em plataforma web responsiva (desktop e mobile).                                       |
-| RNF2   | O sistema deverá estar disponível em ambiente de nuvem com alta disponibilidade.                                           |
-| RNF3   | Os dados dos usuários devem ser armazenados de acordo com boas práticas de segurança da informação (LGPD).                 |
-| RNF4   | A interface deve priorizar acessibilidade e usabilidade, com design centrado no usuário.                                   |
-| RNF5   | O sistema deve ser compatível com os principais navegadores (Chrome, Firefox, Edge, Safari).                               |
-| RNF6   | O sistema deverá permitir integração com APIs externas (Google Maps, órgãos ambientais, prefeituras).                      |
-| RNF7   | A comunicação entre cliente e servidor deve ser criptografada (HTTPS/TLS)                                                  |
-| RNF8   | A base de dados deve contar com rotinas de backup periódico, prevenindo perda de informações em caso de falha do sistema.  |
-| RNF9  | O tempo de resposta para consultas de pontos de coleta não deve ultrapassar 3 segundos em condições normais de uso.        |
-| RNF10  | O sistema de pontos deve ser atualizado em tempo real após o registro de um descarte.                                      |
-| RNF11  | O ranking de usuários deve ser protegido contra fraudes, garantindo que apenas descartes validados gerem pontos.           |
+| Código | Requisito Não Funcional (Restrição)                                                                 |
+|--------|-----------------------------------------------------------------------------------------------------|
+| RNF1   | O sistema deve garantir tempo de resposta inferior a 2 segundos em todas as operações principais.    |
+| RNF2   | O sistema deve ser responsivo, funcionando corretamente em desktops, tablets e dispositivos móveis. |
+| RNF3   | O sistema deve permitir autenticação de usuários através de credenciais (login e senha).            |
+| RNF4   | O sistema deve registrar logs de acesso com data, hora e identificação do usuário.                  |
+| RNF5   | O sistema deve suportar no mínimo 50 usuários simultâneos sem perda perceptível de desempenho.      |
+| RNF6   | O sistema deve estar disponível 99% do tempo, considerando o período mensal.                        |
+
 
 ### 3.3.3 Usuários  
 

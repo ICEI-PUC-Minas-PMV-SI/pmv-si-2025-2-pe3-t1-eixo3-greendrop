@@ -48,19 +48,11 @@ Como objetivos específicos, o projeto propõe-se a:
 
   ---
 
-#### Alinhamento com os ODS da ONU
+#### Alinhamento com os ODS da ONU  
 
-O **GreenDrop** está diretamente alinhado aos **Objetivos de Desenvolvimento Sustentável (ODS)**:
+O **GreenDrop** apresenta uma forte conexão com os **Objetivos de Desenvolvimento Sustentável (ODS)** propostos pela Organização das Nações Unidas. Em relação ao **ODS 11 (Cidades e comunidades sustentáveis)**, o sistema contribui para a promoção de práticas adequadas de descarte e para a ampliação da infraestrutura de pontos de coleta, favorecendo o desenvolvimento urbano sustentável. No que se refere ao **ODS 12 (Consumo e produção responsáveis)**, a plataforma incentiva a reciclagem, a logística reversa e a diminuição de resíduos destinados a aterros, estimulando a conscientização e a mudança de comportamento da sociedade. Por fim, em consonância com o **ODS 13 (Ação contra a mudança global do clima)**, o projeto atua na mitigação dos impactos ambientais causados pelo descarte incorreto, reforçando a importância da responsabilidade ambiental e do engajamento coletivo na luta contra as mudanças climáticas.  
 
-- **ODS 11 – Cidades e comunidades sustentáveis:** ao apoiar práticas corretas de descarte e ampliar a infraestrutura de pontos de coleta.  
-- **ODS 12 – Consumo e produção responsáveis:** ao incentivar a reciclagem, a logística reversa e a redução de resíduos em aterros.  
-- **ODS 13 – Ação contra a mudança global do clima:** ao reduzir os impactos ambientais do descarte inadequado.  
 
----
-
-#### Slogan do Projeto
-
-> **“Descarte certo, planeta limpo.”**
 
 ## 1.4. Público alvo
   Ficou estabelecido, como público alvo deste projeto, todos os indivíduos e organizações presentes no Brasil que sejam elegíveis a realizar descartes de materiais recicláveis e ou especiais em pontos de coleta apropriados. A proposta do sistema é alcançar o maior número de consumidores, ampliando o efeito social e ambiental que este projeto se destina a cumprir. O projeto tem ainda a possibilidade de atrair e disseminar informações corretas sobre o tema e facilitar o acesso ao descarte correto de materiais de forma ampla.
