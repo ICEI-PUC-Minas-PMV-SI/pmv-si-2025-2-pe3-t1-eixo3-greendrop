@@ -1,7 +1,5 @@
 # 3. DOCUMENTO DE ESPECIFICAÇÃO DE REQUISITOS DE SOFTWARE
 
-Nesta parte do trabalho você deve detalhar a documentação dos requisitos do sistema proposto de acordo com as seções a seguir. Ressalta-se que aqui é utilizado como exemplo um sistema de gestão de cursos de aperfeiçoamento.
-
 ## 3.1 Objetivos deste documento
 Descrever e especificar as necessidades da Coordenação do Curso de Sistemas de Informação da PUC Minas que devem ser atendidas pelo projeto SCCA – Sistema de Cadastro de Cursos de Aperfeiçoamento.
 
@@ -85,7 +83,9 @@ O **GreenDrop** não realizará:
 ## 3.4 Modelagem do Sistema
 
 ### 3.4.1 Diagrama de Casos de Uso
-Como observado no diagrama de casos de uso da Figura 1, a secretária poderá gerenciar as matrículas e professores no sistema, enquanto o coordenador, além dessas funções, poderá gerenciar os cursos de aperfeiçoamento.
+
+O diagrama de casos de uso apresentado na Figura 1 evidencia as funcionalidades principais do sistema. Nele, observa-se que o **Usuário** pode realizar operações como **buscar, filtrar, avaliar e interagir com pontos de coleta**, além de acessar **conteúdos educativos** e **resgatar recompensas**. Já o **Administrador**, além de possuir acesso a essas funcionalidades, também é responsável por **gerenciar usuários, pontos de coleta, conteúdos educativos e recompensas**, ampliando seu escopo de atuação no sistema.
+
 
 #### Figura 1: Diagrama de Casos de Uso do Sistema.
 
@@ -93,52 +93,291 @@ Como observado no diagrama de casos de uso da Figura 1, a secretária poderá ge
  
 ### 3.4.2 Descrições de Casos de Uso
 
-Cada caso de uso deve ter a sua descrição representada nesta seção. Exemplo:
+#### Gerenciar Pontos de Coleta (CSU01)
 
-#### Gerenciar Professor (CSU01)
+**Sumário:** O Administrador realiza a gestão (inclusão, alteração, exclusão e consulta) de pontos de coleta.  
 
-Sumário: A Secretária realiza a gestão (inclusão, remoção, alteração e consulta) dos dados sobre professores.
+**Ator Primário:** Administrador.  
+**Ator Secundário:** Usuário.  
 
-Ator Primário: Secretária.
+**Pré-condições:** O Administrador deve estar autenticado no sistema.  
 
-Ator Secundário: Coordenador.
+**Fluxo Principal:**
+1) O Administrador solicita a manutenção dos pontos de coleta.  
+2) O Sistema apresenta as operações disponíveis: inclusão, alteração, exclusão e consulta.  
+3) O Administrador seleciona a operação desejada.  
+4) O Sistema executa a operação e confirma o resultado.  
 
-Pré-condições: A Secretária deve ser validada pelo Sistema.
+**Fluxo Alternativo (3): Inclusão**  
+a) O Administrador requisita a inclusão de um ponto de coleta.  
+b) O Sistema apresenta um formulário para cadastro.  
+c) O Administrador fornece as informações solicitadas.  
+d) O Sistema valida os dados e salva o ponto.  
 
-Fluxo Principal:
+**Fluxo Alternativo (3): Alteração**  
+a) O Administrador seleciona um ponto existente e edita os dados.  
+b) O Sistema valida e atualiza as informações.  
 
-1) 	A Secretária requisita manutenção de professores.
-2) 	O Sistema apresenta as operações que podem ser realizadas: inclusão de um novo professor, alteração de um professor, a exclusão de um professor e a consulta de dados de um professor.
-3) 	A Secretária seleciona a operação desejada: Inclusão, Exclusão, Alteração ou Consulta, ou opta por finalizar o caso de uso.
-4) 	Se a Secretária desejar continuar com a gestão de professores, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
+**Fluxo Alternativo (3): Exclusão**  
+a) O Administrador seleciona um ponto e solicita a exclusão.  
+b) O Sistema confirma a exclusão ou informa impedimento.  
 
-Fluxo Alternativo (3): Inclusão
+**Fluxo Alternativo (3): Consulta**  
+a) O Administrador solicita a consulta de pontos de coleta.  
+b) O Sistema apresenta a lista.  
+c) O Administrador visualiza os detalhes.  
 
-a)	A Secretária requisita a inclusão de um professor. <br>
-b)	O Sistema apresenta uma janela solicitando o CPF do professor a ser cadastrado. <br>
-c)	A Secretária fornece o dado solicitado. <br>
-d)	O Sistema verifica se o professor já está cadastrado. Se sim, o Sistema reporta o fato e volta ao início; caso contrário, apresenta um formulário em branco para que os detalhes do professor (Código, Nome, Endereço, CEP, Estado, Cidade, Bairro, Telefone, Identidade, Sexo, Fax, CPF, Data do Cadastro e Observação) sejam incluídos. <br>
-e)	A Secretária fornece os detalhes do novo professor. <br>
-f)	O Sistema verifica a validade dos dados. Se os dados forem válidos, inclui o novo professor e a grade listando os professores cadastrados é atualizada; caso contrário, o Sistema reporta o fato, solicita novos dados e repete a verificação. <br>
+**Pós-condições:** O ponto foi incluído, alterado, excluído ou exibido.  
 
-Fluxo Alternativo (3): Remoção
+---
 
-a)	A Secretária seleciona um professor e requisita ao Sistema que o remova. <br>
-b)	Se o professor pode ser removido, o Sistema realiza a remoção; caso contrário, o Sistema reporta o fato. <br>
+#### Gerenciar Usuários (CSU02)
 
-Fluxo Alternativo (3): Alteração
+**Sumário:** O Administrador realiza a gestão de usuários cadastrados (inclusão, alteração, exclusão e consulta).  
 
-a)	A Secretária altera um ou mais dos detalhes do professor e requisita sua atualização. <br>
-b)	O Sistema verifica a validade dos dados e, se eles forem válidos, altera os dados na lista de professores, caso contrário, o erro é reportado. <br>
- 
-Fluxo Alternativo (3): Consulta
+**Ator Primário:** Administrador.  
+**Ator Secundário:** Usuário.  
 
-a)	A Secretária opta por pesquisar pelo nome ou código e solicita a consulta sobre a lista de professores. <br>
-b)	O Sistema apresenta uma lista professores. <br>
-c)	A Secretária seleciona o professor. <br>
-d)	O Sistema apresenta os detalhes do professor no formulário de professores. <br>
+**Pré-condições:** O Administrador deve estar autenticado.  
 
-Pós-condições: Um professor foi inserido ou removido, seus dados foram alterados ou apresentados na tela.
+**Fluxo Principal:**
+1) O Administrador solicita manutenção de usuários.  
+2) O Sistema apresenta opções: inclusão, alteração, exclusão, consulta.  
+3) O Administrador seleciona a operação.  
+4) O Sistema executa a operação e confirma o resultado.  
+
+**Fluxo Alternativo:** Similar ao CSU01 (inclusão, alteração, exclusão, consulta).  
+
+**Pós-condições:** O usuário foi incluído, alterado, excluído ou exibido.  
+
+---
+
+#### Gerenciar Autenticação (CSU03)
+
+**Sumário:** O sistema valida o acesso dos usuários via login e senha.  
+
+**Ator Primário:** Usuário.  
+**Ator Secundário:** Sistema.  
+
+**Pré-condições:** Usuário deve estar cadastrado.  
+
+**Fluxo Principal:**
+1) O Usuário acessa a tela de login.  
+2) O Sistema solicita credenciais.  
+3) O Usuário informa login e senha.  
+4) O Sistema valida credenciais e concede acesso.  
+
+**Fluxo Alternativo (3): Credenciais inválidas**  
+a) O Sistema informa erro e solicita nova tentativa.  
+
+**Pós-condições:** O usuário está autenticado ou acesso é negado.  
+
+---
+
+#### Gerenciar Conteúdos Educativos (CSU04)
+
+**Sumário:** O Administrador publica e organiza conteúdos educativos sobre descarte correto.  
+
+**Ator Primário:** Administrador.  
+**Ator Secundário:** Usuário.  
+
+**Pré-condições:** Administrador deve estar autenticado.  
+
+**Fluxo Principal:**
+1) O Administrador acessa a área de conteúdos.  
+2) O Sistema apresenta opções: incluir, alterar, excluir, organizar.  
+3) O Administrador seleciona a operação.  
+4) O Sistema processa a solicitação.  
+
+**Fluxos Alternativos:** Inclusão, alteração, exclusão seguem o mesmo padrão dos casos anteriores.  
+
+**Pós-condições:** O conteúdo foi atualizado ou consultado.  
+
+---
+
+#### Buscar Pontos de Coleta (CSU05)
+
+**Sumário:** O Usuário pesquisa pontos de coleta pelo tipo de resíduo e localização.  
+
+**Ator Primário:** Usuário.  
+**Ator Secundário:** Sistema.  
+
+**Pré-condições:** Usuário deve estar autenticado.  
+
+**Fluxo Principal:**
+1) O Usuário informa tipo de resíduo e/ou localização.  
+2) O Sistema pesquisa na base.  
+3) O Sistema apresenta lista de pontos correspondentes.  
+
+**Fluxo Alternativo:** Nenhum ponto encontrado → Sistema exibe mensagem adequada.  
+
+**Pós-condições:** O usuário obtém lista de pontos de coleta.  
+
+---
+
+#### Exibir Pontos de Coleta em Mapas (CSU06)
+
+**Sumário:** O Usuário visualiza pontos de coleta em mapas interativos.  
+
+**Ator Primário:** Usuário.  
+
+**Pré-condições:** Deve haver pontos de coleta cadastrados.  
+
+**Fluxo Principal:**
+1) O Usuário acessa a visualização em mapa.  
+2) O Sistema apresenta os pontos cadastrados.  
+3) O Usuário interage com o mapa para ver detalhes.  
+
+**Fluxo Alternativo:** Caso não haja pontos, exibe mensagem “Nenhum ponto encontrado”.  
+
+**Pós-condições:** Os pontos foram apresentados em mapa.  
+
+---
+
+#### Sugerir Pontos de Coleta por Geolocalização (CSU07)
+
+**Sumário:** O sistema identifica a localização do usuário e sugere pontos próximos.  
+
+**Ator Primário:** Usuário.  
+
+**Pré-condições:** Usuário deve autorizar compartilhamento da localização.  
+
+**Fluxo Principal:**
+1) O Usuário concede permissão de localização.  
+2) O Sistema identifica posição atual.  
+3) O Sistema sugere pontos de coleta próximos.  
+
+**Fluxo Alternativo:** Usuário não permite → sistema não sugere.  
+
+**Pós-condições:** Pontos próximos foram sugeridos.  
+
+---
+
+#### Filtrar Busca de Pontos de Coleta (CSU08)
+
+**Sumário:** O Usuário aplica filtros na busca de pontos de coleta.  
+
+**Ator Primário:** Usuário.  
+
+**Pré-condições:** Deve existir busca inicial realizada.  
+
+**Fluxo Principal:**
+1) O Usuário acessa filtros.  
+2) Seleciona critérios (tipo de resíduo, distância, horário, acessibilidade).  
+3) O Sistema refina os resultados.  
+
+**Pós-condições:** O usuário visualiza resultados filtrados.  
+
+---
+
+#### Gerenciar Comunicação com Pontos de Coleta (CSU09)
+
+**Sumário:** O Usuário troca mensagens básicas com os pontos de coleta.  
+
+**Ator Primário:** Usuário.  
+**Ator Secundário:** Ponto de Coleta.  
+
+**Pré-condições:** Usuário deve estar autenticado.  
+
+**Fluxo Principal:**
+1) O Usuário envia mensagem a um ponto.  
+2) O Sistema entrega a mensagem.  
+3) O Ponto de Coleta responde.  
+4) O Sistema apresenta a resposta.  
+
+**Pós-condições:** Mensagens foram trocadas.  
+
+---
+
+#### Responder Dúvidas via Bot de Mensagens (CSU10)
+
+**Sumário:** O Bot responde automaticamente dúvidas sobre descarte.  
+
+**Ator Primário:** Usuário.  
+**Ator Secundário:** Bot.  
+
+**Pré-condições:** Usuário deve acessar o chat.  
+
+**Fluxo Principal:**
+1) O Usuário envia dúvida.  
+2) O Bot processa e retorna resposta automática.  
+
+**Fluxo Alternativo:** Dúvida não compreendida → Bot apresenta mensagem padrão.  
+
+**Pós-condições:** Usuário recebeu resposta ou sugestão.  
+
+---
+
+#### Gerenciar Notificações (CSU11)
+
+**Sumário:** O Sistema envia notificações sobre novidades.  
+
+**Ator Primário:** Sistema.  
+**Ator Secundário:** Usuário.  
+
+**Pré-condições:** Usuário deve estar cadastrado e permitir notificações.  
+
+**Fluxo Principal:**
+1) O Sistema identifica novo evento (ponto ou conteúdo).  
+2) O Sistema dispara notificação para os usuários.  
+
+**Pós-condições:** Usuários foram notificados.  
+
+---
+
+#### Gerenciar Avaliações de Pontos de Coleta (CSU12)
+
+**Sumário:** O Usuário avalia pontos de coleta e insere comentários.  
+
+**Ator Primário:** Usuário.  
+
+**Pré-condições:** Usuário deve estar autenticado.  
+
+**Fluxo Principal:**
+1) O Usuário acessa a página de um ponto.  
+2) Insere nota e/ou comentário.  
+3) O Sistema registra a avaliação.  
+
+**Pós-condições:** A avaliação foi armazenada.  
+
+---
+
+#### Gerenciar Sistema de Pontuação (CSU13)
+
+**Sumário:** O Sistema registra pontos para usuários a cada descarte validado.  
+
+**Ator Primário:** Usuário.  
+**Ator Secundário:** Sistema.  
+
+**Pré-condições:** Descarte deve ser validado por ponto de coleta.  
+
+**Fluxo Principal:**
+1) O Ponto confirma descarte.  
+2) O Sistema registra pontos para o usuário.  
+
+**Pós-condições:** O saldo de pontos foi atualizado.  
+
+---
+
+#### Gerenciar Resgate de Recompensas (CSU14)
+
+**Sumário:** O Usuário resgata recompensas com base na pontuação acumulada.  
+
+**Ator Primário:** Usuário.  
+**Ator Secundário:** Sistema.  
+
+**Pré-condições:** Usuário deve possuir pontos suficientes.  
+
+**Fluxo Principal:**
+1) O Usuário acessa o catálogo de recompensas.  
+2) Seleciona uma recompensa.  
+3) O Sistema valida saldo de pontos.  
+4) O Sistema confirma resgate.  
+
+**Fluxo Alternativo:** Pontos insuficientes → Sistema exibe mensagem de erro.  
+
+**Pós-condições:** O resgate foi efetuado ou negado.  
+
 
 ### 3.4.3 Diagrama de Classes 
 
@@ -149,13 +388,16 @@ A Figura 2 mostra o diagrama de classes do sistema. A Matrícula deve conter a i
 ![image](https://github.com/user-attachments/assets/abc7591a-b46f-4ea2-b8f0-c116b60eb24e)
 
 
-### 3.4.4 Descrições das Classes 
+### 3.4.4 Descrições das Classes  
 
-| # | Nome | Descrição |
-|--------------------|------------------------------------|----------------------------------------|
-| 1	|	Aluno |	Cadastro de informações relativas aos alunos. |
-| 2	| Curso |	Cadastro geral de cursos de aperfeiçoamento. |
-| 3 |	Matrícula |	Cadastro de Matrículas de alunos nos cursos. |
-| 4 |	Turma |	Cadastro de turmas.
-| 5	|	Professor |	Cadastro geral de professores que ministram as disciplinas. |
-| ... |	... |	... |
+| # | Nome                | Descrição                                                                 |
+|---|---------------------|---------------------------------------------------------------------------|
+| 1 | Usuário             | Representa os indivíduos ou organizações que utilizam o sistema.          |
+| 2 | Administrador       | Especialização de Usuário, responsável por gerenciar dados e cadastros.   |
+| 3 | PontoDeColeta       | Cadastro dos pontos de coleta disponíveis, com localização e detalhes.    |
+| 4 | Resíduo             | Tipos de resíduos aceitos nos pontos de coleta.                           |
+| 5 | Avaliação           | Registro de comentários e notas fornecidas pelos usuários sobre os pontos.|
+| 6 | Notificação         | Mensagens enviadas aos usuários sobre atualizações e alertas.             |
+| 7 | Recompensa          | Benefícios que podem ser resgatados pelos usuários com base em pontos.    |
+| 8 | SistemaDePontuação  | Controle da pontuação acumulada pelos usuários a partir de descartes.     |
+
