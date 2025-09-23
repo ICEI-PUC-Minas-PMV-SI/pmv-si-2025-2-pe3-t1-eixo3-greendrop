@@ -379,9 +379,10 @@ a) O Sistema informa erro e solicita nova tentativa.
 **Pós-condições:** O resgate foi efetuado ou negado.  
 
 
-### 3.4.3 Diagrama de Classes 
+### 3.4.3 Diagrama de Classes
 
-A Figura 2 mostra o diagrama de classes do sistema. A Matrícula deve conter a identificação do funcionário responsável pelo registro, bem com os dados do aluno e turmas. Para uma disciplina podemos ter diversas turmas, mas apenas um professor responsável por ela.
+A Figura 2 apresenta o diagrama de classes do sistema. Cada **PontoDeColeta** deve conter a identificação do **Administrador** responsável pelo cadastro, bem como os dados dos **Resíduos** aceitos e as avaliações realizadas pelos usuários. Um tipo de **Resíduo** pode estar presente em vários pontos de coleta, mas cada ponto de coleta é gerenciado por um único administrador. Além disso, o sistema mantém o registro de pontuação, notificações e recompensas associadas a cada usuário.
+
 
 #### Figura 2: Diagrama de Classes do Sistema.
  
