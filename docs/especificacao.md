@@ -51,12 +51,11 @@ O **GreenDrop** não realizará:
 | RF6    | Exibir Pontos de Coleta em Mapas | Apresentar pontos de coleta em mapas interativos. |
 | RF7    | Sugerir Pontos de Coleta por Geolocalização | Identificar automaticamente a localização do usuário (com permissão) e sugerir pontos próximos. |
 | RF8    | Filtrar Busca de Pontos de Coleta | Permitir filtros por tipo de resíduo, distância, horário de funcionamento e acessibilidade. |
-| RF9    | Gerenciar Comunicação com Pontos de Coleta | Permitir que usuários enviem e recebam mensagens básicas dos pontos de coleta. |
-| RF10   | Responder Dúvidas via Bot de Mensagens | Fornecer respostas automáticas a dúvidas sobre descarte e indicar pontos de coleta mais próximos em mapa. |
-| RF11   | Gerenciar Notificações | Enviar notificações sobre novos pontos de coleta ou conteúdos educativos relevantes. |
-| RF12   | Gerenciar Avaliações de Pontos de Coleta | Permitir que usuários avaliem e comentem pontos de coleta. |
-| RF13   | Gerenciar Sistema de Pontuação | Registrar pontos para usuários a cada descarte validado em pontos de coleta. |
-| RF14   | Gerenciar Resgate de Recompensas | Permitir que usuários utilizem pontos acumulados para concorrer a prêmios ou resgatar recompensas. |
+| RF9    | Responder Dúvidas via Bot de Mensagens | Fornecer respostas automáticas a dúvidas sobre descarte e indicar pontos de coleta mais próximos em mapa. |
+| RF10   | Gerenciar Notificações | Enviar notificações sobre novos pontos de coleta ou conteúdos educativos relevantes. |
+| RF11   | Gerenciar Avaliações de Pontos de Coleta | Permitir que usuários avaliem e comentem pontos de coleta. |
+| RF12   | Gerenciar Sistema de Pontuação | Registrar pontos para usuários a cada descarte validado em pontos de coleta. |
+| RF13   | Gerenciar Resgate de Recompensas | Permitir que usuários utilizem pontos acumulados para concorrer a prêmios ou resgatar recompensas. |
 
 ---                                    |
 
@@ -329,26 +328,7 @@ d) O Sistema aplica as alterações e exibe mensagem de confirmação.
 
 ---
 
-#### Gerenciar Comunicação com Pontos de Coleta (CSU09)
-
-**Sumário:** O Usuário troca mensagens básicas com os pontos de coleta.  
-
-**Ator Primário:** Usuário.  
-**Ator Secundário:** Ponto de Coleta.  
-
-**Pré-condições:** Usuário deve estar autenticado.  
-
-**Fluxo Principal:**
-1) O Usuário envia mensagem a um ponto.  
-2) O Sistema entrega a mensagem.  
-3) O Ponto de Coleta responde.  
-4) O Sistema apresenta a resposta.  
-
-**Pós-condições:** Mensagens foram trocadas.  
-
----
-
-#### Responder Dúvidas via Bot de Mensagens (CSU10)
+#### Responder Dúvidas via Bot de Mensagens (CSU9)
 
 **Sumário:** O Bot responde automaticamente dúvidas sobre descarte.  
 
@@ -367,7 +347,7 @@ d) O Sistema aplica as alterações e exibe mensagem de confirmação.
 
 ---
 
-#### Gerenciar Notificações (CSU11)
+#### Gerenciar Notificações (CSU10)
 
 **Sumário:** O Sistema envia notificações sobre novidades.  
 
@@ -384,7 +364,7 @@ d) O Sistema aplica as alterações e exibe mensagem de confirmação.
 
 ---
 
-#### Gerenciar Avaliações de Pontos de Coleta (CSU12)
+#### Gerenciar Avaliações de Pontos de Coleta (CSU11)
 
 **Sumário:** O Usuário avalia pontos de coleta e insere comentários.  
 
@@ -401,7 +381,7 @@ d) O Sistema aplica as alterações e exibe mensagem de confirmação.
 
 ---
 
-#### Gerenciar Sistema de Pontuação (CSU13)
+#### Gerenciar Sistema de Pontuação (CSU12)
 
 **Sumário:** O Sistema registra pontos para usuários a cada descarte validado.  
 
@@ -418,7 +398,7 @@ d) O Sistema aplica as alterações e exibe mensagem de confirmação.
 
 ---
 
-#### Gerenciar Resgate de Recompensas (CSU14)
+#### Gerenciar Resgate de Recompensas (CSU13)
 
 **Sumário:** O Usuário resgata recompensas com base na pontuação acumulada.  
 
