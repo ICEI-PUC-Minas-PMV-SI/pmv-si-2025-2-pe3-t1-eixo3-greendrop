@@ -135,20 +135,50 @@ c) O Administrador visualiza os detalhes.
 
 **Sumário:** O Administrador realiza a gestão de usuários cadastrados (inclusão, alteração, exclusão e consulta).  
 
-**Ator Primário:** Administrador.  
-**Ator Secundário:** Usuário.  
+**Ator Primário:** Administrador  
+**Ator Secundário:** Usuário  
 
-**Pré-condições:** O Administrador deve estar autenticado.  
+**Pré-condições:** O Administrador deve estar autenticado no sistema e possuir permissão de gerenciamento de usuários.  
 
 **Fluxo Principal:**
-1) O Administrador solicita manutenção de usuários.  
-2) O Sistema apresenta opções: inclusão, alteração, exclusão, consulta.  
-3) O Administrador seleciona a operação.  
+1) O Administrador solicita a manutenção de usuários.  
+2) O Sistema apresenta as operações disponíveis: inclusão, alteração, exclusão e consulta.  
+3) O Administrador seleciona a operação desejada.  
 4) O Sistema executa a operação e confirma o resultado.  
 
-**Fluxo Alternativo:** Similar ao CSU01 (inclusão, alteração, exclusão, consulta).  
+**Fluxo Alternativo (3): Inclusão**  
+a) O Administrador requisita a inclusão de um novo usuário.  
+b) O Sistema apresenta um formulário para cadastro, contendo campos obrigatórios: nome, e-mail, login, senha e perfil de acesso.  
+c) O Administrador fornece as informações solicitadas e confirma.  
+d) O Sistema valida os dados:
+   - Verifica se o e-mail e login são únicos;  
+   - Confirma preenchimento de campos obrigatórios;  
+   - Aplica regras de complexidade de senha.  
+e) Se os dados forem válidos, o Sistema salva o usuário e exibe mensagem de sucesso.  
+f) Se houver erro na validação, o Sistema apresenta mensagem informando o problema e permite correção.  
 
-**Pós-condições:** O usuário foi incluído, alterado, excluído ou exibido.  
+**Fluxo Alternativo (3): Alteração**  
+a) O Administrador seleciona um usuário existente para edição.  
+b) O Sistema exibe os dados atuais do usuário e permite alteração de nome, e-mail, perfil, status e senha.  
+c) O Administrador realiza as alterações e confirma.  
+d) O Sistema valida as alterações conforme regras de inclusão.  
+e) Se válidas, o Sistema atualiza o usuário e confirma a operação.  
+f) Caso haja inconsistência, o Sistema informa o erro e solicita correção.  
+
+**Fluxo Alternativo (3): Exclusão**  
+a) O Administrador seleciona um usuário para exclusão.  
+b) O Sistema solicita confirmação da operação.  
+c) O Sistema verifica restrições, como vínculos de dados associados.  
+d) Se não houver impedimentos, o Sistema exclui o usuário e confirma.  
+e) Se houver impedimentos, o Sistema informa a razão e cancela a exclusão.  
+
+**Fluxo Alternativo (3): Consulta**  
+a) O Administrador solicita a consulta de usuários.  
+b) O Sistema apresenta a lista completa de usuários, com filtros opcionais (nome, perfil, status).  
+c) O Administrador seleciona um usuário para visualizar detalhes.  
+d) O Sistema exibe todas as informações do usuário, incluindo login, perfil, status e histórico de alterações.  
+
+**Pós-condições:** O usuário foi incluído, alterado, excluído ou exibido.
 
 ---
 
@@ -178,20 +208,49 @@ a) O Sistema informa erro e solicita nova tentativa.
 
 **Sumário:** O Administrador publica e organiza conteúdos educativos sobre descarte correto.  
 
-**Ator Primário:** Administrador.  
-**Ator Secundário:** Usuário.  
+**Ator Primário:** Administrador  
+**Ator Secundário:** Usuário  
 
-**Pré-condições:** Administrador deve estar autenticado.  
+**Pré-condições:** O Administrador deve estar autenticado no sistema.  
 
 **Fluxo Principal:**
-1) O Administrador acessa a área de conteúdos.  
-2) O Sistema apresenta opções: incluir, alterar, excluir, organizar.  
-3) O Administrador seleciona a operação.  
-4) O Sistema processa a solicitação.  
+1) O Administrador acessa a área de conteúdos educativos.  
+2) O Sistema apresenta as operações disponíveis: inclusão, alteração, exclusão e organização de conteúdos.  
+3) O Administrador seleciona a operação desejada.  
+4) O Sistema processa a solicitação e confirma o resultado.  
 
-**Fluxos Alternativos:** Inclusão, alteração, exclusão seguem o mesmo padrão dos casos anteriores.  
+**Fluxo Alternativo (3): Inclusão**  
+a) O Administrador solicita a inclusão de um novo conteúdo educativo.  
+b) O Sistema apresenta um formulário de cadastro contendo campos obrigatórios: título, descrição, tipo de conteúdo (texto, imagem, vídeo) e data de publicação.  
+c) O Administrador preenche as informações solicitadas e confirma a inclusão.  
+d) O Sistema valida os dados:
+   - Verifica preenchimento de todos os campos obrigatórios;  
+   - Confirma formato adequado do conteúdo (ex.: extensão de arquivo válida).  
+e) Se os dados forem válidos, o Sistema salva o conteúdo e exibe mensagem de sucesso.  
+f) Se houver erro na validação, o Sistema informa o problema e permite correção.  
 
-**Pós-condições:** O conteúdo foi atualizado ou consultado.  
+**Fluxo Alternativo (3): Alteração**  
+a) O Administrador seleciona um conteúdo existente para edição.  
+b) O Sistema exibe os dados atuais do conteúdo e permite alteração de título, descrição, tipo ou data de publicação.  
+c) O Administrador realiza as alterações e confirma.  
+d) O Sistema valida as alterações aplicando as mesmas regras da inclusão.  
+e) Se válidas, o Sistema atualiza o conteúdo e confirma a operação.  
+f) Caso haja inconsistência, o Sistema informa o erro e solicita correção.  
+
+**Fluxo Alternativo (3): Exclusão**  
+a) O Administrador seleciona um conteúdo para exclusão.  
+b) O Sistema solicita confirmação da operação.  
+c) O Sistema verifica restrições (ex.: se o conteúdo está vinculado a campanhas ativas).  
+d) Se não houver impedimentos, o Sistema exclui o conteúdo e confirma a operação.  
+e) Se houver impedimentos, o Sistema informa a razão e cancela a exclusão.  
+
+**Fluxo Alternativo (3): Organização**  
+a) O Administrador solicita reorganização dos conteúdos (ordem de exibição, categorias ou agrupamentos).  
+b) O Sistema apresenta a lista de conteúdos e opções de organização.  
+c) O Administrador realiza a organização desejada e confirma.  
+d) O Sistema aplica as alterações e exibe mensagem de confirmação.  
+
+**Pós-condições:** O conteúdo educativo foi incluído, alterado, excluído ou reorganizado conforme a operação executada.
 
 ---
 
@@ -338,7 +397,7 @@ a) O Sistema informa erro e solicita nova tentativa.
 2) Insere nota e/ou comentário.  
 3) O Sistema registra a avaliação.  
 
-**Pós-condições:** A avaliação foi armazenada.  
+**Pós-condições:** A avaliação foi armazenada no perfil do ponto de coleta.  
 
 ---
 
