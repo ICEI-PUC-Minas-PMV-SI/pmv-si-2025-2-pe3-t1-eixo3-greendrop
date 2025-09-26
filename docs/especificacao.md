@@ -57,9 +57,6 @@ O **GreenDrop** não realizará:
 | RF12   | Resgatar Premiação no sistema de recompensa | Permitir que usuários utilizem pontos acumulados para concorrer a prêmios ou resgatar recompensas. |
 | RF13   | Gerenciar Diretrizes de pontução do Usuário | Permitir que o administrador defina, altere e exclua regras de pontuação, como quantidade de pontos atribuídos por tipo de resíduo descartado.  |
 
----                                    |
-
-
 ### 3.3.2 Requisitos Não Funcionais  
 
 | Código | Requisito Não Funcional (Restrição) |
