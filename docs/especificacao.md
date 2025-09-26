@@ -48,14 +48,14 @@ O **GreenDrop** não realizará:
 | RF3    | Gerenciar Autenticação | Restringir o acesso por meio de login e senha individual. |
 | RF4    | Gerenciar Conteúdos Educativos | Disponibilizar e organizar materiais informativos sobre descarte correto e impactos ambientais. |
 | RF5    | Buscar Pontos de Coleta | Localizar pontos de coleta com base no tipo de resíduo e na localização geográfica. |
-| RF6    | Exibir Pontos de Coleta em Mapas | Apresentar pontos de coleta em mapas interativos. |
-| RF7    | Sugerir Pontos de Coleta por Geolocalização | Identificar automaticamente a localização do usuário (com permissão) e sugerir pontos próximos. |
-| RF8    | Filtrar Busca de Pontos de Coleta | Permitir filtros por tipo de resíduo, distância, horário de funcionamento e acessibilidade. |
-| RF9    | Responder Dúvidas via Bot de Mensagens | Fornecer respostas automáticas a dúvidas sobre descarte e indicar pontos de coleta mais próximos em mapa. |
-| RF10   | Gerenciar Notificações | Enviar notificações sobre novos pontos de coleta ou conteúdos educativos relevantes. |
-| RF11   | Gerenciar Avaliações de Pontos de Coleta | Permitir que usuários avaliem e comentem pontos de coleta. |
-| RF12   | Gerenciar Sistema de Pontuação | Registrar pontos para usuários a cada descarte validado em pontos de coleta. |
-| RF13   | Gerenciar Resgate de Recompensas | Permitir que usuários utilizem pontos acumulados para concorrer a prêmios ou resgatar recompensas. |
+| RF6    | Sugerir Pontos de Coleta por Geolocalização | Identificar automaticamente a localização do usuário (com permissão) e sugerir pontos próximos. |
+| RF7    | Filtrar Busca de Pontos de Coleta | Permitir filtros por tipo de resíduo, distância, horário de funcionamento e acessibilidade. |
+| RF8    | Responder Dúvidas via Bot de Whatsapp | Fornecer respostas automáticas a dúvidas sobre descarte e indicar pontos de coleta mais próximos em mapa. |
+| RF9   | Gerenciar Notificações | Enviar notificações sobre novos pontos de coleta ou conteúdos educativos relevantes. |
+| RF10   | Gerenciar Avaliações de Pontos de Coleta | Permitir que usuários avaliem e comentem pontos de coleta. |
+| RF11   | Cadastrar Pontos Coletados dos Usuários | Registrar pontos para usuários a cada descarte validado em pontos de coleta. |
+| RF12   | Resgatar Premiação no sistema de recompensa | Permitir que usuários utilizem pontos acumulados para concorrer a prêmios ou resgatar recompensas. |
+| RF13   | Gerenciar Diretrizes de pontução do Usuário | Permitir que o administrador defina, altere e exclua regras de pontuação, como quantidade de pontos atribuídos por tipo de resíduo descartado.  |
 
 ---                                    |
 
@@ -88,7 +88,8 @@ O diagrama de casos de uso apresentado na Figura 1 evidencia as funcionalidades 
 
 #### Figura 1: Diagrama de Casos de Uso do Sistema.
 
-![dcu](https://github.com/user-attachments/assets/41f6b731-b44e-43aa-911f-423ad6198f47)
+<img width="684" height="782" alt="image" src="https://github.com/user-attachments/assets/c72659dd-b519-4fec-abda-9c6deadd70f0" />
+
  
 ### 3.4.2 Descrições de Casos de Uso
 
@@ -273,26 +274,7 @@ d) O Sistema aplica as alterações e exibe mensagem de confirmação.
 
 ---
 
-#### Exibir Pontos de Coleta em Mapas (CSU06)
-
-**Sumário:** O Usuário visualiza pontos de coleta em mapas interativos.  
-
-**Ator Primário:** Usuário.  
-
-**Pré-condições:** Deve haver pontos de coleta cadastrados.  
-
-**Fluxo Principal:**
-1) O Usuário acessa a visualização em mapa.  
-2) O Sistema apresenta os pontos cadastrados.  
-3) O Usuário interage com o mapa para ver detalhes.  
-
-**Fluxo Alternativo:** Caso não haja pontos, exibe mensagem “Nenhum ponto encontrado”.  
-
-**Pós-condições:** Os pontos foram apresentados em mapa.  
-
----
-
-#### Sugerir Pontos de Coleta por Geolocalização (CSU07)
+#### Sugerir Pontos de Coleta por Geolocalização (CSU06)
 
 **Sumário:** O sistema identifica a localização do usuário e sugere pontos próximos.  
 
@@ -311,7 +293,7 @@ d) O Sistema aplica as alterações e exibe mensagem de confirmação.
 
 ---
 
-#### Filtrar Busca de Pontos de Coleta (CSU08)
+#### Filtrar Busca de Pontos de Coleta (CSU07)
 
 **Sumário:** O Usuário aplica filtros na busca de pontos de coleta.  
 
@@ -328,7 +310,7 @@ d) O Sistema aplica as alterações e exibe mensagem de confirmação.
 
 ---
 
-#### Responder Dúvidas via Bot de Mensagens (CSU9)
+#### Responder Dúvidas via Bot de MWhatsapp (CSU8)
 
 **Sumário:** O Bot responde automaticamente dúvidas sobre descarte.  
 
@@ -347,7 +329,7 @@ d) O Sistema aplica as alterações e exibe mensagem de confirmação.
 
 ---
 
-#### Gerenciar Notificações (CSU10)
+#### Gerenciar Notificações (CSU09)
 
 **Sumário:** O Sistema envia notificações sobre novidades.  
 
@@ -364,7 +346,7 @@ d) O Sistema aplica as alterações e exibe mensagem de confirmação.
 
 ---
 
-#### Gerenciar Avaliações de Pontos de Coleta (CSU11)
+#### Gerenciar Avaliações de Pontos de Coleta (CSU10)
 
 **Sumário:** O Usuário avalia pontos de coleta e insere comentários.  
 
@@ -381,7 +363,7 @@ d) O Sistema aplica as alterações e exibe mensagem de confirmação.
 
 ---
 
-#### Gerenciar Sistema de Pontuação (CSU12)
+#### Cadastrar Pontos Coletados dos Usuários (CSU11)
 
 **Sumário:** O Sistema registra pontos para usuários a cada descarte validado.  
 
@@ -398,7 +380,7 @@ d) O Sistema aplica as alterações e exibe mensagem de confirmação.
 
 ---
 
-#### Gerenciar Resgate de Recompensas (CSU13)
+#### Resgatar Premiação no sistema de recompensa (CSU12)
 
 **Sumário:** O Usuário resgata recompensas com base na pontuação acumulada.  
 
@@ -417,6 +399,44 @@ d) O Sistema aplica as alterações e exibe mensagem de confirmação.
 
 **Pós-condições:** O resgate foi efetuado ou negado.  
 
+---
+
+#### Gerenciar Diretrizes de Pontuação do Usuário (CSU13)
+
+**Sumário:** O Administrador gerencia as regras de pontuação dos usuários, podendo definir, alterar ou excluir a quantidade de pontos atribuídos por tipo de resíduo descartado.  
+
+**Ator Primário:** Administrador  
+**Ator Secundário:** Usuário  
+
+**Pré-condições:** O Administrador deve estar autenticado no sistema e possuir permissão de gerenciamento de pontuação.  
+
+**Fluxo Principal:**  
+1) O Administrador acessa a área de gerenciamento de pontuação.  
+2) O Sistema apresenta as operações disponíveis: inclusão, alteração e exclusão de diretrizes.  
+3) O Administrador seleciona a operação desejada.  
+4) O Sistema processa a operação e confirma o resultado.  
+
+**Fluxo Alternativo (3): Inclusão**  
+a) O Administrador solicita a inclusão de uma nova diretriz de pontuação.  
+b) O Sistema apresenta um formulário contendo campos como: tipo de resíduo e quantidade de pontos atribuídos.  
+c) O Administrador preenche as informações e confirma.  
+d) O Sistema valida os dados (ex.: não permitir valores negativos).  
+e) O Sistema salva a diretriz e confirma a operação.  
+
+**Fluxo Alternativo (3): Alteração**  
+a) O Administrador seleciona uma diretriz existente para edição.  
+b) O Sistema exibe os dados atuais e permite alteração.  
+c) O Administrador atualiza os campos e confirma.  
+d) O Sistema valida e atualiza a diretriz.  
+e) O Sistema confirma a operação.  
+
+**Fluxo Alternativo (3): Exclusão**  
+a) O Administrador seleciona uma diretriz de pontuação para exclusão.  
+b) O Sistema solicita confirmação.  
+c) O Sistema exclui a diretriz e confirma a operação.  
+
+**Pós-condições:** A diretriz de pontuação foi criada, alterada ou excluída com sucesso.  
+
 
 ### 3.4.3 Diagrama de Classes
 
@@ -425,7 +445,7 @@ A Figura 2 apresenta o diagrama de classes do sistema. Cada **PontoDeColeta** de
 
 #### Figura 2: Diagrama de Classes do Sistema.
  
-![image](https://github.com/user-attachments/assets/abc7591a-b46f-4ea2-b8f0-c116b60eb24e)
+<img width="980" height="645" alt="image" src="https://github.com/user-attachments/assets/27736efd-bce8-4667-b388-a03378d7b874" />
 
 
 ### 3.4.4 Descrições das Classes  
