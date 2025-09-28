@@ -307,7 +307,7 @@ d) O Sistema aplica as alterações e exibe mensagem de confirmação.
 
 ---
 
-#### Responder Dúvidas via Bot de MWhatsapp (CSU8)
+#### Responder Dúvidas via Bot de Whatsapp (CSU8)
 
 **Sumário:** O Bot responde automaticamente dúvidas sobre descarte.  
 
