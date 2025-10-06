@@ -1,25 +1,26 @@
-html,
 body {
-  height: 100%;
+  font-family: "Inter", sans-serif;
+  background-color: #f8f9fa;
 }
-
-.form-signin {
-  max-width: 330px;
-  padding: 1rem;
+.brand-green {
+  color: #2e7d32;
 }
-
-.form-signin .form-floating:focus-within {
-  z-index: 2;
+.brand-dark-green {
+  color: #004d40;
 }
-
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+.bg-brand-green {
+  background-color: #2e7d32;
 }
-
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+.hover\:bg-brand-green-dark:hover {
+  background-color: #1b5e20;
+}
+.ring-brand-green:focus {
+  --tw-ring-color: #2e7d32;
+}
+.border-brand-green:focus {
+  --tw-border-opacity: 1;
+  border-color: #2e7d32;
+}
+.bg-brand-off-white {
+  background-color: #f9f6f1;
 }
