@@ -1,0 +1,2 @@
+- Dentro da pasta `src` executar o comando `npm install`
+- Execute `npm run dev` ou `npm start`
