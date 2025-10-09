@@ -1,1 +1,176 @@
-<h1>Home</h1>
+<body class="text-gray-800">
+
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="/" class="text-2xl font-bold brand-dark-green">
+                GreenDrop
+            </a>
+            
+            <!-- Desktop Navigation Links -->
+            <ul class="hidden md:flex items-center space-x-8">
+                <li><a href="#" class="font-medium text-gray-600 hover:brand-green transition-colors duration-300">Início</a></li>
+                <li><a href="#sobre-nos" class="font-medium text-gray-600 hover:brand-green transition-colors duration-300">Sobre Nós</a></li>
+                <li><a href="#servicos" class="font-medium text-gray-600 hover:brand-green transition-colors duration-300">Serviços</a></li>
+                <li><a href="#contato" class="font-medium text-gray-600 hover:brand-green transition-colors duration-300">Contato</a></li>
+            </ul>
+            
+            <!-- Action Buttons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="/login" class="font-medium text-gray-600 hover:brand-green transition-colors duration-300">Entrar</a>
+                <a href="/register" class="py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">
+                    Cadastre-se
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                <i data-feather="menu" class="h-6 w-6 text-gray-600"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <li><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-brand-green">Início</a></li>
+                <li><a href="#sobre-nos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-brand-green">Sobre Nós</a></li>
+                <li><a href="#servicos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-brand-green">Serviços</a></li>
+                <li><a href="#contato" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-brand-green">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-brand-off-white">
+            <div class="container mx-auto px-6 py-20 md:py-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold brand-dark-green mb-4 leading-tight">
+                    Transformando o amanhã,<br>uma gota de cada vez.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    Junte-se à GreenDrop e faça parte da revolução sustentável. Oferecemos soluções inovadoras para coleta e reciclagem, tornando o descarte consciente mais fácil do que nunca.
+                </p>
+                <a href="/register" class="inline-block py-3 px-8 rounded-lg font-semibold text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Comece Agora
+                </a>
+            </div>
+        </section>
+
+        <!-- Features/Services Section -->
+        <section id="servicos" class="section-padding bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold brand-dark-green">Nossos Serviços</h2>
+                    <p class="mt-4 text-lg text-gray-600">Soluções completas para um planeta mais verde.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Feature 1 -->
+                    <div class="text-center p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-green text-white mx-auto mb-6">
+                            <i data-feather="truck" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold brand-dark-green mb-3">Coleta Inteligente</h3>
+                        <p class="text-gray-600">Agende coletas de recicláveis de forma rápida e eficiente através de nosso aplicativo.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="text-center p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-green text-white mx-auto mb-6">
+                             <i data-feather="refresh-cw" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold brand-dark-green mb-3">Reciclagem Eficiente</h3>
+                        <p class="text-gray-600">Garantimos que seus resíduos sejam destinados aos parceiros de reciclagem certos.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="text-center p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-green text-white mx-auto mb-6">
+                            <i data-feather="bar-chart-2" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold brand-dark-green mb-3">Relatório de Impacto</h3>
+                        <p class="text-gray-600">Acompanhe o impacto ambiental positivo de suas ações de reciclagem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Us Section -->
+        <section id="sobre-nos" class="section-padding bg-brand-off-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <img src="https://placehold.co/600x400/2E7D32/FFFFFF?text=Nossa+Miss%C3%A3o" alt="Imagem representando a missão da GreenDrop" class="rounded-2xl shadow-lg w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/2E7D32/FFFFFF?text=Imagem+N%C3%A3o+Dispon%C3%ADvel';">
+                    </div>
+                    <div class="lg:w-1/2 text-center lg:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold brand-dark-green mb-6">Quem Somos</h2>
+                        <p class="text-gray-600 text-lg mb-4">
+                            A GreenDrop nasceu de um ideal: simplificar a sustentabilidade e torná-la acessível a todos. Acreditamos que pequenas ações, quando somadas, geram um impacto gigantesco.
+                        </p>
+                        <p class="text-gray-600 text-lg">
+                            Nossa plataforma conecta você a uma rede de coletores e centros de reciclagem, otimizando o processo de descarte e garantindo que seus resíduos tenham o destino correto. Juntos, estamos construindo um futuro mais limpo e verde.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-brand-green">
+            <div class="container mx-auto px-6 py-16 text-center text-white">
+                <h2 class="text-3xl font-bold mb-4">Pronto para fazer a diferença?</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">Crie sua conta gratuita e comece a transformar o mundo com a gente.</p>
+                <a href="/register" class="inline-block py-3 px-8 rounded-lg font-semibold text-white bg-transparent border-2 border-white hover:bg-white hover:text-brand-green transition-all duration-300 transform hover:scale-105">
+                    Junte-se a Nós
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contato" class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div class="col-span-1 md:col-span-2">
+                    <h4 class="text-xl font-bold mb-4">GreenDrop</h4>
+                    <p class="text-gray-400">Promovendo a sustentabilidade através da tecnologia, conectando pessoas a soluções de reciclagem eficientes.</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#sobre-nos" class="text-gray-400 hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="#servicos" class="text-gray-400 hover:text-white transition-colors">Serviços</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#contato" class="text-gray-400 hover:text-white transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Siga-nos</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+                &copy; 2025 GreenDrop. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Activate Feather Icons
+        feather.replace();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
