@@ -22,7 +22,13 @@
         <div class="w-full md:w-1/2 p-8 sm:p-12 flex flex-col justify-center">
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Acesse sua conta</h2>
 
-            <form action="/main-page">
+            {{#if error}}
+            <div class="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                {{error}}
+            </div>
+            {{/if}}
+
+            <form action="/login" method="POST">
                 <!-- Email Input -->
                 <div class="mb-4">
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
@@ -44,7 +50,6 @@
                     </div>
                 </div>
 
-                <!-- Remember Me & Forgot Password -->
                 <div class="flex items-center justify-between mb-6 text-sm">
                     <div class="flex items-center">
                         <input type="checkbox" id="remember-me" name="remember-me"
@@ -54,7 +59,6 @@
                     <a href="/password-reset" class="font-medium brand-green hover:underline">Esqueceu sua senha?</a>
                 </div>
 
-                <!-- Submit Button -->
                 <div>
                     <button type="submit" 
                             class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-brand-green hover:bg-brand-green-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-transform transform hover:scale-105 duration-300">
@@ -63,7 +67,6 @@
                 </div>
             </form>
 
-            <!-- Sign Up Link -->
             <p class="mt-8 text-center text-sm text-gray-600">
                 Não tem uma conta?
                 <a href="/register" class="font-medium brand-green hover:underline">
@@ -74,10 +77,8 @@
     </div>
 
     <script>
-        // Script to activate Feather Icons
         feather.replace();
 
-        // Script to toggle password visibility
         function togglePasswordVisibility() {
             const passwordInput = document.getElementById('password');
             const icon = document.querySelector('[data-feather="eye"]');

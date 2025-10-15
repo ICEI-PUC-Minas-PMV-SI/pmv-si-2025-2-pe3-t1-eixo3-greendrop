@@ -2,27 +2,23 @@
 
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo -->
             <a href="/" class="text-2xl font-bold brand-dark-green">
                 GreenDrop
             </a>
             
-
-            
-            <!-- Action Buttons -->
             <div class="hidden md:flex items-center space-x-4">
-                <a href="/" class="py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">
-                   Sair
-                </a>
+                <form action="/logout" method="GET" class="inline">
+                    <button type="submit" class="py-2 px-4 rounded-lg font-medium text-white bg-red-600 hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+                        Sair
+                    </button>
+                </form>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button class="md:hidden focus:outline-none" id="mobile-menu-button">
                 <i data-feather="menu" class="h-6 w-6 text-gray-600"></i>
             </button>
         </nav>
 
-        <!-- Mobile Menu -->
         <div class="md:hidden bg-white shadow-md absolute top-full left-0 w-full z-50 hidden" id="mobile-menu">
             <div class="px-6 py-4">
                 <a href="/" class="block py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">
@@ -33,25 +29,21 @@
     </header>
 
     <main class="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
-        <!-- Page Title Section -->
         <div class="text-center mb-12">
             <h1 class="text-4xl font-bold brand-dark-green mb-2">Encontre Nossos Pontos de Coleta</h1>
             <p class="text-lg text-gray-600">Localize o ponto GreenDrop mais próximo de você.</p>
         </div>
 
         <div class="flex flex-col lg:flex-row gap-8">
-            <!-- Sidebar: List of Locations -->
             <aside class="w-full lg:w-1/3 xl:w-1/4 bg-white p-6 rounded-2xl shadow-lg">
                 <h2 class="text-2xl font-bold brand-dark-green mb-4">Pontos Próximos</h2>
                 <div class="mb-4">
                     <input type="text" placeholder="Buscar por endereço ou CEP..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
                 </div>
                 <div id="locations-list" class="space-y-2 overflow-y-auto" style="max-height: calc(100vh - 380px);">
-                    <!-- Location items will be inserted here by JavaScript -->
                 </div>
             </aside>
             
-            <!-- Map Container -->
             <section class="w-full lg:w-2/3 xl:w-3/4">
                 <div id="map" class="shadow-lg rounded-2xl h-[600px] w-full"></div>
             </section>
@@ -59,10 +51,8 @@
     </main>
     
     <script>
-        // Activate Feather Icons
         feather.replace();
 
-        // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -70,9 +60,7 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // --- Leaflet Map Initialization ---
-
-        // 1. Dummy Data for Collection Points in São Paulo
+        // 1. mock
         const locations = [
             {
                 id: 1,
@@ -108,15 +96,12 @@
             }
         ];
 
-        // 2. Initialize Map
         const map = L.map('map').setView([-23.56, -46.66], 13); // Centered in São Paulo
 
-        // 3. Add Tile Layer (Map background)
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        // 4. Create a custom green icon
         const greenIcon = L.divIcon({
             className: 'custom-marker-icon',
             iconSize: [20, 20],
@@ -125,12 +110,10 @@
         });
 
 
-        // 5. Populate Locations List and Map Markers
         const locationsList = document.getElementById('locations-list');
         const markers = {};
 
         locations.forEach(location => {
-            // Add marker to map with the custom icon
             const marker = L.marker([location.lat, location.lng], { icon: greenIcon }).addTo(map)
                 .bindPopup(`
                     <div class="font-sans">
@@ -142,7 +125,6 @@
             
             markers[location.id] = marker;
 
-            // Add location to sidebar list
             const locationItem = document.createElement('div');
             locationItem.className = 'p-4 rounded-lg cursor-pointer hover:bg-green-50 transition-colors';
             locationItem.innerHTML = `
@@ -150,7 +132,6 @@
                 <p class="text-sm text-gray-600">${location.address}</p>
             `;
             
-            // Add click event to pan map and open popup
             locationItem.addEventListener('click', () => {
                 map.flyTo([location.lat, location.lng], 15);
                 marker.openPopup();
