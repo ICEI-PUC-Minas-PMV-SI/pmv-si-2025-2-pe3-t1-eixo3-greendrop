@@ -231,9 +231,7 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        /// Activate Feather Icons
-        feather.replace();
-
+        // Map Initialization
         document.addEventListener('DOMContentLoaded', () => {
             // Dados de exemplo
             const locations = [
@@ -297,7 +295,6 @@
             attribution: '&copy; OpenStreetMap'
             }).addTo(map);
 
-            // Ícone verde
             const greenIcon = L.divIcon({
             className: 'custom-marker-icon',
             iconSize: [20, 20],
@@ -305,7 +302,7 @@
             popupAnchor: [0, -10]
             });
 
-            // Popula lista + marcadores
+            // Popula lista com marcadores
             const list = document.getElementById('locations-list');
             locations.forEach(loc => {
             const marker = L.marker([loc.lat, loc.lng], { icon: greenIcon })
