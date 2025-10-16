@@ -3,155 +3,27 @@
 ## 4.1 Personas
 ## 4.1 Personas
 
-### Persona 1 – Ana Souza  
-**Idade:** 34 anos  
-**Trabalho:** Professora do ensino fundamental  
-**Personalidade:** Cuidadosa, prática e organizada  
-**Hobby:** Cozinhar e ensinar os filhos sobre sustentabilidade  
-**Sonhos:** Criar os filhos com consciência ambiental e contribuir para a redução do lixo doméstico  
-
-**Objetivos-Chave:**  
-- Localizar pontos de coleta próximos  
-- Identificar quais materiais cada ponto aceita  
-- Obter informações de forma rápida e simples  
-
-**Como Devemos Tratá-la:**  
-Com clareza, empatia e linguagem acessível  
-
-**Nunca Devemos:**  
-Usar termos técnicos, exigir muitas etapas de navegação ou sobrecarregar o site com textos extensos  
-
-**Objetos e Lugares:**  
-- Utiliza celular com acesso à internet  
-- Acessa o site pelo celular ou notebook  
-- Costuma utilizar o sistema em casa, na sala ou durante intervalos no trabalho  
+<img width="1920" height="1080" alt="Persona 1 - Ana Souza" src="https://github.com/user-attachments/assets/c02f7792-0de9-4d07-bc83-9001d8c16a99" />
 
 ---
 
-### Persona 2 – João Pereira  
-**Idade:** 22 anos  
-**Trabalho:** Estudante de Biologia  
-**Personalidade:** Curioso, comunicativo e engajado  
-**Hobby:** Participar de eventos ambientais e compartilhar conteúdo educativo nas redes sociais  
-**Sonhos:** Atuar em projetos ambientais e inspirar outras pessoas a adotar hábitos sustentáveis  
-
-**Objetivos-Chave:**  
-- Mapear pontos de coleta  
-- Compartilhar informações com colegas  
-- Utilizar o site para pesquisas e projetos acadêmicos  
-
-**Como Devemos Tratá-lo:**  
-Com linguagem moderna, design visualmente atrativo e dados confiáveis  
-
-**Nunca Devemos:**  
-Manter informações desatualizadas, dificultar o compartilhamento ou utilizar um visual ultrapassado  
-
-**Objetos e Lugares:**  
-- Usa notebook e celular Android  
-- Acessa o site em casa, na universidade ou em bibliotecas  
-- Gosta de compartilhar links e informações em grupos de estudo  
+<img width="1920" height="1080" alt="Persona 2 - João Pereira" src="https://github.com/user-attachments/assets/b6a1ca3d-cd9b-4df4-a9c8-b515adb26701" />
 
 ---
 
-### Persona 3 – Carla Nunes  
-**Idade:** 40 anos  
-**Trabalho:** Proprietária de loja de cosméticos naturais  
-**Personalidade:** Determinada, prática e detalhista  
-**Hobby:** Ler sobre empreendedorismo e participar de feiras ecológicas  
-**Sonhos:** Expandir sua marca e se tornar referência em sustentabilidade no setor  
-
-**Objetivos-Chave:**  
-- Cadastrar sua loja como ponto de coleta  
-- Estabelecer parcerias com centros de descarte  
-- Acompanhar o impacto ambiental da empresa  
-
-**Como Devemos Tratá-la:**  
-Com profissionalismo, clareza e confiabilidade  
-
-**Nunca Devemos:**  
-Apresentar informações confusas, deixar o sistema instável ou parecer amador  
-
-**Objetos e Lugares:**  
-- Utiliza notebook e smartphone diariamente  
-- Acessa o site no escritório e durante reuniões  
-- Usa o sistema para cadastrar pontos de coleta e monitorar resultados  
+<img width="1920" height="1080" alt="Persona 3 - Carla Nunes" src="https://github.com/user-attachments/assets/29cd19b2-6aa4-49b9-bdea-6cb3ad037786" />
 
 ---
 
-### Persona 4 – Marcos Tanaka  
-**Idade:** 29 anos  
-**Trabalho:** Motorista de aplicativo  
-**Personalidade:** Prático, direto e objetivo  
-**Hobby:** Jogar videogame e assistir vídeos sobre tecnologia  
-**Sonhos:** Ter estabilidade financeira e contribuir com o meio ambiente de forma simples  
-
-**Objetivos-Chave:**  
-- Localizar o ponto de coleta mais próximo  
-- Obter rotas rápidas e horários de funcionamento  
-- Descartar corretamente resíduos domésticos  
-
-**Como Devemos Tratá-lo:**  
-De forma objetiva, priorizando rapidez e facilidade de uso  
-
-**Nunca Devemos:**  
-Exigir login desnecessário, usar textos longos ou criar processos lentos  
-
-**Objetos e Lugares:**  
-- Usa smartphone com GPS e conexão móvel  
-- Acessa o site durante paradas rápidas no trabalho  
-- Prefere interfaces simples e responsivas  
+<img width="1920" height="1080" alt="Persona 4 - Marcos Tanaka" src="https://github.com/user-attachments/assets/52681c58-6e68-448a-8450-ab50fce23869" />
 
 ---
 
-### Persona 5 – Lurdes Oliveira  
-**Idade:** 65 anos  
-**Trabalho:** Aposentada  
-**Personalidade:** Calma, curiosa e cuidadosa  
-**Hobby:** Cuidar do jardim e assistir programas sobre natureza  
-**Sonhos:** Viver de forma tranquila e contribuir para um ambiente mais limpo  
-
-**Objetivos-Chave:**  
-- Aprender a separar e descartar o lixo corretamente  
-- Localizar centros de coleta acessíveis  
-- Entender o significado dos símbolos de reciclagem  
-
-**Como Devemos Tratá-la:**  
-Com paciência, clareza e design acessível  
-
-**Nunca Devemos:**  
-Usar textos pequenos, linguagem técnica ou exigir navegação complexa  
-
-**Objetos e Lugares:**  
-- Usa celular com ajuda dos netos  
-- Às vezes utiliza o tablet da família  
-- Acessa o site em casa, geralmente na cozinha ou sala, com auxílio de familiares  
+<img width="1920" height="1080" alt="Persona 5 - Lurdes Oliveira" src="https://github.com/user-attachments/assets/70f222fd-2474-4c50-aeb6-d555251a3274" />
 
 ---
 
-### Persona 6 – Grazielle Araujo  
-**Idade:** 31 anos  
-**Trabalho:** Coordenadora de ONG  
-**Personalidade:** Extrovertida, otimista e flexível  
-**Hobby:** Leitura e prática de pilates  
-**Sonhos:** Criar uma casa de abrigo que acolha moradores de rua junto com animais abandonados  
-
-**Objetivos-Chave:**  
-- Encontrar formas práticas de descartar resíduos domésticos e institucionais  
-- Identificar rapidamente locais de coleta próximos  
-- Priorizar pontos que aceitem diferentes tipos de materiais  
-
-**Como Devemos Tratá-la:**  
-Com profissionalismo, agilidade e comunicação objetiva  
-Valoriza clareza nas informações e confiabilidade nos serviços listados  
-
-**Nunca Devemos:**  
-Demonstrar qualquer atitude discriminatória ou preconceituosa  
-Atrasar ou omitir informações sobre locais e serviços parceiros  
-
-**Objetos e Lugares:**  
-- Utiliza notebook e smartphone corporativo para trabalho diário  
-- Acessa o site no escritório da ONG e durante visitas a centros de coleta  
-- Usa o sistema para verificar locais de descarte e repassar informações à equipe  
+<img width="1920" height="1080" alt="Persona 6 - Grazielle Araujo" src="https://github.com/user-attachments/assets/78741b6d-03c1-4afb-8505-723e04e2b2c2" />
 
 
 ## 4.2 Mapa de Empatia
