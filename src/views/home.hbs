@@ -2,12 +2,16 @@
 
 
     <!-- Header / Navbar -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="bg-white shadow-md sticky top-0 z-[2000]">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Logo -->
-            <a href="/" class="text-2xl font-bold brand-dark-green">
-                GreenDrop
-            </a>
+            <div>
+                <img src="ico.png" alt="GreenDrop Logo" class="h-12 inline-block">
+                <a href="/" class="text-2xl font-bold brand-dark-green">
+                    GreenDrop
+                </a>
+            </div>
+            
 
             <!-- Desktop Navigation Links -->
             <ul class="hidden md:flex items-center space-x-8">
@@ -40,8 +44,8 @@
                         class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-brand-green">Início</a>
                 </li>
                 <li><a href="#sobre-nos"
-                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-brand-green">Sobre
-                        Nós</a></li>
+                        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-brand-green">Sobre Nós</a>
+                </li>
                 <li><a href="#servicos"
                         class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-brand-green">Serviços</a>
                 </li>
@@ -63,12 +67,16 @@
                     Transformando o amanhã,<br>uma gota de cada vez.
                 </h1>
                 <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                    Junte-se à GreenDrop e faça parte da revolução sustentável. Oferecemos soluções inovadoras para
-                    coleta e reciclagem, tornando o descarte consciente mais fácil do que nunca.
+                    Conectamos você aos pontos de coleta corretos para cada tipo de resíduo. 
+                    Descubra lugares próximos, receba orientações e faça o descarte consciente com praticidade.
                 </p>
                 <a href="/register"
-                    class="inline-block py-3 px-8 rounded-lg font-semibold text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    class="inline-block py-3 px-8 mr-4 rounded-lg font-semibold text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 shadow-lg">
                     Comece Agora
+                </a>
+                <a href="#mapa"
+                    class="inline-block py-3 px-8 rounded-lg font-semibold text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Veja no Mapa
                 </a>
             </div>
         </section>
@@ -78,9 +86,9 @@
             <div class="container mx-auto px-6 mb-12">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold brand-dark-green mb-12 pt-8">Nossos Serviços</h2>
-                    <p class="mt-4 text-lg text-gray-600">Soluções completas para um planeta mais verde.</p>
+                    <p class="mt-4 text-lg text-gray-600">Soluções simples para um impacto real no planeta.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                     <!-- Feature 1 -->
                     <div
                         class="text-center p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -89,8 +97,8 @@
                             <i data-feather="truck" class="h-8 w-8"></i>
                         </div>
                         <h3 class="text-xl font-bold brand-dark-green mb-3">Coleta Inteligente</h3>
-                        <p class="text-gray-600">Agende coletas de recicláveis de forma rápida e eficiente através de
-                            nosso aplicativo.</p>
+                        <p class="text-gray-600">Encontre rapidamente o ponto de coleta ideal para cada material. 
+                            Use filtros por tipo de resíduo e visualize opções no mapa em tempo real</p>
                     </div>
                     <!-- Feature 2 -->
                     <div
@@ -100,8 +108,8 @@
                             <i data-feather="refresh-cw" class="h-8 w-8"></i>
                         </div>
                         <h3 class="text-xl font-bold brand-dark-green mb-3">Reciclagem Eficiente</h3>
-                        <p class="text-gray-600">Garantimos que seus resíduos sejam destinados aos parceiros de
-                            reciclagem certos.</p>
+                        <p class="text-gray-600">Direcionamos seus resíduos para destinos adequados, 
+                            com informações claras sobre o que cada ponto aceita e horários de funcionamento.</p>
                     </div>
                     <!-- Feature 3 -->
                     <div
@@ -111,7 +119,19 @@
                             <i data-feather="bar-chart-2" class="h-8 w-8"></i>
                         </div>
                         <h3 class="text-xl font-bold brand-dark-green mb-3">Relatório de Impacto</h3>
-                        <p class="text-gray-600">Acompanhe o impacto ambiental positivo de suas ações de reciclagem.</p>
+                        <p class="text-gray-600">Acompanhe quanto você já ajudou a reciclar. 
+                            Veja métricas de materiais destinados corretamente e mantenha sua rotina sustentável.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div
+                        class="text-center p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div
+                            class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-green text-white mx-auto mb-6">
+                            <i data-feather="book-open" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold brand-dark-green mb-3">Educação Ambiental</h3>
+                        <p class="text-gray-600">Acesse dicas, listas do que pode ou não reciclar e orientações para descarte especial 
+                            (eletrônicos, óleo, pilhas e mais).</p>
                     </div>
                 </div>
             </div>
@@ -122,21 +142,22 @@
             <div class="container mx-auto px-6">
                 <div class="flex flex-col lg:flex-row items-center gap-12">
                     <div class="lg:w-1/2">
-                        <img src="https://placehold.co/600x400/2E7D32/FFFFFF?text=Nossa+Miss%C3%A3o"
+                        <img src="/logo.png"
                             alt="Imagem representando a missão da GreenDrop"
-                            class="rounded-2xl shadow-lg w-full h-auto object-cover"
-                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/2E7D32/FFFFFF?text=Imagem+N%C3%A3o+Dispon%C3%ADvel';">
+                            class="rounded-2xl shadow-lg w-full h-auto object-cover">
                     </div>
                     <div class="lg:w-1/2 text-center lg:text-left">
                         <h2 class="text-3xl md:text-4xl font-bold brand-dark-green mb-6">Quem Somos</h2>
                         <p class="text-gray-600 text-lg mb-4">
-                            A GreenDrop nasceu de um ideal: simplificar a sustentabilidade e torná-la acessível a todos.
-                            Acreditamos que pequenas ações, quando somadas, geram um impacto gigantesco.
+                            A GreenDrop nasceu para tornar a sustentabilidade acessível no dia a dia. 
+                            Nosso propósito é facilitar o descarte correto de resíduos, conectando pessoas a pontos de coleta confiáveis.
+                        </p>
+                        <p class="text-gray-600 text-lg mb-6">
+                            Somos um projeto acadêmico com foco em impacto socioambiental. 
+                            Construímos uma plataforma clara, útil e gratuita para que pequenos gestos gerem grandes mudanças.
                         </p>
                         <p class="text-gray-600 text-lg">
-                            Nossa plataforma conecta você a uma rede de coletores e centros de reciclagem, otimizando o
-                            processo de descarte e garantindo que seus resíduos tenham o destino correto. Juntos,
-                            estamos construindo um futuro mais limpo e verde.
+                            Projeto desenvolvido no âmbito universitário, com tecnologia aberta e colaboração da comunidade.
                         </p>
                     </div>
                 </div>
@@ -144,19 +165,23 @@
         </section>
 
         <!-- Map Section -->
-        <section id="mapa" class="section-padding bg-white">
+        <section id="mapa" class="section-padding bg-white pb-8">
             <div class="container mx-auto px-6">
                 <div class="text-center mt-12 mb-12">
-                <h1 class="text-4xl font-bold brand-dark-green mb-2 pt-8">Encontre Nossos Pontos de Coleta</h1>
-                <p class="text-lg text-gray-600">Localize o ponto GreenDrop mais próximo de você.</p>
+                <h1 class="text-4xl font-bold brand-dark-green mb-2 pt-8">Encontre Pontos de Coleta Perto de Você</h1>
+                <p class="text-lg text-gray-600">Digite seu endereço ou permita a localização do dispositivo para visualizar os pontos mais próximos. 
+                    Filtre por tipo de material e confira detalhes antes de sair de casa.</p>
                 </div>
 
                 <div class="flex flex-col lg:flex-row gap-8">
                     <!-- Lista (opcional) -->
                     <aside class="w-full lg:w-1/3 xl:w-1/4 bg-white p-6 rounded-2xl shadow-lg">
-                        <h2 class="text-2xl font-bold brand-dark-green mb-4">Pontos Próximos</h2>
+                        <h2 class="text-2xl font-bold brand-dark-green mb-4">Buscar por endereço, bairro ou CEP…</h2>
+                        <p class="text-gray-600 text-sm pb-4">
+                            Dica: ative a localização do navegador para resultados mais precisos.
+                        </p>
                         <input id="coleta-search" type="text" placeholder="Buscar por endereço ou CEP..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2">
-                        <div id="locations-list" class="space-y-2 overflow-y-auto mt-4" style="max-height: calc(100vh - 380px)"></div>
+                        <div id="locations-list" class="space-y-2 overflow-y-auto mt-4" style="max-height: calc(100vh - 480px)"></div>
                     </aside>
 
                     <!-- Mapa -->
@@ -218,112 +243,4 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Activate Feather Icons
-        feather.replace();
-
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Map Initialization
-        document.addEventListener('DOMContentLoaded', () => {
-            // Dados de exemplo
-            const locations = [
-                {
-                    id: 01,
-                    name: "Ponto de Coleta – Centro (Praça Sete)",
-                    address: "Av. Afonso Pena, 700 – Centro",
-                    lat: -19.9191, lng: -43.9386,
-                    type: "Plástico, Papel, Vidro, Metal"
-                },
-                {
-                    id: 02,
-                    name: "Eco Ponto – Savassi",
-                    address: "Praça Diogo de Vasconcelos – Savassi",
-                    lat: -19.9367, lng: -43.9332,
-                    type: "Plástico, Papel, Vidro"
-                },
-                {
-                    id: 03,
-                    name: "Green Station – Funcionários",
-                    address: "Av. Getúlio Vargas, 1200 – Funcionários",
-                    lat: -19.9345, lng: -43.9359,
-                    type: "Eletrônicos, Baterias"
-                },
-                {
-                    id: 04,
-                    name: "Ponto de Coleta – Santa Efigênia",
-                    address: "Av. do Contorno, 4800 – Santa Efigênia",
-                    lat: -19.9222, lng: -43.9219,
-                    type: "Plástico, Papel, Vidro, Óleo de Cozinha"
-                },
-                {
-                    id: 05,
-                    name: "Eco Ponto – Pampulha (Mineirão)",
-                    address: "Av. Antônio Abrahão Caram, 1001 – São José",
-                    lat: -19.8653, lng: -43.9712,
-                    type: "Plástico, Papelão, Vidro"
-                },
-                {
-                    id: 06,
-                    name: "Ponto de Coleta – UFMG",
-                    address: "Av. Pres. Carlos Luz, 6627 – Pampulha",
-                    lat: -19.8702, lng: -43.9675,
-                    type: "Eletrônicos, Pilhas/Baterias"
-                },
-                {
-                    id: 07,
-                    name: "Green Station – Barreiro",
-                    address: "Av. Olinto Meireles, 1800 – Barreiro",
-                    lat: -19.9750, lng: -44.0125,
-                    type: "Plástico, Papel, Vidro, Metal"
-                },
-            ];
-
-            // Cria o mapa
-            const map = L.map('map').setView([-19.9191, -43.9386], 13);
-
-            // Camada base
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; OpenStreetMap'
-            }).addTo(map);
-
-            const greenIcon = L.divIcon({
-            className: 'custom-marker-icon',
-            iconSize: [20, 20],
-            iconAnchor: [10, 10],
-            popupAnchor: [0, -10]
-            });
-
-            // Popula lista com marcadores
-            const list = document.getElementById('locations-list');
-            locations.forEach(loc => {
-            const marker = L.marker([loc.lat, loc.lng], { icon: greenIcon })
-                .addTo(map)
-                .bindPopup(`
-                <div class="font-sans">
-                    <h3 class="font-bold text-lg brand-dark-green">${loc.name}</h3>
-                    <p class="text-gray-600">${loc.address}</p>
-                    <p class="text-sm text-gray-500 mt-1"><strong>Coleta:</strong> ${loc.type}</p>
-                </div>
-                `);
-
-            if (list) {
-                const item = document.createElement('div');
-                item.className = 'p-4 rounded-lg cursor-pointer hover:bg-green-50 transition-colors';
-                item.innerHTML = `<h3 class="font-semibold brand-dark-green">${loc.name}</h3>
-                                <p class="text-sm text-gray-600">${loc.address}</p>`;
-                item.addEventListener('click', () => { map.flyTo([loc.lat, loc.lng], 15); marker.openPopup(); });
-                list.appendChild(item);
-            }
-            });
-        });
-    </script>
 </body>
