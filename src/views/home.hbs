@@ -60,6 +60,21 @@
     </header>
 
     <main>
+        
+       <!-- Contêiner da Animação de Fundo -->
+            <div id="background-animation">
+                <svg id="falling-items-svg" style="width: 100%; height: 100%;">
+                    <defs>
+                        <g id="leaf">
+                            <path d="M15 0 C 10 5, 5 15, 0 20 C 5 18, 10 16, 15 15 C 20 16, 25 18, 30 20 C 25 15, 20 5, 15 0 Z"/>
+                        </g>
+                        <g id="greendrop">
+                            <path d="M15 0 C -5 15, 15 35, 15 35 C 15 35, 35 15, 15 0 Z"/>
+                        </g>
+                    </defs>
+                </svg>
+            </div>
+
         <!-- Hero Section -->
         <section class="bg-brand-off-white">
             <div class="container mx-auto px-6 py-20 md:py-32 text-center">
@@ -82,7 +97,8 @@
         </section>
 
         <!-- Features/Services Section -->
-        <section id="servicos" class="section-padding bg-white">
+        <section id="servicos" class="section-padding">
+            <!-- Contêiner da Animação de Fundo -->
             <div class="container mx-auto px-6 mb-12">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold brand-dark-green mb-12 pt-8">Nossos Serviços</h2>
@@ -91,7 +107,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                     <!-- Feature 1 -->
                     <div
-                        class="text-center p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        class="text-center p-8 bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div
                             class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-green text-white mx-auto mb-6">
                             <i data-feather="truck" class="h-8 w-8"></i>
@@ -102,18 +118,18 @@
                     </div>
                     <!-- Feature 2 -->
                     <div
-                        class="text-center p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        class="text-center p-8 bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div
                             class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-green text-white mx-auto mb-6">
                             <i data-feather="refresh-cw" class="h-8 w-8"></i>
                         </div>
-                        <h3 class="text-xl font-bold brand-dark-green mb-3">Reciclagem Eficiente</h3>
+                        <h3 class="text-xl font-bold  brand-dark-green mb-3">Reciclagem Eficiente</h3>
                         <p class="text-gray-600">Direcionamos seus resíduos para destinos adequados, 
                             com informações claras sobre o que cada ponto aceita e horários de funcionamento.</p>
                     </div>
                     <!-- Feature 3 -->
                     <div
-                        class="text-center p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        class="text-center p-8 bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div
                             class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-green text-white mx-auto mb-6">
                             <i data-feather="bar-chart-2" class="h-8 w-8"></i>
@@ -124,7 +140,7 @@
                     </div>
                     <!-- Feature 4 -->
                     <div
-                        class="text-center p-8 border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        class="text-center p-8 bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div
                             class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-green text-white mx-auto mb-6">
                             <i data-feather="book-open" class="h-8 w-8"></i>
@@ -138,13 +154,13 @@
         </section>
 
         <!-- About Us Section -->
-        <section id="sobre-nos" class="section-padding bg-brand-off-white mb-12">
+        <section id="sobre-nos" class="section-padding mb-12 bg-brand-off-white">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col lg:flex-row items-center gap-12">
                     <div class="lg:w-1/2">
                         <img src="/logo.png"
                             alt="Imagem representando a missão da GreenDrop"
-                            class="rounded-2xl shadow-lg w-full h-auto object-cover">
+                            class="rounded-2xl w-full h-auto object-cover">
                     </div>
                     <div class="lg:w-1/2 text-center lg:text-left">
                         <h2 class="text-3xl md:text-4xl font-bold brand-dark-green mb-6">Quem Somos</h2>
@@ -165,7 +181,7 @@
         </section>
 
         <!-- Map Section -->
-        <section id="mapa" class="section-padding bg-white pb-8">
+        <section id="mapa" class="section-padding pb-8">
             <div class="container mx-auto px-6">
                 <div class="text-center mt-12 mb-12">
                 <h1 class="text-4xl font-bold brand-dark-green mb-2 pt-8">Encontre Pontos de Coleta Perto de Você</h1>
@@ -194,13 +210,13 @@
 
 
         <!-- CTA Section -->
-        <section class="bg-brand-green">
-            <div class="container mx-auto px-6 py-16 text-center text-white">
+        <section class="bg-brand-off-white">
+            <div class="container mx-auto px-6 py-16 text-center text-gray-600">
                 <h2 class="text-3xl font-bold mb-4">Pronto para fazer a diferença?</h2>
                 <p class="text-lg mb-8 max-w-2xl mx-auto">Crie sua conta gratuita e comece a transformar o mundo com a
                     gente.</p>
                 <a href="/register"
-                    class="inline-block py-3 px-8 rounded-lg font-semibold text-white bg-transparent border-2 border-white hover:bg-white hover:text-brand-green transition-all duration-300 transform hover:scale-105">
+                    class="inline-block py-3 px-8 mr-4 rounded-lg font-semibold text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 shadow-lg">
                     Junte-se a Nós
                 </a>
             </div>
@@ -209,7 +225,7 @@
     </main>
 
     <!-- Footer -->
-    <footer id="contato" class="bg-gray-800 text-white">
+    <footer id="contato" class="bg-gray-800 text-gray-600 bg-white border border-t shadow-md">
         <div class="container mx-auto px-6 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- About -->
@@ -222,19 +238,19 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
                     <ul class="space-y-2">
-                        <li><a href="#sobre-nos" class="text-gray-400 hover:text-white transition-colors">Sobre</a></li>
-                        <li><a href="#servicos" class="text-gray-400 hover:text-white transition-colors">Serviços</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
-                        <li><a href="#contato" class="text-gray-400 hover:text-white transition-colors">Contato</a></li>
+                        <li><a href="#sobre-nos" class="text-gray-400 hover:text-green-800 transition-colors">Sobre</a></li>
+                        <li><a href="#servicos" class="text-gray-400 hover:text-green-800 transition-colors">Serviços</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-800 transition-colors">FAQ</a></li>
+                        <li><a href="#contato" class="text-gray-400 hover:text-green-800 transition-colors">Contato</a></li>
                     </ul>
                 </div>
                 <!-- Social -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Siga-nos</h4>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="instagram"></i></a>
                     </div>
                 </div>
             </div>
