@@ -6,6 +6,17 @@ const authController = require('./controllers/authController');
 const { requireAuth } = require('./middleware/auth');
 const app = express();
 
+
+
+const profileController = require('./controllers/profileController');
+
+app.get('/perfil', profileController.view);
+app.get('/perfil/config', (req, res) => res.send('Configurações do perfil (em construção)'));
+app.get('/perfil/editar', (req, res) => res.send('Editar perfil (em construção)'));
+
+
+
+
 app.engine('.hbs', engine({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
 app.set('views', './views');

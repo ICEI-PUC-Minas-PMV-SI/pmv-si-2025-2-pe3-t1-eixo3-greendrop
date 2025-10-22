@@ -29,6 +29,24 @@ async function register(req, res) {
             password: hashedPassword,
         });
 
+        const payload = {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            verified: !!user.verified,
+            avatarUrl: user.avatarUrl || '',
+            biome: user.biome || 'Mata Atlântica',
+            location: user.location || 'Minas Gerais, Brasil',
+            levelNumber: user.levelNumber || 1,
+            levelTitle: user.levelTitle || 'Iniciante',
+            levelPercent: user.levelPercent || 0,
+            txTotal: user.txTotal || 0,
+            txPending: user.txPending || 0,
+            earnings: user.earnings || '0,00',
+            earningsDelta: user.earningsDelta || '0%',
+            impactScore: user.impactScore || '0.0',
+        };
+        
         const token = jwt.sign(
             { id: user.id, email: user.email },
             JWT_SECRET,
@@ -40,7 +58,7 @@ async function register(req, res) {
             maxAge: 7 * 24 * 60 * 60 * 1000,
         });
 
-        res.redirect('/main-page');
+        res.redirect('/perfil');
     } catch (error) {
         console.error('Erro no registro:', error);
         res.status(500).render('register', {
@@ -67,6 +85,25 @@ async function login(req, res) {
             });
         }
 
+        // Gera payload JWT com campos úteis para o perfil
+        const payload = {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            verified: !!user.verified,
+            avatarUrl: user.avatarUrl || '',
+            biome: user.biome || 'Mata Atlântica',
+            location: user.location || 'Minas Gerais, Brasil',
+            levelNumber: user.levelNumber || 1,
+            levelTitle: user.levelTitle || 'Iniciante',
+            levelPercent: user.levelPercent || 0,
+            txTotal: user.txTotal || 0,
+            txPending: user.txPending || 0,
+            earnings: user.earnings || '0,00',
+            earningsDelta: user.earningsDelta || '0%',
+            impactScore: user.impactScore || '0.0',
+        };
+
         const token = jwt.sign(
             { id: user.id, email: user.email },
             JWT_SECRET,
@@ -78,7 +115,7 @@ async function login(req, res) {
             maxAge: 7 * 24 * 60 * 60 * 1000,
         });
 
-        res.redirect('/main-page');
+        res.redirect('/perfil');
     } catch (error) {
         console.error('Erro no login:', error);
         res.status(500).render('login', {
