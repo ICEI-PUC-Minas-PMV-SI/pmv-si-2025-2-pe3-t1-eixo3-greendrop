@@ -4,20 +4,20 @@ const cookieParser = require('cookie-parser');
 const sequelize = require('./services/database');
 const authController = require('./controllers/authController');
 const { requireAuth } = require('./middleware/auth');
+const { requireAdmin } = require('./middleware/adminAuth');
+const pontoColetaController = require('./controllers/pontoColetaController');
+const profileController = require('./controllers/profileController');
 const app = express();
 
 
-
-const profileController = require('./controllers/profileController');
-
-app.get('/perfil', profileController.view);
-app.get('/perfil/config', (req, res) => res.send('Configurações do perfil (em construção)'));
-app.get('/perfil/editar', (req, res) => res.send('Editar perfil (em construção)'));
-
-
-
-
-app.engine('.hbs', engine({ extname: '.hbs' }));
+app.engine('.hbs', engine({
+    extname: '.hbs',
+    defaultLayout: 'main',
+    layoutsDir: 'views/layouts/',
+    helpers: {
+        eq: (a, b) => a === b,
+    }
+}));
 app.set('view engine', '.hbs');
 app.set('views', './views');
 app.use(express.static('public'));
@@ -42,13 +42,24 @@ app.post('/register', authController.register);
 app.post('/login', authController.login);
 app.get('/logout', authController.logout);
 
+
+
+// ROTAS PÚBLICAS
 app.get('/password-reset', (req, res) => {
     res.render('password-reset');
 });
 
+// ROTAS AUTENTICADAS
+app.get('/perfil', requireAuth, profileController.view);
 app.get('/main-page', requireAuth, (req, res) => {
     res.render('main-page');
 });
+
+
+// Rotas administrativas de pontos de coleta
+app.get('/admin', requireAuth, requireAdmin, pontoColetaController.renderAdminPage);
+
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, async () => {
