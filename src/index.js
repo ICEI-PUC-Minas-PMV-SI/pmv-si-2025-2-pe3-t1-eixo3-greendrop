@@ -16,8 +16,13 @@ app.get('/perfil/editar', (req, res) => res.send('Editar perfil (em construção
 
 
 
-
-app.engine('.hbs', engine({ extname: '.hbs' }));
+const hbs = engine({
+  extname: '.hbs',
+  helpers: {
+    json: (ctx) => JSON.stringify(ctx),
+  },
+});
+app.engine('.hbs', hbs);
 app.set('view engine', '.hbs');
 app.set('views', './views');
 app.use(express.static('public'));
@@ -28,6 +33,14 @@ app.use(cookieParser());
 app.get('/', (req, res) => {
     res.render('home');
 });
+
+app.get('/educativo', (req, res) => {
+    res.render('educativo');
+});
+
+const mapController = require('./controllers/mapController');
+app.get('/mapa', mapController.fullscreen);
+app.get('/api/pontos', mapController.api);
 
 app.get('/login', (req, res) => {
     res.render('login');

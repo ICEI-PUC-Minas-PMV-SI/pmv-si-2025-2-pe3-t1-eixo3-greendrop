@@ -69,3 +69,12 @@ section+section {
   border-radius: 50%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
+.leaflet-control-custom {
+  background: linear-gradient(135deg, #16a34a, #10b981);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, .3);
+}
+.leaflet-control-custom:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 14px rgba(16, 185, 129, .4);
+}

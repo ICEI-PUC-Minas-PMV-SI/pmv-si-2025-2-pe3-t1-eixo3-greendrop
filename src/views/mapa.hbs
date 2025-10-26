@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa de Descarte</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet (2D) -->
+  <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Cluster para Leaflet -->
+  <link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" rel="stylesheet">
+  <link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" rel="stylesheet">
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <!-- MapLibre (3D/perspectiva) -->
+  <link href="https://unpkg.com/maplibre-gl@3.6.1/dist/maplibre-gl.css" rel="stylesheet">
+  <script src="https://unpkg.com/maplibre-gl@3.6.1/dist/maplibre-gl.js"></script>
+
+  <link rel="stylesheet" href="/css/map.css">
+</head>
+<body class="relative overflow-hidden">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="brand">
+      <span class="dot"></span> GreenDrop • Pontos de Descarte
+    </div>
+    <div class="controls flex items-center gap-3">
+      <div class="view-toggle" role="tablist">
+        <button class="btn btn-toggle active" data-view="leaflet" aria-selected="true">2D</button>
+        <button class="btn btn-toggle" data-view="maplibre" aria-selected="false">3D</button>
+      </div>
+      <a href="/main-page" class="btn-outline">Voltar</a>
+    </div>
+  </nav>
+
+  <!-- Painel lateral de filtros -->
+  <aside class="filters">
+    <div class="filters-header">
+      <strong>Filtrar por material</strong>
+      <button id="clearFilters" class="btn btn-mini">Limpar</button>
+    </div>
+
+    <div id="chips" class="chips"></div>
+
+    <div class="legend">
+      <div><span class="lg lg-plastico"></span>Plástico</div>
+      <div><span class="lg lg-vidro"></span>Vidro</div>
+      <div><span class="lg lg-metal"></span>Metal</div>
+      <div><span class="lg lg-papel"></span>Papel</div>
+      <div><span class="lg lg-eletronicos"></span>Eletrônicos</div>
+      <div><span class="lg lg-organico"></span>Orgânico</div>
+    </div>
+  </aside>
+
+  <!-- Contêineres dos mapas -->
+  <main id="maps">
+    <div id="map-leaflet" class="map is-visible" aria-label="Mapa 2D"></div>
+    <div id="map-maplibre" class="map" aria-label="Mapa 3D"></div>
+  </main>
+
+  <!-- Dados injetados -->
+  <script>
+    window.MAPTILER_KEY = '{{MAPTILER_KEY}}';
+    window.__POINTS__ = {{#if points}}{{{json points}}}{{else}}[]{{/if}};
+  </script>
+  <script src="/js/map.js" defer></script>
+</body>
+</html>

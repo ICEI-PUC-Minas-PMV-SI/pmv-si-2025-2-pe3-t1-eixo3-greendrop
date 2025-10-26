@@ -1,0 +1,213 @@
+:root{
+  /* Paleta GreenDrop */
+  --green:#34A853;
+  --green-600:#16a34a;
+  --green-500:#22c55e;
+  --green-400:#4ade80;
+  --green-dark:#2C8C46;
+
+  --bg:#f7f9fb;
+  --panel:#ffffff;
+  --text:#111827;
+  --muted:#6B7280;
+  --border:#E5E7EB;
+
+  /* Layout */
+  --topbar-h:56px;
+  --aside-w:280px;
+  --radius-lg:16px;
+  --radius-md:10px;
+  --radius-sm:8px;
+
+  /* Sombras */
+  --shadow-soft:0 6px 16px rgba(0,0,0,.06);
+  --shadow-green:0 10px 24px rgba(52,168,83,.12);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body.map-body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* =======================
+   TOPBAR
+======================= */
+.topbar{
+  position:fixed;inset:0 0 auto 0;height:var(--topbar-h);
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 12px;
+  z-index:1000;
+}
+.brand{
+  font-weight:900;display:flex;align-items:center;gap:8px;
+  color:#0b4d33;
+}
+.brand .dot{
+  width:10px;height:10px;border-radius:50%;background:var(--green);display:inline-block;
+}
+.controls{display:flex;gap:10px;align-items:center}
+
+/* Toggle 2D/3D + botões */
+.view-toggle{background:#f3f4f6;border:1px solid var(--border);border-radius:999px;padding:3px;display:flex;gap:4px}
+.btn{
+  border:0;border-radius:var(--radius-md);cursor:pointer;font-weight:800;line-height:1;
+  transition:.2s ease;
+}
+.btn:focus-visible{outline:3px solid rgba(52,168,83,.35);outline-offset:2px}
+.btn-toggle{padding:8px 12px;background:transparent;color:#374151}
+.btn-toggle:hover{background:#eef2f7}
+.btn-toggle.active{
+  background:#fff;color:var(--green);
+  border:1px solid var(--green);
+  box-shadow:0 0 0 3px rgba(52,168,83,.15);
+}
+.btn-outline{
+  padding:9px 12px;border:1px solid var(--border);background:#fff;color:#111;border-radius:999px;font-weight:800;
+}
+.btn-outline:hover{border-color:#d1d5db;box-shadow:var(--shadow-soft)}
+.btn-mini{
+  padding:6px 10px;border:1px solid var(--border);background:#fff;border-radius:var(--radius-sm);
+  color:#374151;font-weight:700;
+}
+.btn-mini:hover{background:#f9fafb}
+
+/* =======================
+   FILTROS (ASIDE)
+======================= */
+.filters{
+  position:fixed;top:calc(var(--topbar-h) + 8px);left:12px;width:var(--aside-w);
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-green);
+  z-index:900;padding:14px 14px 12px 14px;
+}
+.filters-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:10px;
+}
+.filters-header strong{font-weight:900;color:#064e3b}
+
+.chips{
+  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;
+}
+.chip{
+  padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:#fff;color:#374151;
+  font-weight:700;font-size:13px;cursor:pointer;transition:.18s ease;
+}
+.chip:hover{background:#f1f5f9}
+.chip:focus-visible{outline:3px solid rgba(52,168,83,.3)}
+.chip.active{
+  border-color:var(--green);
+  box-shadow:0 0 0 3px rgba(52,168,83,.18);
+  color:var(--green);background:#fff;
+}
+
+/* Legenda enxuta e alinhada */
+.legend{
+  border-top:1px solid var(--border);
+  margin-top:12px;padding-top:12px;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;
+  color:#374151;font-size:13px;
+}
+.legend div{display:flex;align-items:center;gap:6px}
+.lg{display:inline-block;width:14px;height:14px;border-radius:3px}
+.lg-plastico{background:#2dd4bf}
+.lg-vidro{background:#22c55e}
+.lg-metal{background:#f59e0b}
+.lg-papel{background:#60a5fa}
+.lg-organico{background:#a3e635}
+.lg-eletronicos{background:#ef4444}
+
+/* Scroll suave dentro do aside em telas menores */
+.filters{max-height:calc(100vh - var(--topbar-h) - 16px);overflow:auto}
+.filters::-webkit-scrollbar{width:10px}
+.filters::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:999px;border:2px solid #f8fafc}
+.filters::-webkit-scrollbar-thumb:hover{background:#cbd5e1}
+
+/* Responsivo: aside centralizado em telas estreitas */
+@media (max-width: 960px){
+  .filters{left:50%;transform:translateX(-50%);width:92%}
+}
+
+/* =======================
+   MAPAS
+======================= */
+#maps{
+  position:fixed;top:var(--topbar-h);left:0;right:0;bottom:0;
+}
+.map{
+  position:absolute;inset:0;visibility:hidden;opacity:0;
+  transition:opacity .22s ease;
+}
+.map.is-visible{visibility:visible;opacity:1}
+
+/* Se quiser que o mapa não fique sob o aside em telas largas,
+   descomente abaixo: (o HTML atual sobrepõe o aside propositalmente)
+*/
+/*
+@media (min-width: 1200px){
+  #maps{left:calc(var(--aside-w) + 28px)}
+}
+*/
+
+/* Leaflet UI polida */
+.leaflet-popup-content-wrapper{border-radius:12px}
+.leaflet-popup-content{margin:10px 12px}
+.leaflet-container a.leaflet-popup-close-button{
+  color:#334155;right:10px;top:6px;
+}
+.leaflet-control-zoom a{
+  background:#fff;border:1px solid var(--border);
+  width:34px;height:34px;line-height:32px;border-radius:8px;
+}
+.leaflet-control-zoom a:hover{background:#f8fafc}
+
+/* Botões custom via JS (ex.: 🌍 e 📍) */
+.leaflet-control-custom{
+  background:linear-gradient(135deg,var(--green-600),var(--green));
+  border-radius:10px !important;
+  box-shadow:0 6px 14px rgba(34,197,94,.25);
+  border:0 !important;
+}
+.leaflet-control-custom:hover{transform:scale(1.06)}
+.leaflet-bar a, .leaflet-bar button{
+  border-radius:10px;
+}
+
+/* MarkerCluster (se estiver usando) */
+.marker-cluster-small{background:rgba(34,197,94,.12)}
+.marker-cluster-small div{background:#22c55e;color:#fff}
+.marker-cluster-medium{background:rgba(34,197,94,.16)}
+.marker-cluster-medium div{background:#16a34a;color:#fff}
+.marker-cluster-large{background:rgba(34,197,94,.2)}
+.marker-cluster-large div{background:#15803d;color:#fff}
+
+/* Acessibilidade: foco visível em botões do topo */
+.view-toggle button:focus-visible,
+.btn-outline:focus-visible,
+.btn-mini:focus-visible{
+  outline:3px solid rgba(52,168,83,.35);
+  outline-offset:2px;
+}
+
+/* Micro-ajustes de tipografia */
+.topbar .btn, .filters .chip, .filters .btn-mini{letter-spacing:.2px}
+.legend{letter-spacing:.1px}
+
+/* Suporte a dark (opcional): com data-theme="dark" no html/body */
+[data-theme="dark"] body.map-body{background:#0b1016;color:#e5e7eb}
+[data-theme="dark"] .topbar{background:#0f172a;border-color:#1f2937}
+[data-theme="dark"] .brand{color:#e5e7eb}
+[data-theme="dark"] .btn-outline{background:#0f172a;color:#e5e7eb;border-color:#1f2937}
+[data-theme="dark"] .filters{background:#0f172a;border-color:#1f2937;box-shadow:none}
+[data-theme="dark"] .chip{background:#0b1320;color:#e2e8f0;border-color:#1f2937}
+[data-theme="dark"] .chip:hover{background:#0d1b2a}
+[data-theme="dark"] .legend{border-color:#1f2937}
+[data-theme="dark"] .leaflet-control-zoom a{background:#0f172a;border-color:#1f2937;color:#e5e7eb}
