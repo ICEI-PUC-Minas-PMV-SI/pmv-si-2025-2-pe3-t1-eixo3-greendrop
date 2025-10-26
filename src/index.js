@@ -17,6 +17,7 @@ app.engine('.hbs', engine({
     layoutsDir: 'views/layouts/',
     helpers: {
         eq: (a, b) => a === b,
+        json: (ctx) => JSON.stringify(ctx),
     }
 }));
 app.set('view engine', '.hbs');
