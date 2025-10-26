@@ -1,12 +1,13 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+const PontoColeta = require('../models/pontoColeta');
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
 async function register(req, res) {
     try {
-        const { name, email, password } = req.body;
+        const { name, email, password, userType, pontoColetaName, cep, endereco, numero } = req.body;
 
         const existingUser = await User.findOne({ where: { email } });
         if (existingUser) {
@@ -23,11 +24,25 @@ async function register(req, res) {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
+        const role = userType === 'admin' ? 'admin' : 'user';
+
         const user = await User.create({
             name,
             email,
             password: hashedPassword,
+            role,
         });
+
+        if (role === 'admin') {
+            const fullAddress = `${endereco}, ${numero}`;
+
+            await PontoColeta.create({
+                nome: pontoColetaName,
+                cep,
+                endereco: fullAddress,
+                adminId: user.id,
+            });
+        }
 
         const payload = {
             id: user.id,
@@ -46,9 +61,9 @@ async function register(req, res) {
             earningsDelta: user.earningsDelta || '0%',
             impactScore: user.impactScore || '0.0',
         };
-        
+
         const token = jwt.sign(
-            { id: user.id, email: user.email },
+            { id: user.id, email: user.email, role: user.role },
             JWT_SECRET,
             { expiresIn: '7d' }
         );
@@ -57,6 +72,10 @@ async function register(req, res) {
             httpOnly: true,
             maxAge: 7 * 24 * 60 * 60 * 1000,
         });
+
+        if (role === 'admin') {
+            return res.redirect('/admin/pontos');
+        }
 
         res.redirect('/perfil');
     } catch (error) {
@@ -114,6 +133,12 @@ async function login(req, res) {
             httpOnly: true,
             maxAge: 7 * 24 * 60 * 60 * 1000,
         });
+
+        const isAdmin = user.role === 'admin';
+        
+        if (isAdmin) {
+            return res.redirect('/admin/pontos');
+        }
 
         res.redirect('/perfil');
     } catch (error) {

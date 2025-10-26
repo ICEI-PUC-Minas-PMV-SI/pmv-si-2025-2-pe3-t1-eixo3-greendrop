@@ -60,85 +60,108 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // 1. mock
-        const locations = [
-            {
-                id: 1,
-                name: "Ponto de Coleta - Parque Ibirapuera",
-                address: "Av. Pedro Álvares Cabral, s/n - Vila Mariana",
-                lat: -23.588,
-                lng: -46.656,
-                type: "Plástico, Papel, Vidro"
-            },
-            {
-                id: 2,
-                name: "Recicla Center - Pinheiros",
-                address: "R. dos Pinheiros, 1234 - Pinheiros",
-                lat: -23.565,
-                lng: -46.695,
-                type: "Eletrônicos, Baterias"
-            },
-            {
-                id: 3,
-                name: "Green Station - Paulista",
-                address: "Av. Paulista, 2000 - Cerqueira César",
-                lat: -23.561,
-                lng: -46.656,
-                type: "Todos os recicláveis"
-            },
-            {
-                id: 4,
-                name: "Eco Ponto - Tatuapé",
-                address: "R. Tuiuti, 500 - Tatuapé",
-                lat: -23.541,
-                lng: -46.574,
-                type: "Óleo de Cozinha, Papelão"
+        // Carregar pontos de coleta da API
+        let locations = [];
+
+        async function carregarPontos() {
+            try {
+                const response = await fetch('/api/pontos');
+                const pontos = await response.json();
+                
+                locations = pontos.map(ponto => ({
+                    id: ponto.id,
+                    name: ponto.nome,
+                    address: ponto.endereco,
+                    lat: parseFloat(ponto.latitude),
+                    lng: parseFloat(ponto.longitude),
+                    residuos: ponto.residuos.map(r => r.nome).join(', ') || 'Não especificado',
+                    telefone: ponto.telefone,
+                    horario: ponto.horarioFuncionamento,
+                }));
+
+                inicializarMapa();
+            } catch (error) {
+                console.error('Erro ao carregar pontos:', error);
+                // Usar dados mock se a API falhar
+                locations = [
+                    {
+                        id: 1,
+                        name: "Ponto de Coleta - Parque Ibirapuera",
+                        address: "Av. Pedro Álvares Cabral, s/n - Vila Mariana",
+                        lat: -23.588,
+                        lng: -46.656,
+                        residuos: "Plástico, Papel, Vidro"
+                    },
+                ];
+                inicializarMapa();
             }
-        ];
+        }
 
-        const map = L.map('map').setView([-23.56, -46.66], 13); // Centered in São Paulo
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        const greenIcon = L.divIcon({
-            className: 'custom-marker-icon',
-            iconSize: [20, 20],
-            iconAnchor: [10, 10],
-            popupAnchor: [0, -10]
-        });
-
-
-        const locationsList = document.getElementById('locations-list');
-        const markers = {};
-
-        locations.forEach(location => {
-            const marker = L.marker([location.lat, location.lng], { icon: greenIcon }).addTo(map)
-                .bindPopup(`
-                    <div class="font-sans">
-                        <h3 class="font-bold text-lg brand-dark-green">${location.name}</h3>
-                        <p class="text-gray-600">${location.address}</p>
-                        <p class="text-sm text-gray-500 mt-1"><strong>Coleta:</strong> ${location.type}</p>
-                    </div>
-                `);
+        function inicializarMapa() {
+            // Centralizar no primeiro ponto ou em São Paulo
+            const centerLat = locations.length > 0 ? locations[0].lat : -23.56;
+            const centerLng = locations.length > 0 ? locations[0].lng : -46.66;
             
-            markers[location.id] = marker;
+            const map = L.map('map').setView([centerLat, centerLng], 13);
 
-            const locationItem = document.createElement('div');
-            locationItem.className = 'p-4 rounded-lg cursor-pointer hover:bg-green-50 transition-colors';
-            locationItem.innerHTML = `
-                <h3 class="font-semibold brand-dark-green">${location.name}</h3>
-                <p class="text-sm text-gray-600">${location.address}</p>
-            `;
-            
-            locationItem.addEventListener('click', () => {
-                map.flyTo([location.lat, location.lng], 15);
-                marker.openPopup();
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            const greenIcon = L.divIcon({
+                className: 'custom-marker-icon',
+                iconSize: [20, 20],
+                iconAnchor: [10, 10],
+                popupAnchor: [0, -10]
             });
 
-            locationsList.appendChild(locationItem);
-        });
+            const locationsList = document.getElementById('locations-list');
+            const markers = {};
+
+            locations.forEach(location => {
+                const marker = L.marker([location.lat, location.lng], { icon: greenIcon }).addTo(map)
+                    .bindPopup(`
+                        <div class="font-sans">
+                            <h3 class="font-bold text-lg brand-dark-green">${location.name}</h3>
+                            <p class="text-gray-600 text-sm mb-2">${location.address}</p>
+                            <p class="text-sm text-gray-500"><strong>Aceita:</strong> ${location.residuos}</p>
+                            ${location.horario ? `<p class="text-sm text-gray-500"><strong>Horário:</strong> ${location.horario}</p>` : ''}
+                            <a href="/pontos/${location.id}" class="text-green-600 hover:underline text-sm font-medium mt-2 inline-block">Ver detalhes →</a>
+                        </div>
+                    `);
+                
+                markers[location.id] = marker;
+
+                const locationItem = document.createElement('div');
+                locationItem.className = 'p-4 rounded-lg cursor-pointer hover:bg-green-50 transition-colors border-b border-gray-100';
+                locationItem.innerHTML = `
+                    <h3 class="font-semibold brand-dark-green mb-1">${location.name}</h3>
+                    <p class="text-sm text-gray-600 mb-2">${location.address}</p>
+                    <div class="flex flex-wrap gap-1">
+                        ${location.residuos.split(', ').slice(0, 3).map(r => `
+                            <span class="px-2 py-0.5 text-xs font-medium rounded-full bg-green-100 text-green-800">${r}</span>
+                        `).join('')}
+                        ${location.residuos.split(', ').length > 3 ? '<span class="text-xs text-gray-500">...</span>' : ''}
+                    </div>
+                `;
+                
+                locationItem.addEventListener('click', () => {
+                    map.flyTo([location.lat, location.lng], 15);
+                    marker.openPopup();
+                });
+
+                locationsList.appendChild(locationItem);
+            });
+
+            // Ajustar bounds se houver pontos
+            if (locations.length > 0) {
+                const bounds = L.latLngBounds(locations.map(loc => [loc.lat, loc.lng]));
+                map.fitBounds(bounds, { padding: [50, 50] });
+            }
+        }
+
+        // Carregar pontos ao carregar a página
+        carregarPontos();
 
     </script>
 </body>
