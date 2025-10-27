@@ -1,48 +1,54 @@
 <!-- Cabeçalho (Header) - Foco na Identidade Visual Verde -->
 <header id="site-header" class="bg-white shadow-md fixed top-0 left-0 right-0 z-[2000]">
-  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <!-- Logo -->
-    <div class="flex items-center gap-3">
-      <img src="/ico.png" alt="GreenDrop Logo" class="h-10 w-auto" />
-      <a href="/" class="text-2xl font-bold brand-dark-green">GreenDrop</a>
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+            <img src="/ico.png" alt="GreenDrop Logo" class="h-10 w-auto" />
+            <a href="/" class="text-2xl font-bold brand-dark-green">GreenDrop</a>
+        </div>
+
+        <!-- Links desktop -->
+        <ul class="hidden md:flex items-center space-x-8">
+            <li><a href="/" class="font-medium text-gray-600 hover:brand-green transition-colors">Início</a></li>
+            <li><a href="/educativo" class="font-medium text-gray-600 hover:brand-green transition-colors">Escola do
+                    Planeta</a></li>
+            <li><a href="/mapa" class="font-medium text-gray-600 hover:brand-green transition-colors">Mapa</a></li>
+        </ul>
+
+        <!-- Ações -->
+        <div class="hidden md:flex items-center space-x-4">
+            <a href="/login" class="font-medium text-gray-600 hover:brand-green transition-colors">Entrar</a>
+            <a href="/register"
+                class="py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-transform duration-300 hover:scale-105">
+                Cadastre-se
+            </a>
+        </div>
+
+        <!-- Menu mobile -->
+        <button class="md:hidden focus:outline-none" id="mobile-menu-button" aria-label="Abrir menu">
+            <i data-feather="menu" class="h-6 w-6 text-gray-600"></i>
+        </button>
+    </nav>
+
+    <!-- Drawer mobile -->
+    <div class="hidden md:hidden border-t border-gray-100" id="mobile-menu">
+        <ul class="px-4 py-3 space-y-1">
+            <li><a href="/"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Início</a>
+            </li>
+            <li><a href="/mapa"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Mapa</a>
+            </li>
+        </ul>
     </div>
-
-    <!-- Links desktop -->
-    <ul class="hidden md:flex items-center space-x-8">
-      <li><a href="/" class="font-medium text-gray-600 hover:brand-green transition-colors">Início</a></li>
-      <li><a href="/educativo" class="font-medium text-gray-600 hover:brand-green transition-colors">Escola do Planeta</a></li>
-      <li><a href="/mapa" class="font-medium text-gray-600 hover:brand-green transition-colors">Mapa</a></li>
-    </ul>
-
-    <!-- Ações -->
-    <div class="hidden md:flex items-center space-x-4">
-      <a href="/login" class="font-medium text-gray-600 hover:brand-green transition-colors">Entrar</a>
-      <a href="/register"
-         class="py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-transform duration-300 hover:scale-105">
-        Cadastre-se
-      </a>
-    </div>
-
-    <!-- Menu mobile -->
-    <button class="md:hidden focus:outline-none" id="mobile-menu-button" aria-label="Abrir menu">
-      <i data-feather="menu" class="h-6 w-6 text-gray-600"></i>
-    </button>
-  </nav>
-
-  <!-- Drawer mobile -->
-  <div class="hidden md:hidden border-t border-gray-100" id="mobile-menu">
-    <ul class="px-4 py-3 space-y-1">
-      <li><a href="/" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Início</a></li>
-      <li><a href="/mapa" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Mapa</a></li>
-    </ul>
-  </div>
 </header>
 
 
 <!-- Seção de Destaque/Introdução -->
 <main class="flex-grow">
+
     <div id="background-animation">
-        <svg id="falling-items-svg" style="width: 100%; height: 100%;">
+        <svg id="falling-items-svg" style="width:100%;height:100%">
             <defs>
                 <g id="leaf">
                     <path
@@ -54,26 +60,21 @@
             </defs>
         </svg>
     </div>
-    <!-- Seção Principal / Hero -->
+
     <section class="relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 flex flex-col lg:flex-row items-center">
             <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-12">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
-                    Seu Descarte, Nosso Impacto.
-                </h1>
-                <p class="text-xl lg:text-2xl mb-8 opacity-90">
-                    A plataforma que conecta você a cooperativas e aos pontos de coleta corretos. Transforme seu
-                    resíduo em um ciclo de sustentabilidade.
-                </p>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">Seu Descarte, Nosso
+                    Impacto.</h1>
+                <p class="text-xl lg:text-2xl mb-8 opacity-90">A plataforma que conecta você a cooperativas e aos pontos
+                    de coleta corretos. Transforme seu resíduo em um ciclo de sustentabilidade.</p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="/register"
-                        class="w-full md:w-auto py-3 px-8 rounded-lg font-semibold text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
-                        Começar a Reciclar
-                    </a>
+                        class="w-full md:w-auto py-3 px-8 rounded-lg font-semibold text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 shadow-lg text-center">Começar
+                        a Reciclar</a>
                 </div>
             </div>
             <div class="lg:w-1/2">
-                <!-- Imagem ilustrativa de reciclagem/planeta (Placeholder) -->
                 <div
                     class="w-full max-w-md mx-auto aspect-square bg-green-100 bg-opacity-80 rounded-full flex items-center justify-center p-8">
                     <div class="text-9xl">🌎</div>
@@ -82,7 +83,6 @@
         </div>
     </section>
 
-    <!-- SEÇÃO Escolinha do Planeta (Cards que abrem Modals) -->
     <section id="escolinha-planeta" class="py-16 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 text-center">Escolinha do Planeta</h2>
@@ -90,370 +90,301 @@
                 diferença, passo a passo, em cinco lições essenciais para um futuro mais sustentável.</p>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Card 1: Coleta Inteligente (Modal Trigger) -->
                 <button onclick="toggleModal('modal-coleta')"
                     class="text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-green-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-green-300">
                     <div class="flex justify-center mb-4">
-                        <div class="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
-                            <i data-feather="map-pin" class="h-8 w-8 text-green-600"></i>
-                        </div>
+                        <div class="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center"><i
+                                data-feather="map-pin" class="h-8 w-8 text-green-600"></i></div>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Coleta Inteligente</h3>
-                    <p class="text-gray-600 text-sm text-center">Encontre rapidamente o ponto de coleta ideal para
-                        cada material. Visualize opções no mapa em tempo real.</p>
+                    <p class="text-gray-600 text-sm text-center">Encontre rapidamente o ponto de coleta ideal para cada
+                        material. Visualize opções no mapa em tempo real.</p>
                 </button>
 
-                <!-- Card 2: Reciclagem Eficiente (Modal Trigger) -->
                 <button onclick="toggleModal('modal-reciclagem')"
                     class="text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-blue-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-blue-300">
                     <div class="flex justify-center mb-4">
-                        <div class="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
-                            <i data-feather="refresh-cw" class="h-8 w-8 text-blue-600"></i>
-                        </div>
+                        <div class="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center"><i
+                                data-feather="refresh-cw" class="h-8 w-8 text-blue-600"></i></div>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Reciclagem Eficiente</h3>
-                    <p class="text-gray-600 text-sm text-center">Direcionamos seus resíduos para destinos adequados,
-                        com informações claras sobre o que cada ponto aceita.</p>
+                    <p class="text-gray-600 text-sm text-center">Direcionamos seus resíduos para destinos adequados, com
+                        informações claras sobre o que cada ponto aceita.</p>
                 </button>
 
-                <!-- Card 3: Relatório de Impacto (Modal Trigger) -->
                 <button onclick="toggleModal('modal-impacto')"
                     class="text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-purple-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-purple-300">
                     <div class="flex justify-center mb-4">
-                        <div class="h-16 w-16 rounded-full bg-purple-100 flex items-center justify-center">
-                            <i data-feather="bar-chart-2" class="h-8 w-8 text-purple-600"></i>
-                        </div>
+                        <div class="h-16 w-16 rounded-full bg-purple-100 flex items-center justify-center"><i
+                                data-feather="bar-chart-2" class="h-8 w-8 text-purple-600"></i></div>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Relatório de Impacto</h3>
-                    <p class="text-gray-600 text-sm text-center">Acompanhe quanto você já reciclou e veja métricas
-                        do seu impacto positivo na sua rotina sustentável.</p>
+                    <p class="text-gray-600 text-sm text-center">Acompanhe quanto você já reciclou e veja métricas do
+                        seu impacto positivo na sua rotina sustentável.</p>
                 </button>
 
-                <!-- Card 4: Descarte Especial (Modal Trigger) -->
                 <button onclick="toggleModal('modal-especial')"
                     class="text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-yellow-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-yellow-300">
                     <div class="flex justify-center mb-4">
-                        <div class="h-16 w-16 rounded-full bg-yellow-100 flex items-center justify-center">
-                            <i data-feather="book-open" class="h-8 w-8 text-yellow-600"></i>
-                        </div>
+                        <div class="h-16 w-16 rounded-full bg-yellow-100 flex items-center justify-center"><i
+                                data-feather="book-open" class="h-8 w-8 text-yellow-600"></i></div>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Descarte Especial</h3>
                     <p class="text-gray-600 text-sm text-center">Acesse dicas, listas do que pode ou não reciclar e
                         orientações para descarte especial (eletrônicos, óleo, pilhas).</p>
                 </button>
 
-                <!-- Card 5: Resíduos Comuns (Rejeito) (Modal Trigger) -->
                 <button onclick="toggleModal('modal-rejeito')"
                     class="text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-brand-slate transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-gray-400">
                     <div class="flex justify-center mb-4">
-                        <div class="h-16 w-16 rounded-full bg-gray-200 flex items-center justify-center">
-                            <i data-feather="box" class="h-8 w-8 text-brand-slate"></i>
-                        </div>
+                        <div class="h-16 w-16 rounded-full bg-gray-200 flex items-center justify-center"><i
+                                data-feather="box" class="h-8 w-8 text-brand-slate"></i></div>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Resíduos Comuns (Rejeito)</h3>
                     <p class="text-gray-600 text-sm text-center">Entenda o que são os 'rejeitos', o que não pode ser
                         reciclado, e qual o destino final deste material.</p>
                 </button>
-
             </div>
         </div>
     </section>
 
-    <!-- Rodapé (Footer) -->
     <footer class="text-gray-600 p-6 text-center bg-white border-t">
         <p class="text-sm">&copy; 2024 GreenDrop Project. Todos os direitos reservados. | Desenvolvido com foco no
             Planeta.</p>
     </footer>
 
-    <!-- Modals (5 total) -->
-
-    <!-- Modal 1: Coleta Inteligente -->
-    <div id="modal-coleta" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-50 hidden transition-opacity duration-300">
-        <div class="flex items-center justify-center min-h-screen">
-            <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 p-8 transform transition-all duration-300 scale-95 opacity-0"
-                id="content-modal-coleta">
-                <div class="flex justify-between items-start border-b pb-3 mb-4">
-                    <h3 class="text-3xl font-bold text-brand-green flex items-center">
-                        <i data-feather="map-pin" class="mr-3 h-8 w-8"></i> Lição 1: Coleta Inteligente
-                    </h3>
-                    <button onclick="toggleModal('modal-coleta')"
-                        class="text-gray-400 hover:text-gray-600 transition duration-150">
-                        <i data-feather="x" class="h-6 w-6"></i>
-                    </button>
-                </div>
-                <!-- Conteúdo detalhado da Lição 1 (ATUALIZADO) -->
-                <p class="text-xl text-gray-600 mb-6 text-justify">
-                    A <strong>Coleta Inteligente</strong> significa descarte preciso. O erro mais comum é misturar
-                    materiais
-                    recicláveis com orgânicos ou rejeitos, o que contamina o lote e o torna impróprio para
-                    reciclagem. A solução é usar o GreenDrop para localizar o Ponto de Entrega Voluntária (PEV) mais
-                    próximo, filtrando pelo tipo de material (plástico, vidro, metal, papel).
-                </p>
-                <h4 class="text-2xl font-semibold text-brand-green-dark mb-3 flex items-center"><i
-                        data-feather="check-square" class="mr-2 h-6 w-6"></i> Regra de Ouro: Preparação Básica</h4>
-                <ul class="space-y-3 text-gray-700 list-disc pl-5 mb-8">
-                    <li><strong>Limpeza:</strong> Remova o máximo de resíduo orgânico ou gordura possível. Uma lavagem
-                        rápida
-                        (água de reuso, se possível) ou apenas limpar com um papel já faz uma grande diferença. Isso
-                        impede mau cheiro e contaminação.</li>
-                    <li><strong>Secagem:</strong> Materiais secos são essenciais. O papel molhado, por exemplo, não pode
-                        ser
-                        reciclado. Deixe os plásticos e vidros secarem ao ar antes de guardar.</li>
-                    <li><strong>Compactação:</strong> Amasse latas de metal e garrafas PET. Isso reduz o volume e
-                        otimiza o
-                        transporte e o espaço nas cooperativas. Caixas de papelão devem ser desmontadas e dobradas.
-                    </li>
-                </ul>
-                <div class="bg-green-50 p-6 rounded-xl border border-green-200">
-                    <p class="font-semibold text-lg text-green-700">Ação Próxima:</p>
-                    <p class="text-green-600">Em um app real, aqui estaria um mapa interativo que permite a você
-                        filtrar por material e encontrar o ponto exato de coleta!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 2: Reciclagem Eficiente -->
-    <div id="modal-reciclagem"
-        class="fixed inset-0 bg-gray-900 bg-opacity-75 z-50 hidden transition-opacity duration-300">
-        <div class="flex items-center justify-center min-h-screen">
-            <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 p-8 transform transition-all duration-300 scale-95 opacity-0"
-                id="content-modal-reciclagem">
-                <div class="flex justify-between items-start border-b pb-3 mb-4">
-                    <h3 class="text-3xl font-bold text-brand-blue flex items-center">
-                        <i data-feather="refresh-cw" class="mr-3 h-8 w-8"></i> Lição 2: Reciclagem Eficiente
-                    </h3>
-                    <button onclick="toggleModal('modal-reciclagem')"
-                        class="text-gray-400 hover:text-gray-600 transition duration-150">
-                        <i data-feather="x" class="h-6 w-6"></i>
-                    </button>
-                </div>
-                <!-- Conteúdo detalhado da Lição 2 (ATUALIZADO) -->
-                <p class="text-xl text-gray-600 mb-6 text-justify">
-                    A <strong>Reciclagem Eficiente</strong> transforma seu lixo em recurso, economizando recursos
-                    naturais e
-                    energia (reciclar alumínio usa 95% menos energia do que produzi-lo do zero). O segredo é separar
-                    corretamente o lixo seco do rejeito, garantindo que seus materiais cheguem às cooperativas em
-                    condições ideais de processamento.
-                </p>
-
-                <h4 class="text-2xl font-semibold text-brand-blue mb-4 flex items-center"><i data-feather="tool"
-                        class="mr-2"></i> Preparação Detalhada por Material</h4>
-                <div class="grid md:grid-cols-2 gap-6 mb-8">
-                    <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                        <p class="font-bold text-lg text-brand-blue">Plásticos</p>
-                        <ul class="text-sm text-gray-700 list-disc pl-5 mt-1">
-                            <li><strong>Recicle:</strong> Garrafas PET, potes, embalagens de limpeza (limpos).</li>
-                            <li><strong>Prepare:</strong> Lave rapidamente (o suficiente para remover restos). Retire os
-                                rótulos
-                                de papel sempre que possível. Tampe as garrafas para que o ar dentro ajude a
-                                compactá-las e economizar espaço.</li>
-                        </ul>
+    <div id="modal-coleta" class="modal-sheet hidden">
+        <div class="w-full h-full bg-gray-900 bg-opacity-75">
+            <div class="flex items-start justify-center h-full">
+                <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 my-6 p-8 transform transition-all duration-300 scale-95 opacity-0"
+                    id="content-modal-coleta">
+                    <div class="flex justify-between items-start border-b pb-3 mb-4">
+                        <h3 class="text-3xl font-bold text-brand-green flex items-center"><i data-feather="map-pin"
+                                class="mr-3 h-8 w-8"></i> Lição 1: Coleta Inteligente</h3>
+                        <button onclick="toggleModal('modal-coleta')"
+                            class="text-gray-400 hover:text-gray-600 transition duration-150"><i data-feather="x"
+                                class="h-6 w-6"></i></button>
                     </div>
-                    <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                        <p class="font-bold text-lg text-brand-blue">Metais</p>
-                        <ul class="text-sm text-gray-700 list-disc pl-5 mt-1">
-                            <li><strong>Recicle:</strong> Latas de alumínio (bebidas), latas de conserva, ferragens.
-                            </li>
-                            <li><strong>Prepare:</strong> Lave as latas de conserva para remover óleo e restos de
-                                alimento.
-                                Amasse as latas de bebida para reduzir volume. Objetos pontiagudos (como pregos)
-                                devem ser colocados em embalagens seguras.</li>
-                        </ul>
-                    </div>
-                    <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                        <p class="font-bold text-lg text-brand-blue">Papéis</p>
-                        <ul class="text-sm text-gray-700 list-disc pl-5 mt-1">
-                            <li><strong></strong>Recicle:</strong> Jornais, revistas, caixas de papelão, envelopes.</li>
-                            <li><strong>Prepare:</strong> Rasgue e desmonte caixas grandes. Evite dobrar para que não
-                                fiquem
-                                volumes de ar. <strong>NUNCA</strong> amasse ou molhe. Junte em maços ou coloque em
-                                sacos
-                                separados.</li>
-                        </ul>
-                    </div>
-                    <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                        <p class="font-bold text-lg text-brand-blue">Vidros</p>
-                        <ul class="text-sm text-gray-700 list-disc pl-5 mt-1">
-                            <li><strong>Recicle:</strong> Garrafas, potes de geleia, frascos de perfume (limpos).</li>
-                            <li><strong>Prepare:</strong> Lave bem. Remova tampas. <strong>Segurança:</strong> se o
-                                vidro estiver quebrado,
-                                embale-o separadamente em jornal grosso ou caixa de papelão e identifique como
-                                "VIDRO QUEBRADO" para proteger os coletores.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
-                    <p class="font-semibold text-lg text-brand-blue">Lembrete Importante:</p>
-                    <p class="text-gray-700">O resíduo deve estar o mais limpo e seco possível para garantir que a
-                        cooperativa consiga utilizá-lo e que o processo de reciclagem seja economicamente viável.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 3: Relatório de Impacto -->
-    <div id="modal-impacto" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-50 hidden transition-opacity duration-300">
-        <div class="flex items-center justify-center min-h-screen">
-            <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 p-8 transform transition-all duration-300 scale-95 opacity-0"
-                id="content-modal-impacto">
-                <div class="flex justify-between items-start border-b pb-3 mb-4">
-                    <h3 class="text-3xl font-bold text-purple-600 flex items-center">
-                        <i data-feather="bar-chart-2" class="mr-3 h-8 w-8"></i> Lição 3: Relatório de Impacto
-                    </h3>
-                    <button onclick="toggleModal('modal-impacto')"
-                        class="text-gray-400 hover:text-gray-600 transition duration-150">
-                        <i data-feather="x" class="h-6 w-6"></i>
-                    </button>
-                </div>
-                <!-- Conteúdo detalhado da Lição 3 (SEM ALTERAÇÃO) -->
-                <p class="text-xl text-gray-600 mb-8 text-justify">
-                    O <strong>Relatório de Impacto</strong> quantifica sua sustentabilidade. Ele mostra exatamente
-                    quantos
-                    quilogramas você desviou do aterro sanitário e o que isso representa em termos ambientais:
-                    litros de água economizados, árvores salvas e dióxido de carbono evitado. Esta transparência não
-                    só motiva a sua rotina, como também permite que empresas parceiras ofereçam benefícios por sua
-                    contribuição. Acompanhar seu impacto é o primeiro passo para o consumo consciente!
-                </p>
-                <div class="bg-purple-50 p-6 rounded-xl border border-purple-200">
-                    <p class="font-semibold text-lg text-purple-700">Métricas de Conscientização:</p>
-                    <p class="text-purple-600">Cada 1kg de alumínio reciclado salva energia equivalente a manter uma
-                        TV ligada por 3 horas. Seu esforço conta!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 4: Descarte Especial -->
-    <div id="modal-especial"
-        class="fixed inset-0 bg-gray-900 bg-opacity-75 z-50 hidden transition-opacity duration-300">
-        <div class="flex items-center justify-center min-h-screen">
-            <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 p-8 transform transition-all duration-300 scale-95 opacity-0"
-                id="content-modal-especial">
-                <div class="flex justify-between items-start border-b pb-3 mb-4">
-                    <h3 class="text-3xl font-bold text-yellow-600 flex items-center">
-                        <i data-feather="book-open" class="mr-3 h-8 w-8"></i> Lição 4: Descarte Especial
-                    </h3>
-                    <button onclick="toggleModal('modal-especial')"
-                        class="text-gray-400 hover:text-gray-600 transition duration-150">
-                        <i data-feather="x" class="h-6 w-6"></i>
-                    </button>
-                </div>
-                <!-- Conteúdo detalhado da Lição 4 (ATUALIZADO) -->
-                <p class="text-xl text-gray-600 mb-6 text-justify">
-                    O <strong>Descarte Especial</strong> lida com resíduos perigosos que NUNCA devem ir para o lixo
-                    comum. Itens
-                    como pilhas, baterias, lâmpadas fluorescentes, medicamentos vencidos e óleo de cozinha contêm
-                    produtos químicos que contaminam solo e água, causando sérios danos. A preparação correta é
-                    crucial para a segurança.
-                </p>
-
-                <h4 class="text-2xl font-semibold text-yellow-600 mb-4 flex items-center"><i data-feather="shield"
-                        class="mr-2"></i> Manuseio e Preparação de Resíduos Perigosos</h4>
-                <div class="grid md:grid-cols-1 gap-4 bg-gray-100 p-6 rounded-xl shadow-md border border-yellow-200">
-                    <!-- Eletrônicos -->
-                    <div class="border-l-4 border-yellow-500 pl-4">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Lixo Eletrônico (Pilhas, Baterias)</h3>
-                        <p class="text-gray-600 text-sm">Armazene em um recipiente de plástico fechado (sem misturar
-                            com outros lixos). Nunca desmonte ou danifique pilhas/baterias. Leve a pontos de coleta
-                            específicos (supermercados, lojas de eletrônicos ou assistências técnicas que fazem
-                            logística reversa).</p>
-                    </div>
-                    <!-- Óleo de Cozinha -->
-                    <div class="border-l-4 border-yellow-500 pl-4">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Óleo de Cozinha Usado</h3>
-                        <p class="text-gray-600 text-sm">Espere o óleo esfriar e guarde-o em uma garrafa PET
-                            transparente e bem fechada. **Nunca descarte no ralo.** Entregue a PEVs ou ONGs para ser
-                            transformado em sabão ou biodiesel.</p>
-                    </div>
-                    <!-- Medicamentos -->
-                    <div class="border-l-4 border-yellow-500 pl-4">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Medicamentos Vencidos ou Sobras</h3>
-                        <p class="text-gray-600 text-sm">Leve-os em suas embalagens originais. Descarte em farmácias
-                            ou postos de saúde, que são obrigados por lei a receber e dar o destino adequado. Evite
-                            retirar da cartela. Nunca jogue no lixo ou vaso sanitário.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 5: Resíduos Comuns (Rejeito) -->
-    <div id="modal-rejeito" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-50 hidden transition-opacity duration-300">
-        <div class="flex items-center justify-center min-h-screen">
-            <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 p-8 transform transition-all duration-300 scale-95 opacity-0"
-                id="content-modal-rejeito">
-                <div class="flex justify-between items-start border-b pb-3 mb-4">
-                    <h3 class="text-3xl font-bold text-brand-slate flex items-center">
-                        <i data-feather="box" class="mr-3 h-8 w-8"></i> Lição 5: Resíduos Comuns (Rejeito)
-                    </h3>
-                    <button onclick="toggleModal('modal-rejeito')"
-                        class="text-gray-400 hover:text-gray-600 transition duration-150">
-                        <i data-feather="x" class="h-6 w-6"></i>
-                    </button>
-                </div>
-                <!-- Conteúdo detalhado da Lição 5 (ATUALIZADO) -->
-                <p class="text-xl text-gray-600 mb-6 text-justify">
-                    Os <strong>Resíduos Comuns</strong>, ou rejeitos, são todo lixo que não pode ser reciclado (por
-                    composição ou
-                    contaminação). Isso inclui papel carbono, papel higiênico, absorventes, fraldas descartáveis,
-                    etc. Eles devem ser separados do lixo seco, pois contaminam o material reciclável e comprometem
-                    todo o processo. O destino final deste material é o aterro sanitário.
-                </p>
-
-                <h4 class="text-2xl font-semibold text-brand-slate mb-4 flex items-center"><i
-                        data-feather="alert-triangle" class="mr-2"></i> Como Descartar Rejeitos e Evitar
-                    Contaminação</h4>
-                <div class="bg-gray-100 p-6 rounded-xl border border-gray-200 shadow-md">
-                    <ul class="space-y-2 text-gray-700 list-disc pl-5">
-                        <li><strong>Lixo de Banheiro/Higiene:</strong> Sempre descarte em sacos fechados. Isso é
-                            fundamental para
-                            a saúde e higiene dos coletores e para evitar a proliferação de vetores.</li>
-                        <li><strong>Lixo Orgânico Pesado:</strong> Restos de comida e lixo de jardim são rejeitos, a
-                            menos que
-                            você faça compostagem. Mantenha-os separados do lixo seco.</li>
-                        <li><strong>Materiais Perigosos/Cortantes (Vidros Comuns Quebrados, Porcelana):</strong> Embora
-                            sejam
-                            rejeitos, exigem atenção extra. Envolva-os em várias camadas de jornal, coloque-os
-                            dentro de uma caixa de papelão resistente e identifique a embalagem com a palavra
-                            "CUIDADO FRÁGIL" ou "VIDRO QUEBRADO" para evitar acidentes com os coletores.</li>
-                        <li><strong>Embalagens Mistas:</strong> Plástico metalizado (salgadinhos) e caixas de pizza
-                            engorduradas
-                            são rejeitos e não podem ser reciclados.</li>
+                    <p class="text-xl text-gray-600 mb-6 text-justify">A <strong>Coleta Inteligente</strong> significa
+                        descarte preciso. O erro mais comum é misturar materiais recicláveis com orgânicos ou rejeitos,
+                        o que contamina o lote e o torna impróprio para reciclagem. A solução é usar o GreenDrop para
+                        localizar o Ponto de Entrega Voluntária (PEV) mais próximo, filtrando pelo tipo de material
+                        (plástico, vidro, metal, papel).</p>
+                    <h4 class="text-2xl font-semibold text-brand-green-dark mb-3 flex items-center"><i
+                            data-feather="check-square" class="mr-2 h-6 w-6"></i> Regra de Ouro: Preparação Básica</h4>
+                    <ul class="space-y-3 text-gray-700 list-disc pl-5 mb-8">
+                        <li><strong>Limpeza:</strong> Remova o máximo de resíduo orgânico ou gordura possível. Uma
+                            lavagem rápida (água de reuso, se possível) ou apenas limpar com um papel já faz uma grande
+                            diferença. Isso impede mau cheiro e contaminação.</li>
+                        <li><strong>Secagem:</strong> Materiais secos são essenciais. O papel molhado, por exemplo, não
+                            pode ser reciclado. Deixe os plásticos e vidros secarem ao ar antes de guardar.</li>
+                        <li><strong>Compactação:</strong> Amasse latas de metal e garrafas PET. Isso reduz o volume e
+                            otimiza o transporte e o espaço nas cooperativas. Caixas de papelão devem ser desmontadas e
+                            dobradas.</li>
                     </ul>
+                    <div class="bg-green-50 p-6 rounded-xl border border-green-200">
+                        <p class="font-semibold text-lg text-green-700">Ação Próxima:</p>
+                        <p class="text-green-600">Em um app real, aqui estaria um mapa interativo que permite a você
+                            filtrar por material e encontrar o ponto exato de coleta!</p>
+                    </div>
                 </div>
-                <p class="text-lg text-gray-600 mt-6 text-center">
-                    Lembre-se: reduzir o rejeito que você produz é a maior lição de todas!
-                </p>
             </div>
         </div>
     </div>
 
+    <div id="modal-reciclagem" class="modal-sheet hidden">
+        <div class="w-full h-full bg-gray-900 bg-opacity-75">
+            <div class="flex items-start justify-center h-full">
+                <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 my-6 p-8 transform transition-all duration-300 scale-95 opacity-0"
+                    id="content-modal-reciclagem">
+                    <div class="flex justify-between items-start border-b pb-3 mb-4">
+                        <h3 class="text-3xl font-bold text-brand-blue flex items-center"><i data-feather="refresh-cw"
+                                class="mr-3 h-8 w-8"></i> Lição 2: Reciclagem Eficiente</h3>
+                        <button onclick="toggleModal('modal-reciclagem')"
+                            class="text-gray-400 hover:text-gray-600 transition duration-150"><i data-feather="x"
+                                class="h-6 w-6"></i></button>
+                    </div>
+                    <p class="text-xl text-gray-600 mb-6 text-justify">A <strong>Reciclagem Eficiente</strong>
+                        transforma seu lixo em recurso, economizando recursos naturais e energia (reciclar alumínio usa
+                        95% menos energia do que produzi-lo do zero). O segredo é separar corretamente o lixo seco do
+                        rejeito, garantindo que seus materiais cheguem às cooperativas em condições ideais de
+                        processamento.</p>
+                    <h4 class="text-2xl font-semibold text-brand-blue mb-4 flex items-center"><i data-feather="tool"
+                            class="mr-2"></i> Preparação Detalhada por Material</h4>
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-bold text-lg text-brand-blue">Plásticos</p>
+                            <ul class="text-sm text-gray-700 list-disc pl-5 mt-1">
+                                <li><strong>Recicle:</strong> Garrafas PET, potes, embalagens de limpeza (limpos).</li>
+                                <li><strong>Prepare:</strong> Lave rapidamente. Retire rótulos quando possível. Tampe as
+                                    garrafas.</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-bold text-lg text-brand-blue">Metais</p>
+                            <ul class="text-sm text-gray-700 list-disc pl-5 mt-1">
+                                <li><strong>Recicle:</strong> Latas de alumínio, latas de conserva, ferragens.</li>
+                                <li><strong>Prepare:</strong> Lave as latas de conserva. Amasse latas de bebida. Proteja
+                                    pontiagudos.</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-bold text-lg text-brand-blue">Papéis</p>
+                            <ul class="text-sm text-gray-700 list-disc pl-5 mt-1">
+                                <li><strong>Recicle:</strong> Jornais, revistas, caixas de papelão, envelopes.</li>
+                                <li><strong>Prepare:</strong> Desmonte caixas. Não molhe. Junte em maços ou sacos.</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-bold text-lg text-brand-blue">Vidros</p>
+                            <ul class="text-sm text-gray-700 list-disc pl-5 mt-1">
+                                <li><strong>Recicle:</strong> Garrafas, potes de geleia, frascos de perfume.</li>
+                                <li><strong>Prepare:</strong> Lave, remova tampas. Vidro quebrado deve ser embalado e
+                                    identificado.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+                        <p class="font-semibold text-lg text-brand-blue">Lembrete Importante:</p>
+                        <p class="text-gray-700">O resíduo deve estar o mais limpo e seco possível para garantir que a
+                            cooperativa consiga utilizá-lo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-impacto" class="modal-sheet hidden">
+        <div class="w-full h-full bg-gray-900 bg-opacity-75">
+            <div class="flex items-start justify-center h-full">
+                <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 my-6 p-8 transform transition-all duration-300 scale-95 opacity-0"
+                    id="content-modal-impacto">
+                    <div class="flex justify-between items-start border-b pb-3 mb-4">
+                        <h3 class="text-3xl font-bold text-purple-600 flex items-center"><i data-feather="bar-chart-2"
+                                class="mr-3 h-8 w-8"></i> Lição 3: Relatório de Impacto</h3>
+                        <button onclick="toggleModal('modal-impacto')"
+                            class="text-gray-400 hover:text-gray-600 transition duration-150"><i data-feather="x"
+                                class="h-6 w-6"></i></button>
+                    </div>
+                    <p class="text-xl text-gray-600 mb-8 text-justify">O <strong>Relatório de Impacto</strong>
+                        quantifica sua sustentabilidade. Ele mostra exatamente quantos quilogramas você desviou do
+                        aterro sanitário e o que isso representa em termos ambientais: litros de água economizados,
+                        árvores salvas e dióxido de carbono evitado.</p>
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-200">
+                        <p class="font-semibold text-lg text-purple-700">Métricas de Conscientização:</p>
+                        <p class="text-purple-600">Cada 1kg de alumínio reciclado salva energia equivalente a manter uma
+                            TV ligada por 3 horas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-especial" class="modal-sheet hidden">
+        <div class="w-full h-full bg-gray-900 bg-opacity-75">
+            <div class="flex items-start justify-center h-full">
+                <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 my-6 p-8 transform transition-all duration-300 scale-95 opacity-0"
+                    id="content-modal-especial">
+                    <div class="flex justify-between items-start border-b pb-3 mb-4">
+                        <h3 class="text-3xl font-bold text-yellow-600 flex items-center"><i data-feather="book-open"
+                                class="mr-3 h-8 w-8"></i> Lição 4: Descarte Especial</h3>
+                        <button onclick="toggleModal('modal-especial')"
+                            class="text-gray-400 hover:text-gray-600 transition duration-150"><i data-feather="x"
+                                class="h-6 w-6"></i></button>
+                    </div>
+                    <p class="text-xl text-gray-600 mb-6 text-justify">O <strong>Descarte Especial</strong> lida com
+                        resíduos perigosos que nunca devem ir para o lixo comum. Pilhas, baterias, lâmpadas
+                        fluorescentes, medicamentos vencidos e óleo de cozinha contêm químicos que contaminam solo e
+                        água.</p>
+                    <h4 class="text-2xl font-semibold text-yellow-600 mb-4 flex items-center"><i data-feather="shield"
+                            class="mr-2"></i> Manuseio e Preparação de Resíduos Perigosos</h4>
+                    <div
+                        class="grid md:grid-cols-1 gap-4 bg-gray-100 p-6 rounded-xl shadow-md border border-yellow-200">
+                        <div class="border-l-4 border-yellow-500 pl-4">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Lixo Eletrônico (Pilhas, Baterias)</h3>
+                            <p class="text-gray-600 text-sm">Armazene em recipiente plástico fechado. Não desmonte. Leve
+                                a pontos de coleta específicos.</p>
+                        </div>
+                        <div class="border-l-4 border-yellow-500 pl-4">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Óleo de Cozinha Usado</h3>
+                            <p class="text-gray-600 text-sm">Guarde em garrafa PET fechada. Não descarte no ralo.
+                                Entregue a PEVs ou ONGs.</p>
+                        </div>
+                        <div class="border-l-4 border-yellow-500 pl-4">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Medicamentos Vencidos ou Sobras</h3>
+                            <p class="text-gray-600 text-sm">Descarte em farmácias ou postos de saúde. Evite retirar da
+                                cartela. Não jogue no lixo ou vaso sanitário.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-rejeito" class="modal-sheet hidden">
+        <div class="w-full h-full bg-gray-900 bg-opacity-75">
+            <div class="flex items-start justify-center h-full">
+                <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 my-6 p-8 transform transition-all duration-300 scale-95 opacity-0"
+                    id="content-modal-rejeito">
+                    <div class="flex justify-between items-start border-b pb-3 mb-4">
+                        <h3 class="text-3xl font-bold text-brand-slate flex items-center"><i data-feather="box"
+                                class="mr-3 h-8 w-8"></i> Lição 5: Resíduos Comuns (Rejeito)</h3>
+                        <button onclick="toggleModal('modal-rejeito')"
+                            class="text-gray-400 hover:text-gray-600 transition duration-150"><i data-feather="x"
+                                class="h-6 w-6"></i></button>
+                    </div>
+                    <p class="text-xl text-gray-600 mb-6 text-justify">Os <strong>Resíduos Comuns</strong>, ou rejeitos,
+                        são todo lixo que não pode ser reciclado por composição ou contaminação. Devem ser separados do
+                        lixo seco.</p>
+                    <h4 class="text-2xl font-semibold text-brand-slate mb-4 flex items-center"><i
+                            data-feather="alert-triangle" class="mr-2"></i> Como Descartar Rejeitos e Evitar
+                        Contaminação</h4>
+                    <div class="bg-gray-100 p-6 rounded-xl border border-gray-200 shadow-md">
+                        <ul class="space-y-2 text-gray-700 list-disc pl-5">
+                            <li><strong>Lixo de Banheiro/Higiene:</strong> Sempre descarte em sacos fechados.</li>
+                            <li><strong>Lixo Orgânico Pesado:</strong> Mantenha separado do lixo seco.</li>
+                            <li><strong>Materiais Cortantes:</strong> Embale e identifique como frágil.</li>
+                            <li><strong>Embalagens Mistas:</strong> Plástico metalizado e caixas de pizza engorduradas
+                                são rejeitos.</li>
+                        </ul>
+                    </div>
+                    <p class="text-lg text-gray-600 mt-6 text-center">Lembre-se: reduzir o rejeito que você produz é a
+                        maior lição de todas!</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
+
 <script>
-    // Lógica do Modal
+    function syncHeaderHeight() {
+        const header = document.getElementById('site-header') || document.querySelector('header');
+        const h = header ? header.offsetHeight : 72;
+        document.documentElement.style.setProperty('--header-h', h + 'px');
+        document.body.classList.add('has-fixed-header');
+    }
+    window.addEventListener('load', syncHeaderHeight);
+    window.addEventListener('resize', () => requestAnimationFrame(syncHeaderHeight));
+
     function toggleModal(modalId) {
         const modal = document.getElementById(modalId);
         const content = document.getElementById(`content-${modalId}`);
-
-        if (modal.classList.contains('hidden')) {
+        const open = modal.classList.contains('hidden');
+        if (open) {
             modal.classList.remove('hidden');
+            modal.classList.add('is-open');
             setTimeout(() => {
                 content.classList.remove('opacity-0', 'scale-95');
                 content.classList.add('opacity-100', 'scale-100');
-                document.body.style.overflow = 'hidden';
+                document.documentElement.style.overflow = 'hidden';
             }, 10);
         } else {
-
             content.classList.remove('opacity-100', 'scale-100');
             content.classList.add('opacity-0', 'scale-95');
-
             setTimeout(() => {
                 modal.classList.add('hidden');
-                document.body.style.overflow = '';
+                modal.classList.remove('is-open');
+                document.documentElement.style.overflow = '';
             }, 300);
         }
     }

@@ -53,6 +53,9 @@ section+section {
   margin-top: var(--space-12);
 }
 
+.modal-sheet{position:fixed;left:0;right:0;bottom:0;top:var(--header-h);z-index:2000;display:none}
+.modal-sheet.is-open{display:block}
+
 /* Leaflet map container */
 #map {
   height: calc(80vh - 250px);
