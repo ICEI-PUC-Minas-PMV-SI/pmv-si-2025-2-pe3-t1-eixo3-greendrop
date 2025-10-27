@@ -82,7 +82,6 @@ body{ padding-top: var(--topbar-h); }
 }
 
 .brand-name{
-  font-weight: 900;
   color: #0b4d33;
   text-decoration: none;
   line-height: 1;

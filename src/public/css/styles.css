@@ -1,8 +1,15 @@
-body {
+html,body {
   font-family: "Inter", sans-serif;
   background-color: #f8f9fa;
-  position: relative; 
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
+* { box-sizing: border-box; }
+:root { --header-h: 72px; }  /* fallback */
+body.has-fixed-header { padding-top: var(--header-h); }
+
 #background-animation {
   position: fixed; /* Fixa a animação na tela */
   top: 0;
