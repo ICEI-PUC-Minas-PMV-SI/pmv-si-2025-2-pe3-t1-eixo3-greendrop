@@ -38,27 +38,85 @@ body.map-body{
 /* =======================
    TOPBAR
 ======================= */
+:root{
+  --topbar-h: 64px;
+  --border: #e5e7eb;
+  --green: #34a853;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --shadow-soft: 0 6px 16px rgba(0,0,0,.06);
+}
+
+/* empurra o conteúdo para baixo da topbar fixa */
+body{ padding-top: var(--topbar-h); }
+
 .topbar{
-  position:fixed;inset:0 0 auto 0;height:var(--topbar-h);
-  background:#fff;
-  border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 12px;
-  z-index:1000;
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--topbar-h);
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
 }
+
+/* container da topbar centralizado e com flex */
+.navbar{
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.logo{ height: 32px; width: auto; display: block; }
+
 .brand{
-  font-weight:900;display:flex;align-items:center;gap:8px;
-  color:#0b4d33;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
 }
+
+.brand-name{
+  font-weight: 900;
+  color: #0b4d33;
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+
 .brand .dot{
   width:10px;height:10px;border-radius:50%;background:var(--green);display:inline-block;
 }
-.controls{display:flex;gap:10px;align-items:center}
+
+/* lado direito */
+.controls{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: auto; /* garante empurrar para a direita */
+}
 
 /* Toggle 2D/3D + botões */
-.view-toggle{background:#f3f4f6;border:1px solid var(--border);border-radius:999px;padding:3px;display:flex;gap:4px}
+.view-toggle{
+  background:#f3f4f6;
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:3px;
+  display:flex;
+  gap:4px;
+}
+
 .btn{
-  border:0;border-radius:var(--radius-md);cursor:pointer;font-weight:800;line-height:1;
+  border:0;
+  border-radius:var(--radius-md);
+  cursor:pointer;
+  font-weight:800;
+  line-height:1;
   transition:.2s ease;
 }
 .btn:focus-visible{outline:3px solid rgba(52,168,83,.35);outline-offset:2px}
@@ -70,7 +128,12 @@ body.map-body{
   box-shadow:0 0 0 3px rgba(52,168,83,.15);
 }
 .btn-outline{
-  padding:9px 12px;border:1px solid var(--border);background:#fff;color:#111;border-radius:999px;font-weight:800;
+  padding:9px 12px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:#111;
+  border-radius:999px;
+  font-weight:800;
 }
 .btn-outline:hover{border-color:#d1d5db;box-shadow:var(--shadow-soft)}
 .btn-mini{
@@ -78,6 +141,13 @@ body.map-body{
   color:#374151;font-weight:700;
 }
 .btn-mini:hover{background:#f9fafb}
+
+/* responsivo (opcional) */
+@media (max-width: 520px){
+  .brand-name{ display:none; } /* mostra só o ícone em telas muito pequenas */
+  .navbar{ padding: 0 10px; }
+}
+
 
 /* =======================
    FILTROS (ASIDE)

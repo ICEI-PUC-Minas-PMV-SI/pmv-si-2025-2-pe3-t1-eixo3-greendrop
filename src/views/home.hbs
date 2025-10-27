@@ -163,8 +163,8 @@
                             descarte especial
                             (eletrônicos, óleo, pilhas e mais).</p>
                         <button
-                        class="bg-brand-green text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition duration-300"><a
-                            href="./educativo">Entenda Mais</a></button>
+                            class="bg-brand-green text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition duration-300"><a
+                                href="./educativo">Entenda Mais</a></button>
                     </div>
                 </div>
             </div>
@@ -216,33 +216,60 @@
                 <div class="flex flex-col lg:flex-row gap-8">
                     <!-- Lista (opcional) -->
                     <aside class="w-full lg:w-1/3 xl:w-1/4 bg-white p-6 rounded-2xl shadow-lg">
-                        <h2 class="text-2xl font-bold brand-dark-green mb-4">
+                        <h2 class="text-2xl font-bold brand-dark-green mb-2">
                             Buscar por endereço, bairro ou CEP…
                         </h2>
                         <p class="text-gray-600 text-sm pb-4">
                             Dica: ative a localização do navegador para resultados mais precisos.
                         </p>
 
+                        <!-- Busca -->
+                        <div class="flex gap-2 mb-4">
+                            <input id="map-search" type="text" placeholder="Digite o endereço ou bairro..."
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-brand-green" />
+                            <button id="btn-search"
+                                class="bg-brand-green text-white px-3 rounded-lg hover:bg-brand-green-dark transition">🔍</button>
+                        </div>
+
+                        <!-- Select de material -->
                         <div class="mb-4">
-                            <label for="filter-material" class="block text-sm font-semibold text-gray-700 mb-2">Filtrar
-                                por tipo de material</label>
-                            <select id="filter-material"
-                                class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-green">
-                                <option value="">Todos os Recicláveis</option>
-                                <option value="plastico">Plástico (Inclui Acrílico)</option>
-                                <option value="papel">Papel e Papelão</option>
+                            <label for="map-filter-material" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Filtrar por tipo de material
+                            </label>
+                            <select id="map-filter-material"
+                                class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 ring-brand-green">
+                                <option value="">Todos</option>
+                                <option value="plastico">Plástico</option>
+                                <option value="papel">Papel</option>
                                 <option value="vidro">Vidro</option>
                                 <option value="metal">Metal</option>
-                                <option value="eletronicos">Lixo Eletrônico (E-Waste)</option>
-                                <option value="baterias">Pilhas e Baterias</option>
-                                <option value="oleo">Óleo de cozinha Usado</option>
-                                <option value="organicos">Orgânicos (Compostagem)</option>
+                                <option value="organico">Orgânico</option>
+                                <option value="eletronicos">Eletrônicos</option>
+                                <option value="baterias">Baterias</option>
+                                <option value="oleo">Óleo de cozinha</option>
+                                <option value="isopor">Isopor</option>
                             </select>
                         </div>
 
-                        <div id="locations-list" class="space-y-2 overflow-y-auto"
-                            style="max-height: calc(100vh - 680px)"></div>
+                        <!-- Aberto agora -->
+                        <label class="flex items-center gap-2 mb-3 cursor-pointer select-none">
+                            <input id="map-open-now" type="checkbox" class="h-4 w-4">
+                            <span class="text-sm font-semibold text-gray-700">Mostrar somente locais <span
+                                    class="text-emerald-700">abertos agora</span></span>
+                        </label>
+
+                        <!-- Chips (multi-seleção) -->
+                        <div class="flex items-center justify-between mb-2">
+                            <strong class="text-gray-800">Filtrar por materiais</strong>
+                            <button id="clearFilters" class="text-sm text-gray-600 hover:underline">Limpar</button>
+                        </div>
+                        <div id="chips" class="chips"></div>
+
+                        <!-- Lista -->
+                        <div id="locations-list" class="space-y-2 overflow-y-auto mt-4"
+                            style="max-height: calc(40vh - 200px)"></div>
                     </aside>
+
 
 
                     <!-- Mapa -->

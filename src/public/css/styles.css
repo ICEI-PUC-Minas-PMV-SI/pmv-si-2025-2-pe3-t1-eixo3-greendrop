@@ -48,8 +48,8 @@ section+section {
 
 /* Leaflet map container */
 #map {
-  height: calc(100vh - 250px);
-  min-height: 400px;
+  height: calc(80vh - 250px);
+  min-height: 800px;
   width: 100%;
   border-radius: 1rem;
 }
@@ -62,19 +62,64 @@ section+section {
   font-family: 'Inter', sans-serif;
 }
 
-/* Custom green marker icon */
-.custom-marker-icon {
-  background-color: #2E7D32;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+/* Chips */
+.chips .chip{
+  border:1px solid #e5e7eb;
+  background:#fff;
+  border-radius:999px;
+  padding:6px 10px;
+  font-weight:700;
+  font-size:.875rem;
+  cursor:pointer;
+  transition:.15s ease;
 }
-.leaflet-control-custom {
-  background: linear-gradient(135deg, #16a34a, #10b981);
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(16, 185, 129, .3);
+.chips .chip.active{ box-shadow:0 0 0 3px rgba(52,168,83,.15); }
+
+/* Paleta por material (cores usadas também nos marcadores) */
+:root{
+  --mat-plastico:#2dd4bf;
+  --mat-vidro:#22c55e;
+  --mat-metal:#f59e0b;
+  --mat-papel:#60a5fa;
+  --mat-organicos:#a3e635;   /* nome plural na sua home */
+  --mat-eletronicos:#ef4444;
+  --mat-baterias:#ef4444;
+  --mat-oleo:#8b5cf6;
 }
-.leaflet-control-custom:hover {
-  transform: scale(1.06);
-  box-shadow: 0 6px 14px rgba(16, 185, 129, .4);
+
+/* Badge de material na lista */
+.badge{
+  display:inline-block;
+  border-radius:999px;
+  padding:2px 8px;
+  font-size:.75rem;
+  font-weight:700;
+  color:#111;
+  background:#f3f4f6;
+  border:1px solid #e5e7eb;
 }
+.badge[data-mat="plastico"]{ border-color:var(--mat-plastico); }
+.badge[data-mat="vidro"]{ border-color:var(--mat-vidro); }
+.badge[data-mat="metal"]{ border-color:var(--mat-metal); }
+.badge[data-mat="papel"]{ border-color:var(--mat-papel); }
+.badge[data-mat="organicos"]{ border-color:var(--mat-organicos); }
+.badge[data-mat="eletronicos"]{ border-color:var(--mat-eletronicos); }
+.badge[data-mat="baterias"]{ border-color:var(--mat-baterias); }
+.badge[data-mat="oleo"]{ border-color:var(--mat-oleo); }
+
+/* Marcador Leaflet (divIcon) base + “miolo” */
+.marker-dot{
+  width:22px;height:22px;border-radius:50%;
+  background:#fff;border:2px solid #111;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+.marker-dot .inner{
+  width:10px;height:10px;border-radius:50%;
+  background:#111;
+}
+
+/* Estado “aberto agora” na lista */
+.dot-open{ width:10px;height:10px;border-radius:50%; background:#16a34a; display:inline-block; }
+.dot-closed{ width:10px;height:10px;border-radius:50%; background:#ef4444; display:inline-block; }
