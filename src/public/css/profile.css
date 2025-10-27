@@ -10,7 +10,7 @@
 }
 
 *{box-sizing:border-box}
-body{background:var(--bg-light);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;color:var(--text-dark)}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;color:var(--text-dark)}
 
 .profile-container{
   max-width:1024px;margin:24px auto;padding:24px 20px;background:#fff;border-radius:18px;box-shadow:var(--shadow)
