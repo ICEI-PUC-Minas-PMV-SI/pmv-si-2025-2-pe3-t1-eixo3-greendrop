@@ -440,3 +440,4 @@
     document.querySelector('.btn-toggle[data-view="leaflet"]')?.click();
   });
 })();
+
