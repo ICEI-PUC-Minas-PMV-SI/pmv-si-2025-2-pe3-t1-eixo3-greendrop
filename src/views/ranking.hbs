@@ -1,0 +1,128 @@
+<body class="text-gray-800 bg-brand-off-white">
+
+    <!-- Navbar principal igual ao resto do site -->
+    {{> navbar }}
+
+    <!-- Segunda Navbar: Ranking -->
+    <header class="bg-white shadow-md z-[1000]">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <ul class="flex items-center space-x-8 font-medium">
+                <li><a href="#categorias" class="text-gray-600 hover:brand-green transition-colors duration-300">Categorias</a></li>
+                <li><a href="#placar" class="text-gray-600 hover:brand-green transition-colors duration-300">Ranking</a></li>
+                <li><a href="#resgatar" class="text-gray-600 hover:brand-green transition-colors duration-300">Resgatar Pontos</a></li>
+            </ul>
+            <a href="#resgatar"
+                class="py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">
+                Resgatar Prêmios
+            </a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-20">
+
+        <!-- CATEGORIAS -->
+        <section id="categorias" class="mb-20">
+            <h2 class="text-3xl font-bold brand-dark-green mb-8 text-center">Categorias e Pontuação</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div class="p-6 bg-white border shadow-lg rounded-xl">
+                    <h3 class="text-xl font-semibold brand-dark-green mb-4">Plástico</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>Garrafa PET: +1 ponto</li>
+                        <li>Sacos e embalagens: +1 ponto a cada 200g</li>
+                        <li>Tampinhas: +2 pontos por 10 unidades</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 bg-white border shadow-lg rounded-xl">
+                    <h3 class="text-xl font-semibold brand-dark-green mb-4">Papel e Papelão</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>Papel limpo: +1 ponto a cada 300g</li>
+                        <li>Papelão: +2 pontos a cada 500g</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 bg-white border shadow-lg rounded-xl">
+                    <h3 class="text-xl font-semibold brand-dark-green mb-4">Eletrônicos</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>Baterias e pilhas: +10 pontos por unidade</li>
+                        <li>Celulares antigos: +25 pontos</li>
+                        <li>Cabos: +5 pontos o quilo</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RANKING DE PONTUAÇÃO -->
+        <section id="placar" class="mb-20">
+            <h2 class="text-3xl font-bold brand-dark-green mb-8 text-center">Ranking de Usuários</h2>
+
+            <div class="overflow-x-auto bg-white rounded-2xl shadow-lg p-6">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="bg-gray-100 text-gray-700">
+                            <th class="py-3 px-4">Posição</th>
+                            <th class="py-3 px-4">Nome</th>
+                            <th class="py-3 px-4">GreenPoints</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">1</td>
+                            <td class="py-3 px-4 font-semibold">Professor Fábio Martins</td>
+                            <td class="py-3 px-4 brand-dark-green font-bold">999.999.999</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">2</td>
+                            <td class="py-3 px-4 font-semibold">Mercado Verde</td>
+                            <td class="py-3 px-4 font-bold">4.810</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">3</td>
+                            <td class="py-3 px-4 font-semibold">TechPlast Recycling</td>
+                            <td class="py-3 px-4 font-bold">4.120</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- RESGATAR PONTOS -->
+        <section id="resgatar" class="mb-20">
+            <h2 class="text-3xl font-bold brand-dark-green mb-8 text-center">Resgate de Prêmios</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div class="text-center bg-white p-6 shadow-lg rounded-xl border">
+                    <h3 class="font-semibold text-xl brand-dark-green mb-3">Desconto em Conta de Luz</h3>
+                    <p class="text-gray-600 mb-6">Economia para a empresa e incentivo sustentável</p>
+                    <button class="py-2 px-6 rounded-lg bg-brand-green text-white hover:bg-brand-green-dark">
+                        3.000 pontos
+                    </button>
+                </div>
+
+                <div class="text-center bg-white p-6 shadow-lg rounded-xl border">
+                    <h3 class="font-semibold text-xl brand-dark-green mb-3">Certificado Verde</h3>
+                    <p class="text-gray-600 mb-6">Reconhecimento público e ESG</p>
+                    <button class="py-2 px-6 rounded-lg bg-brand-green text-white hover:bg-brand-green-dark">
+                        2.000 pontos
+                    </button>
+                </div>
+
+                <div class="text-center bg-white p-6 shadow-lg rounded-xl border">
+                    <h3 class="font-semibold text-xl brand-dark-green mb-3">Lixeira Inteligente</h3>
+                    <p class="text-gray-600 mb-6">Automatização da gestão de resíduos</p>
+                    <button class="py-2 px-6 rounded-lg bg-brand-green text-white hover:bg-brand-green-dark">
+                        4.500 pontos
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    {{> footer }}
+
+</body>
