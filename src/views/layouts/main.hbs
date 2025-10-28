@@ -18,7 +18,19 @@
 </head>
 
 <body>
-
+  <div id="background-animation" aria-hidden="true">
+    <svg id="falling-items-svg" style="width: 100%; height: 100%;">
+      <defs>
+        <g id="leaf">
+          <path d="M15 0 C 10 5, 5 15, 0 20 C 5 18, 10 16, 15 15 C 20 16, 25 18, 30 20 C 25 15, 20 5, 15 0 Z" />
+        </g>
+        <g id="greendrop">
+          <path d="M15 0 C -5 15, 15 35, 15 35 C 15 35, 35 15, 15 0 Z" />
+        </g>
+      </defs>
+    </svg>
+  </div>
+  
   {{{body}}}
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>

@@ -1,243 +1,231 @@
-<div id="profile-app" class="profile-container">
-  <!-- Contêiner da Animação de Fundo -->
-  <div id="background-animation">
-    <svg id="falling-items-svg" style="width: 100%; height: 100%;">
-      <defs>
-        <g id="leaf">
-          <path d="M15 0 C 10 5, 5 15, 0 20 C 5 18, 10 16, 15 15 C 20 16, 25 18, 30 20 C 25 15, 20 5, 15 0 Z" />
-        </g>
-        <g id="greendrop">
-          <path d="M15 0 C -5 15, 15 35, 15 35 C 15 35, 35 15, 15 0 Z" />
-        </g>
-      </defs>
-    </svg>
-  </div>
-  <!-- HEADER DO PERFIL -->
-  <header class="profile-header">
-    <div class="profile-id">
-      <div class="avatar-wrap">
-        <img class="avatar"
-          src="{{#if user.avatarUrl}}{{user.avatarUrl}}{{else}}https://placehold.co/96x96/A8ED94/34A853?text={{avatarInitials}}{{/if}}"
-          alt="Avatar do Usuário"
-          onerror="this.onerror=null;this.src='https://placehold.co/96x96/A8ED94/34A853?text={{avatarInitials}}'">
-        {{#if user.verified}}
-        <span class="verified-badge" title="Perfil verificado">
-          <!-- ícone check -->
-          <svg viewBox="0 0 24 24" class="icon">
-            <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </span>
-        {{/if}}
-      </div>
-
-      <div class="profile-texts">
-        <h1 class="profile-name">{{user.name}}</h1>
-        {{#if user.username}}<p class="profile-handle">@{{user.username}}</p>{{/if}}
-
-        <!-- Barra de Progresso -->
-        <div class="level-box">
-          <div class="level-top">
-            <span class="level-title">
-              Nível {{user.level.number}}: {{user.level.title}}
-            </span>
-            <span class="level-next">
-              Próximo Nível: {{user.level.percent}}%
-            </span>
-          </div>
-          <div class="progress">
-            <div class="progress-fill" style="width: {{user.level.percent}}%;"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="profile-actions">
-      <a href="/perfil/config" class="btn btn-outline">
-        <!-- engrenagem -->
-        <svg viewBox="0 0 24 24" class="icon icon-left">
-          <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" fill="none" stroke="currentColor"
-            stroke-width="1.8" />
-          <path
-            d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.07a2 2 0 1 1-2.83 2.83l-.07-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1.5.9l-.03.07a2 2 0 1 1-3.94-1.02l.03-.07A1.7 1.7 0 0 0 8.6 15a1.7 1.7 0 0 0-1.87-.34l-.07.03a2 2 0 1 1-1.81-3.55l.07-.03A1.7 1.7 0 0 0 8.6 9a1.7 1.7 0 0 0 1.5-.9l.03-.07a2 2 0 1 1 3.94 1.02l-.03.07A1.7 1.7 0 0 0 15 8.6c.4 0 .8.12 1.14.33l.07.04a2 2 0 1 1 1.89 3.5l-.07-.03c-.35-.2-.75-.34-1.14-.34z"
-            fill="none" stroke="currentColor" stroke-width="1.2" />
-        </svg>
-        Configurações
-      </a>
-      <a href="/perfil/editar" class="btn btn-primary">
-        <!-- lápis -->
-        <svg viewBox="0 0 24 24" class="icon icon-left">
-          <path d="M3 21l3.75-.75L17.5 9.5 14.5 6.5 4.5 16.5 3 21zM14.5 6.5l3 3" fill="none" stroke="currentColor"
-            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        Editar Perfil
-      </a>
-      <a href="/mapa" class="btn btn-outline">
-        <!-- Mapa -->
-        <svg viewBox="0 0 24 24" class="icon icon-left">
-          <path
-            d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"
-            fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        Mapa
-      </a>
-    </div>
-    <a href="/" class="btn btn-outline">
-      <!-- Casa -->
-      <svg viewBox="0 0 24 24" class="icon icon-left">
-        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="none" stroke="currentColor" stroke-width="1.8"
-          stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-      Início
-    </a>
-  </header>
-
-  <main>
-    <!-- IMPACTO / LOCALIZAÇÃO -->
-    <section class="impact">
-      <h2 class="section-title">
-        <!-- pin -->
-        <svg viewBox="0 0 24 24" class="icon icon-left green">
-          <path d="M12 22s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z" fill="none" stroke="currentColor"
-            stroke-width="1.8" />
-          <circle cx="12" cy="11" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8" />
-        </svg>
-        Informações de Impacto
-      </h2>
-
-      <div class="chips">
-        {{#if user.biome}}
-        <p class="chip">
-          <span class="chip-icon">🍃</span>
-          Bioma Principal: <strong>{{user.biome}}</strong>
-        </p>
-        {{/if}}
-
-        {{#if user.location}}
-        <p class="chip">
-          <span class="chip-icon">🌎</span>
-          Localização Base: <strong>{{user.location}}</strong>
-        </p>
-        {{/if}}
-      </div>
-    </section>
-
-    <!-- MÉTRICAS -->
-    <section class="metrics">
-      <div class="metric">
-        <p class="metric-label">
-          <!-- trending -->
-          <svg viewBox="0 0 24 24" class="icon icon-left">
-            <path d="M3 17l6-6 4 4 7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-          Ganhos Totais (R$)
-        </p>
-        <p class="metric-value green">R$ {{metrics.earnings}}</p>
-        {{#if metrics.earningsDelta}}
-        <p class="metric-sub green">+{{metrics.earningsDelta}} vs. mês passado</p>
-        {{/if}}
-      </div>
-
-      <div class="metric">
-        <p class="metric-label">
-          <svg viewBox="0 0 24 24" class="icon icon-left">
-            <path d="M12 17.5l-5 2.6 1-5.7L4 9.8l5.7-.8L12 3l2.3 6 5.7.8-4.1 4.6 1 5.7z" fill="none"
-              stroke="currentColor" stroke-width="1.2" />
-          </svg>
-          Pontuação de Impacto
-        </p>
-        <p class="metric-value">{{metrics.impactScore}}/10</p>
-        <p class="metric-sub">Ações sustentáveis registradas</p>
-      </div>
-
-      <div class="metric">
-        <p class="metric-label">
-          <svg viewBox="0 0 24 24" class="icon icon-left">
-            <path d="M4 6h16v12H4zM4 10h16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-          Transações Concluídas
-        </p>
-        <p class="metric-value">{{metrics.transactions.total}}</p>
-        <div class="metric-row">
-          <span class="metric-sub">100% sucesso</span>
-          {{#if metrics.transactions.pending}}
-          <span class="metric-sub warn">{{metrics.transactions.pending}} pendentes</span>
+<main>
+  <div id="profile-app" class="profile-container">
+    <!-- HEADER DO PERFIL -->
+    <header class="profile-header">
+      <div class="profile-id">
+        <div class="avatar-wrap">
+          <img class="avatar"
+            src="{{#if user.avatarUrl}}{{user.avatarUrl}}{{else}}https://placehold.co/96x96/A8ED94/34A853?text={{avatarInitials}}{{/if}}"
+            alt="Avatar do Usuário"
+            onerror="this.onerror=null;this.src='https://placehold.co/96x96/A8ED94/34A853?text={{avatarInitials}}'">
+          {{#if user.verified}}
+          <span class="verified-badge" title="Perfil verificado">
+            <!-- ícone check -->
+            <svg viewBox="0 0 24 24" class="icon">
+              <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
           {{/if}}
         </div>
-      </div>
-    </section>
 
-    <!-- TABS -->
-    <section class="tabs">
-      <div class="tab-nav" role="tablist">
-        <button class="tab-btn active" data-tab="activity" role="tab" aria-selected="true">✔ Atividade</button>
-        <button class="tab-btn" data-tab="wallet" role="tab" aria-selected="false">💼 Carteira</button>
-        <button class="tab-btn" data-tab="rewards" role="tab" aria-selected="false">🏆 Recompensas & Badges</button>
-        <button class="tab-btn" data-tab="connections" role="tab" aria-selected="false">👥 Conexões</button>
-      </div>
+        <div class="profile-texts">
+          <h1 class="profile-name">{{user.name}}</h1>
+          {{#if user.username}}<p class="profile-handle">@{{user.username}}</p>{{/if}}
 
-      <!-- Atividade -->
-      <div id="content-activity" class="tab-panel">
-        <h2 class="panel-title">Histórico Recente</h2>
-        <ul class="activity-list">
-          {{#if activities.length}}
-          {{#each activities}}
-          <li class="activity-item">
-            <div class="activity-icon {{iconBg}}">{{icon}}</div>
-            <div class="activity-body">
-              <p class="activity-title">{{this.title}}</p>
-              <p class="activity-sub">{{this.subtitle}}</p>
+          <!-- Barra de Progresso -->
+          <div class="level-box">
+            <div class="level-top">
+              <span class="level-title">
+                Nível {{user.level.number}}: {{user.level.title}}
+              </span>
+              <span class="level-next">
+                Próximo Nível: {{user.level.percent}}%
+              </span>
             </div>
-            {{#if this.amount}}
-            <span class="activity-amount {{this.amountClass}}">{{this.amount}}</span>
-            {{/if}}
-          </li>
-          {{/each}}
-          {{else}}
-          <li class="empty">Nenhuma atividade recente.</li>
-          {{/if}}
-        </ul>
-      </div>
-
-      <!-- Recompensas -->
-      <div id="content-rewards" class="tab-panel hidden">
-        <h2 class="panel-title">Seus Badges de Sustentabilidade</h2>
-
-        <div class="badges-grid">
-          {{#if badges.length}}
-          {{#each badges}}
-          <div class="badge-card {{#if this.locked}}is-locked{{/if}}">
-            <span class="badge-emoji" title="{{this.title}}">{{this.emoji}}</span>
-            <p class="badge-title">{{this.title}}</p>
-            <p class="badge-sub">{{this.description}}</p>
+            <div class="progress">
+              <div class="progress-fill" style="width: {{user.level.percent}}%;"></div>
+            </div>
           </div>
-          {{/each}}
-          {{else}}
-          <p class="empty">Você ainda não possui badges.</p>
+        </div>
+      </div>
+
+      <div class="profile-actions">
+        <a href="/perfil/config" class="btn btn-outline">
+          <!-- engrenagem -->
+          <svg viewBox="0 0 24 24" class="icon icon-left">
+            <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" fill="none" stroke="currentColor"
+              stroke-width="1.8" />
+            <path
+              d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.07a2 2 0 1 1-2.83 2.83l-.07-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1.5.9l-.03.07a2 2 0 1 1-3.94-1.02l.03-.07A1.7 1.7 0 0 0 8.6 15a1.7 1.7 0 0 0-1.87-.34l-.07.03a2 2 0 1 1-1.81-3.55l.07-.03A1.7 1.7 0 0 0 8.6 9a1.7 1.7 0 0 0 1.5-.9l.03-.07a2 2 0 1 1 3.94 1.02l-.03.07A1.7 1.7 0 0 0 15 8.6c.4 0 .8.12 1.14.33l.07.04a2 2 0 1 1 1.89 3.5l-.07-.03c-.35-.2-.75-.34-1.14-.34z"
+              fill="none" stroke="currentColor" stroke-width="1.2" />
+          </svg>
+          Configurações
+        </a>
+        <a href="/perfil/editar" class="btn btn-primary">
+          <!-- lápis -->
+          <svg viewBox="0 0 24 24" class="icon icon-left">
+            <path d="M3 21l3.75-.75L17.5 9.5 14.5 6.5 4.5 16.5 3 21zM14.5 6.5l3 3" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Editar Perfil
+        </a>
+        <a href="/mapa" class="btn btn-outline">
+          <!-- Mapa -->
+          <svg viewBox="0 0 24 24" class="icon icon-left">
+            <path
+              d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"
+              fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Mapa
+        </a>
+      </div>
+      <a href="/" class="btn btn-outline">
+        <!-- Casa -->
+        <svg viewBox="0 0 24 24" class="icon icon-left">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Início
+      </a>
+    </header>
+
+    <main>
+      <!-- IMPACTO / LOCALIZAÇÃO -->
+      <section class="impact">
+        <h2 class="section-title">
+          <!-- pin -->
+          <svg viewBox="0 0 24 24" class="icon icon-left green">
+            <path d="M12 22s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z" fill="none" stroke="currentColor"
+              stroke-width="1.8" />
+            <circle cx="12" cy="11" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8" />
+          </svg>
+          Informações de Impacto
+        </h2>
+
+        <div class="chips">
+          {{#if user.biome}}
+          <p class="chip">
+            <span class="chip-icon">🍃</span>
+            Bioma Principal: <strong>{{user.biome}}</strong>
+          </p>
+          {{/if}}
+
+          {{#if user.location}}
+          <p class="chip">
+            <span class="chip-icon">🌎</span>
+            Localização Base: <strong>{{user.location}}</strong>
+          </p>
+          {{/if}}
+        </div>
+      </section>
+
+      <!-- MÉTRICAS -->
+      <section class="metrics">
+        <div class="metric">
+          <p class="metric-label">
+            <!-- trending -->
+            <svg viewBox="0 0 24 24" class="icon icon-left">
+              <path d="M3 17l6-6 4 4 7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Ganhos Totais (R$)
+          </p>
+          <p class="metric-value green">R$ {{metrics.earnings}}</p>
+          {{#if metrics.earningsDelta}}
+          <p class="metric-sub green">+{{metrics.earningsDelta}} vs. mês passado</p>
           {{/if}}
         </div>
 
-        {{#if badgesNext}}
-        <div class="next-goal">
-          <p>Seu próximo objetivo é o badge <strong>"{{badgesNext.title}}"</strong> — {{badgesNext.hint}}.</p>
+        <div class="metric">
+          <p class="metric-label">
+            <svg viewBox="0 0 24 24" class="icon icon-left">
+              <path d="M12 17.5l-5 2.6 1-5.7L4 9.8l5.7-.8L12 3l2.3 6 5.7.8-4.1 4.6 1 5.7z" fill="none"
+                stroke="currentColor" stroke-width="1.2" />
+            </svg>
+            Pontuação de Impacto
+          </p>
+          <p class="metric-value">{{metrics.impactScore}}/10</p>
+          <p class="metric-sub">Ações sustentáveis registradas</p>
         </div>
-        {{/if}}
-      </div>
 
-      <!-- Carteira -->
-      <div id="content-wallet" class="tab-panel hidden">
-        <h2 class="panel-title">Visão Geral da Carteira</h2>
-        <p class="panel-placeholder">Aqui você veria seus saldos, alocações de ativos e histórico detalhado de
-          investimentos.</p>
-      </div>
+        <div class="metric">
+          <p class="metric-label">
+            <svg viewBox="0 0 24 24" class="icon icon-left">
+              <path d="M4 6h16v12H4zM4 10h16" fill="none" stroke="currentColor" stroke-width="1.4"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Transações Concluídas
+          </p>
+          <p class="metric-value">{{metrics.transactions.total}}</p>
+          <div class="metric-row">
+            <span class="metric-sub">100% sucesso</span>
+            {{#if metrics.transactions.pending}}
+            <span class="metric-sub warn">{{metrics.transactions.pending}} pendentes</span>
+            {{/if}}
+          </div>
+        </div>
+      </section>
 
-      <!-- Conexões -->
-      <div id="content-connections" class="tab-panel hidden">
-        <h2 class="panel-title">Sua Rede Greendrop</h2>
-        <p class="panel-placeholder">Aqui você veria suas conexões e rede de parceiros.</p>
-      </div>
-    </section>
-</div>
+      <!-- TABS -->
+      <section class="tabs">
+        <div class="tab-nav" role="tablist">
+          <button class="tab-btn active" data-tab="activity" role="tab" aria-selected="true">✔ Atividade</button>
+          <button class="tab-btn" data-tab="wallet" role="tab" aria-selected="false">💼 Carteira</button>
+          <button class="tab-btn" data-tab="rewards" role="tab" aria-selected="false">🏆 Recompensas & Badges</button>
+          <button class="tab-btn" data-tab="connections" role="tab" aria-selected="false">👥 Conexões</button>
+        </div>
+
+        <!-- Atividade -->
+        <div id="content-activity" class="tab-panel">
+          <h2 class="panel-title">Histórico Recente</h2>
+          <ul class="activity-list">
+            {{#if activities.length}}
+            {{#each activities}}
+            <li class="activity-item">
+              <div class="activity-icon {{iconBg}}">{{icon}}</div>
+              <div class="activity-body">
+                <p class="activity-title">{{this.title}}</p>
+                <p class="activity-sub">{{this.subtitle}}</p>
+              </div>
+              {{#if this.amount}}
+              <span class="activity-amount {{this.amountClass}}">{{this.amount}}</span>
+              {{/if}}
+            </li>
+            {{/each}}
+            {{else}}
+            <li class="empty">Nenhuma atividade recente.</li>
+            {{/if}}
+          </ul>
+        </div>
+
+        <!-- Recompensas -->
+        <div id="content-rewards" class="tab-panel hidden">
+          <h2 class="panel-title">Seus Badges de Sustentabilidade</h2>
+
+          <div class="badges-grid">
+            {{#if badges.length}}
+            {{#each badges}}
+            <div class="badge-card {{#if this.locked}}is-locked{{/if}}">
+              <span class="badge-emoji" title="{{this.title}}">{{this.emoji}}</span>
+              <p class="badge-title">{{this.title}}</p>
+              <p class="badge-sub">{{this.description}}</p>
+            </div>
+            {{/each}}
+            {{else}}
+            <p class="empty">Você ainda não possui badges.</p>
+            {{/if}}
+          </div>
+
+          {{#if badgesNext}}
+          <div class="next-goal">
+            <p>Seu próximo objetivo é o badge <strong>"{{badgesNext.title}}"</strong> — {{badgesNext.hint}}.</p>
+          </div>
+          {{/if}}
+        </div>
+
+        <!-- Carteira -->
+        <div id="content-wallet" class="tab-panel hidden">
+          <h2 class="panel-title">Visão Geral da Carteira</h2>
+          <p class="panel-placeholder">Aqui você veria seus saldos, alocações de ativos e histórico detalhado de
+            investimentos.</p>
+        </div>
+
+        <!-- Conexões -->
+        <div id="content-connections" class="tab-panel hidden">
+          <h2 class="panel-title">Sua Rede Greendrop</h2>
+          <p class="panel-placeholder">Aqui você veria suas conexões e rede de parceiros.</p>
+        </div>
+      </section>
+  </div>
 </main>

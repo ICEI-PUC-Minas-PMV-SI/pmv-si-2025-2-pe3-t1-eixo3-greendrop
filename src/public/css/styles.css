@@ -10,15 +10,11 @@ html,body {
 :root { --header-h: 72px; }  /* fallback */
 body.has-fixed-header { padding-top: var(--header-h); }
 
-#background-animation {
-  position: fixed; /* Fixa a animação na tela */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh; /* Ocupa a altura inteira da tela */
-  z-index: -1; /* Coloca a animação atrás de todo o conteúdo */
-  overflow: hidden;
-}
+#background-animation{position:fixed; inset:0; pointer-events:none; z-index:0;}
+main, header, footer, .container, .profile-container{position:relative; z-index:1;}
+#falling-items-svg{width:100%; height:100%; display:block; overflow:visible;}
+#background-animation svg use{will-change:transform;}
+
 
 .brand-green {
   color: #2e7d32;
