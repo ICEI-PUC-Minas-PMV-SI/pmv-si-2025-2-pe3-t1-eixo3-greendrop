@@ -40,6 +40,16 @@ app.get('/ods', (req, res) => {
     res.render('ods');
 });
 
+// Página de Notificações
+app.get('/notificacoes', (req, res) => {
+    const novosPontos = [
+        { name: 'Supermercado VerdeVida', address: 'Rua das Árvores, 1001 - Jardim, BH', materials: ['Plástico', 'Papel', 'Vidro'] },
+        { name: 'Eco Estação ReciclaMais', address: 'Av. Sustentável, 250 - Centro, Contagem', materials: ['Metal', 'Eletrônicos', 'Óleo'] },
+        { name: 'Mercadinho Limpo e Leve', address: 'Praça do Meio Ambiente, 12 - Santa Luzia', materials: ['Plástico', 'Orgânico', 'Pilhas'] }
+    ];
+    res.render('notificacoes', { pontos: novosPontos });
+});
+
 app.get('/mapa', mapController.fullscreen);
 app.get('/api/pontos', mapController.api);
 
