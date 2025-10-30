@@ -35,6 +35,11 @@ app.get('/educativo', (req, res) => {
     res.render('educativo');
 });
 
+// Página ODS ONU
+app.get('/ods', (req, res) => {
+    res.render('ods');
+});
+
 app.get('/mapa', mapController.fullscreen);
 app.get('/api/pontos', mapController.api);
 

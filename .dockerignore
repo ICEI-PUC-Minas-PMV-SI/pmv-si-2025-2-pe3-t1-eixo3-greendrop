@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log
+Dockerfile*
+.git
+.gitignore
+.env
+.env.*
+**/*.log
+**/.DS_Store
+**/Thumbs.db
