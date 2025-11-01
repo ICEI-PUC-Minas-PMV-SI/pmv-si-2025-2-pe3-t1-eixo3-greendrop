@@ -11,6 +11,7 @@
         <ul class="hidden md:flex items-center space-x-8">
             <li><a href="/" class="font-medium text-gray-600 hover:brand-green transition-colors">Início</a></li>
             <li><a href="/mapa" class="font-medium text-gray-600 hover:brand-green transition-colors">Mapa</a></li>
+            <li><a href="/ods" class="font-medium text-gray-600 hover:brand-green transition-colors">ODS ONU</a></li>
         </ul>
 
         <!-- Ações -->
@@ -36,6 +37,9 @@
             </li>
             <li><a href="/mapa"
                     class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Mapa</a>
+            </li>
+            <li><a href="/ods"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">ODS ONU</a>
             </li>
             <li><a href="/login"
                     class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Entrar</a>
@@ -134,6 +138,19 @@
                     <p class="text-gray-600 text-sm text-center">Entenda o que são os 'rejeitos', o que não pode ser
                         reciclado, e qual o destino final deste material.</p>
                 </button>
+
+                <button onclick="toggleModal('modal-medicamentos')"
+                    class="text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-red-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-red-300">
+                    <div class="flex justify-center mb-4">
+                        <div class="h-16 w-16 rounded-full bg-red-100 flex items-center justify-center">
+                            <i data-feather="alert-octagon" class="h-8 w-8 text-red-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Descarte de Medicamentos</h3>
+                    <p class="text-gray-600 text-sm text-center">Aprenda como separar e onde entregar remédios vencidos
+                        ou sobras, sem poluir solo e água.</p>
+                </button>
+
             </div>
         </div>
     </section>
@@ -344,6 +361,115 @@
             </div>
         </div>
     </div>
+
+    <div id="modal-medicamentos" class="modal-sheet hidden">
+        <div class="w-full h-full bg-gray-900 bg-opacity-75">
+            <div class="flex items-start justify-center h-full">
+                <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 my-6 p-8 transform transition-all duration-300 scale-95 opacity-0"
+                    id="content-modal-medicamentos" role="dialog" aria-modal="true"
+                    aria-labelledby="title-modal-medicamentos">
+                    <div class="flex justify-between items-start border-b pb-3 mb-4">
+                        <h3 id="title-modal-medicamentos" class="text-3xl font-bold text-red-600 flex items-center">
+                            <i data-feather="alert-octagon" class="mr-3 h-8 w-8"></i> Lição 6: Descarte de Medicamentos
+                        </h3>
+                        <button onclick="toggleModal('modal-medicamentos')"
+                            class="text-gray-400 hover:text-gray-600 transition duration-150" aria-label="Fechar modal">
+                            <i data-feather="x" class="h-6 w-6"></i>
+                        </button>
+                    </div>
+
+                    <p class="text-xl text-gray-600 mb-6 text-justify">
+                        Medicamentos vencidos, sobras de comprimidos/cápsulas, xaropes, pomadas e frascos contaminados
+                        <strong>não devem ir para o lixo comum nem para o vaso sanitário</strong>. O descarte incorreto
+                        pode
+                        contaminar água e solo. Utilize pontos de coleta em <strong>farmácias, drogarias e unidades de
+                            saúde</strong>
+                        participantes de logística reversa.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-bold text-lg text-red-600">Como preparar</p>
+                            <ul class="text-sm text-gray-700 list-disc pl-5 mt-1 space-y-1">
+                                <li><strong>Mantenha</strong> comprimidos na cartela quando possível.</li>
+                                <li><strong>Feche</strong> frascos/xaropes originais e acondicione em saco bem fechado.
+                                </li>
+                                <li><strong>Remova dados pessoais</strong> de rótulos/receitas antes do descarte.</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-bold text-lg text-red-600">Nunca faça</p>
+                            <ul class="text-sm text-gray-700 list-disc pl-5 mt-1 space-y-1">
+                                <li>Não jogue no vaso sanitário ou pia.</li>
+                                <li>Não misture com lixo orgânico/rejeito.</li>
+                                <li>Não queime nem abra cápsulas/comprimidos.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 p-6 rounded-xl border border-red-200 mb-6">
+                        <p class="font-semibold text-lg text-red-700">Onde levar?</p>
+                        <p class="text-gray-700">
+                            Procure <strong>farmácias/drogarias</strong> e <strong>postos de saúde</strong> que recebem
+                            medicamentos.
+                            No GreenDrop, use o filtro “Medicamentos” no mapa para encontrar um ponto autorizado
+                            próximo.
+                        </p>
+                    </div>
+
+                    <!-- NOVO BLOCO: Embalagens e Recipientes de Medicamentos -->
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
+                        <h4 class="text-2xl font-semibold text-red-600 mb-3 flex items-center">
+                            <i data-feather="package" class="mr-2"></i> Embalagens e Recipientes de Medicamentos
+                        </h4>
+                        <p class="text-gray-700 mb-4 text-justify">
+                            As embalagens também precisam de cuidado: algumas podem ser recicladas, outras não.
+                            Frascos plásticos, cartuchos de papel e bulas geralmente <strong>podem ser encaminhados para
+                                reciclagem</strong>,
+                            mas apenas se <strong>não estiverem contaminados com resíduos do medicamento</strong>.
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg border border-green-200">
+                                <p class="font-bold text-green-700 mb-1">Recipientes recicláveis</p>
+                                <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1">
+                                    <li>Caixas de papelão e bulas (papel limpo e seco).</li>
+                                    <li>Frascos plásticos de vitaminas/cosméticos (bem lavados e secos).</li>
+                                    <li>Cartuchos de medicamentos vazios e limpos.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-red-200">
+                                <p class="font-bold text-red-700 mb-1">Recipientes que exigem descarte especial</p>
+                                <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1">
+                                    <li>Blisters (cartelas de alumínio + plástico) — em geral não recicláveis no lixo
+                                        comum.</li>
+                                    <li>Frascos com resíduos de medicamento líquido ou pomada.</li>
+                                    <li>Seringas, agulhas, ampolas e qualquer perfurocortante.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-600 mt-4 text-justify">
+                            O ideal é <strong>devolver embalagens contaminadas junto com os medicamentos</strong> nos
+                            pontos de coleta.
+                            Já as <strong>embalagens limpas</strong> podem ir para a reciclagem convencional,
+                            respeitando a separação do material
+                            (papel, plástico etc.).
+                        </p>
+                    </div>
+                    <!-- FIM DO NOVO BLOCO -->
+
+                    <p class="text-sm text-gray-500">
+                        Observação: perfurocortantes domiciliares (agulhas/seringas) exigem acondicionamento rígido e
+                        entrega
+                        conforme orientação da rede de saúde local.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </main>
 
 <script>
