@@ -20,42 +20,42 @@ const premios = [
         id: 1,
         nome: 'Auditoria Ambiental Especializada',
         descricao: 'Consultoria completa sobre práticas sustentáveis na empresa',
-        pontosNecessarios: 500.000,
+        pontosNecessarios: 500000,
         icone: 'clipboard'
     },
     {
         id: 2,
         nome: 'Relatório de Impacto Ambiental',
         descricao: 'Análise detalhada do impacto ambiental de novos projetos',
-        pontosNecessarios: 100.000,
+        pontosNecessarios: 100000,
         icone: 'file-text'
     },
     {
         id: 3,
         nome: 'Certificado de Empresa Sustentável',
         descricao: 'Certificação oficial de práticas sustentáveis',
-        pontosNecessarios: 50.000,
+        pontosNecessarios: 50000,
         icone: 'award'
     },
     {
         id: 4,
         nome: 'Workshop de Sustentabilidade',
         descricao: 'Treinamento para equipe sobre práticas sustentáveis',
-        pontosNecessarios: 15.000,
+        pontosNecessarios: 15000,
         icone: 'users'
     },
     {
         id: 5,
         nome: 'Plano de Gestão de Resíduos',
         descricao: 'Desenvolvimento de plano personalizado de gestão de resíduos',
-        pontosNecessarios: 15.000,
+        pontosNecessarios: 15000,
         icone: 'trending-up'
     },
     {
         id: 6,
         nome: '1 crédito de carbono (aproximadamente US 15.00)',
         descricao: 'Selo de reconhecimento para uso em marketing e comunicação',
-        pontosNecessarios: 9.000,
+        pontosNecessarios: 9000,
         icone: 'check-circle'
     }
 ];
