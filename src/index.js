@@ -8,6 +8,7 @@ const { requireAdmin } = require('./middleware/adminAuth');
 const pontoColetaController = require('./controllers/pontoColetaController');
 const profileController = require('./controllers/profileController');
 const mapController = require('./controllers/mapController');
+const rankingController = require('./controllers/rankingController');
 const app = express();
 
 
@@ -49,6 +50,12 @@ app.get('/notificacoes', (req, res) => {
     ];
     res.render('notificacoes', { pontos: novosPontos });
 });
+
+// Página de Ranking
+app.get('/ranking', rankingController.renderRankingPage);
+app.get('/api/ranking/diretrizes', rankingController.getDiretrizes);
+app.get('/api/ranking/empresas', rankingController.getRanking);
+app.get('/api/ranking/premios', rankingController.getPremios);
 
 app.get('/mapa', mapController.fullscreen);
 app.get('/api/pontos', mapController.api);
