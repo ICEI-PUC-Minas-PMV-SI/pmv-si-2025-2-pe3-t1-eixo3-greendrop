@@ -9,6 +9,12 @@ const pontoColetaController = require('./controllers/pontoColetaController');
 const profileController = require('./controllers/profileController');
 const mapController = require('./controllers/mapController');
 const rankingController = require('./controllers/rankingController');
+const reviewController = require('./controllers/reviewController');
+// Importar modelos para garantir que sejam sincronizados
+require('./models/user');
+require('./models/pontoColeta');
+require('./models/residuo');
+require('./models/avaliacao');
 const app = express();
 
 
@@ -59,6 +65,11 @@ app.get('/api/ranking/premios', rankingController.getPremios);
 
 app.get('/mapa', mapController.fullscreen);
 app.get('/api/pontos', mapController.api);
+
+// Rotas de avaliações
+app.post('/api/reviews', requireAuth, reviewController.createReview);
+app.get('/api/reviews/ponto/:pontoColetaId', reviewController.getReviewsByPonto);
+app.get('/api/reviews/media/:pontoColetaId', reviewController.getAverageRating);
 
 app.get('/login', (req, res) => {
     res.render('login');

@@ -66,6 +66,9 @@
         <div><span class="lg lg-eletronicos"></span>Eletrônicos</div>
         <div><span class="lg lg-organico"></span>Orgânico</div>
       </div>
+
+      <!-- Lista de pontos de coleta -->
+      <div id="locations-list" class="locations-list mt-4"></div>
     </aside>
 
     <!-- Contêineres dos mapas -->
@@ -74,6 +77,34 @@
       <div id="map-maplibre" class="map" aria-label="Mapa 3D"></div>
     </section>
   </main>
+
+  <!-- Modal de Avaliações -->
+  <div id="reviews-modal" class="reviews-modal hidden">
+    <div class="reviews-modal-overlay" onclick="closeReviewsModal()"></div>
+    <div class="reviews-modal-content">
+      <div class="reviews-modal-header">
+        <h2 id="modal-point-name" class="text-xl font-bold">Avaliações</h2>
+        <button onclick="closeReviewsModal()" class="close-btn">&times;</button>
+      </div>
+      <div class="reviews-modal-body">
+        <div id="modal-rating-section" class="mb-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-sm text-gray-600">Avaliar:</span>
+            <div id="modal-rating-stars" class="rating-stars interactive">
+              <span class="star" data-rating="1">★</span>
+              <span class="star" data-rating="2">★</span>
+              <span class="star" data-rating="3">★</span>
+              <span class="star" data-rating="4">★</span>
+              <span class="star" data-rating="5">★</span>
+            </div>
+          </div>
+          <textarea id="modal-review-comment" class="w-full p-2 border border-gray-300 rounded-md text-sm" rows="3" placeholder="Deixe um comentário (opcional)"></textarea>
+          <button id="modal-submit-review" class="mt-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 text-sm font-semibold">Enviar Avaliação</button>
+        </div>
+        <div id="modal-reviews-list" class="reviews-list"></div>
+      </div>
+    </div>
+  </div>
   <!-- Dados injetados -->
   <script>
     window.MAPTILER_KEY = '{{MAPTILER_KEY}}';

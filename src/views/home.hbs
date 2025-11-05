@@ -310,3 +310,281 @@
         </div>
     </div>
 </footer>
+
+<!-- Modal de Avaliações -->
+<div id="reviews-modal" class="reviews-modal hidden">
+    <div class="reviews-modal-overlay" onclick="closeReviewsModal()"></div>
+    <div class="reviews-modal-content">
+        <div class="reviews-modal-header">
+            <h2 id="modal-point-name" class="text-xl font-bold">Avaliações</h2>
+            <button onclick="closeReviewsModal()" class="close-btn">&times;</button>
+        </div>
+        <div class="reviews-modal-body">
+            <div id="modal-rating-section" class="mb-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-sm text-gray-600">Avaliar:</span>
+                    <div id="modal-rating-stars" class="rating-stars interactive">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                </div>
+                <textarea id="modal-review-comment" class="w-full p-2 border border-gray-300 rounded-md text-sm" rows="3" placeholder="Deixe um comentário (opcional)"></textarea>
+                <button id="modal-submit-review" class="mt-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 text-sm font-semibold">Enviar Avaliação</button>
+            </div>
+            <div id="modal-reviews-list" class="reviews-list"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Função global para renderizar estrelas
+    window.renderStars = function(rating, interactive = false) {
+        const stars = [];
+        const fullStars = Math.floor(rating);
+        const hasHalfStar = rating % 1 >= 0.5;
+        for (let i = 1; i <= 5; i++) {
+            let starClass = '';
+            if (i <= fullStars) {
+                starClass = 'active';
+            } else if (i === fullStars + 1 && hasHalfStar) {
+                starClass = 'active';
+            }
+            stars.push(`<span class="star ${starClass}" ${interactive ? `data-rating="${i}"` : ''} style="color: ${starClass ? '#fbbf24' : '#d1d5db'}; font-size: 16px; cursor: ${interactive ? 'pointer' : 'default'};">★</span>`);
+        }
+        return `<div style="display: inline-flex; gap: 2px;">${stars.join('')}</div>`;
+    };
+
+    // ------ Modal de Avaliações ------
+    let currentPontoId = null;
+    let currentRating = 0;
+
+    window.openReviewsModal = async function(pontoId, pointName) {
+        currentPontoId = pontoId;
+        document.getElementById('modal-point-name').textContent = `${pointName} - Avaliações`;
+        document.getElementById('reviews-modal').classList.remove('hidden');
+        
+        // Resetar estrelas
+        const stars = document.querySelectorAll('#modal-rating-stars .star');
+        stars.forEach(s => {
+            s.classList.remove('active');
+            s.style.color = '#d1d5db';
+        });
+        currentRating = 0;
+        
+        // Carregar avaliações
+        await loadReviews(pontoId);
+        
+        // Bind eventos das estrelas
+        bindModalStarEvents();
+        bindSubmitReview();
+    };
+
+    window.closeReviewsModal = function() {
+        document.getElementById('reviews-modal').classList.add('hidden');
+        currentPontoId = null;
+        currentRating = 0;
+    };
+
+    function bindModalStarEvents() {
+        const stars = document.querySelectorAll('#modal-rating-stars .star');
+        stars.forEach((star, index) => {
+            star.onclick = () => {
+                const rating = index + 1;
+                currentRating = rating;
+                stars.forEach((s, i) => {
+                    if (i < rating) {
+                        s.classList.add('active');
+                        s.style.color = '#fbbf24';
+                    } else {
+                        s.classList.remove('active');
+                        s.style.color = '#d1d5db';
+                    }
+                });
+            };
+        });
+    }
+
+    function bindSubmitReview() {
+        const submitBtn = document.getElementById('modal-submit-review');
+        if (submitBtn.onclick) return; // Já bindado
+        
+        submitBtn.onclick = async () => {
+            if (!currentRating) {
+                alert('Por favor, selecione uma nota');
+                return;
+            }
+            
+            try {
+                const comentario = document.getElementById('modal-review-comment').value;
+                const response = await fetch('/api/reviews', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        pontoColetaId: currentPontoId,
+                        nota: currentRating,
+                        comentario: comentario || null
+                    })
+                });
+                
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        alert('Você precisa estar logado para avaliar');
+                        return;
+                    }
+                    throw new Error('Erro ao enviar avaliação');
+                }
+                
+                // Recarregar avaliações e atualizar lista de pontos
+                await loadReviews(currentPontoId);
+                document.getElementById('modal-review-comment').value = '';
+                currentRating = 0;
+                const stars = document.querySelectorAll('#modal-rating-stars .star');
+                stars.forEach(s => {
+                    s.classList.remove('active');
+                    s.style.color = '#d1d5db';
+                });
+                
+                // Recarregar página ou atualizar mapa
+                if (typeof renderLocations === 'function') {
+                    // Recarregar pontos se a função existir
+                    const resp = await fetch('/api/pontos', { cache: 'no-store' });
+                    if (resp.ok) {
+                        const pontos = await resp.json();
+                        // Atualizar locations e re-renderizar
+                        if (window.locations) {
+                            window.locations = pontos.map(p => ({
+                                id: p.id,
+                                name: p.name || p.nome || 'Ponto de Coleta',
+                                address: p.address || p.endereco || '',
+                                lat: parseFloat(p.lat || p.latitude),
+                                lng: parseFloat(p.lng || p.longitude),
+                                materials: Array.isArray(p.materials) ? p.materials : [],
+                                horario: p.horario || p.horarioFuncionamento || '',
+                                rating: p.rating || 0,
+                                totalReviews: p.totalReviews || 0
+                            }));
+                            location.reload(); // Recarregar página para atualizar tudo
+                        }
+                    }
+                } else {
+                    location.reload(); // Recarregar página
+                }
+            } catch (error) {
+                console.error('Erro ao enviar avaliação:', error);
+                alert('Erro ao enviar avaliação. Tente novamente.');
+            }
+        };
+    }
+
+    async function loadReviews(pontoId) {
+        try {
+            const response = await fetch(`/api/reviews/ponto/${pontoId}`);
+            const reviews = await response.json();
+            
+            const reviewsList = document.getElementById('modal-reviews-list');
+            if (!reviews || reviews.length === 0) {
+                reviewsList.innerHTML = '<p class="text-sm text-gray-500 text-center py-4">Ainda não há avaliações para este ponto.</p>';
+                return;
+            }
+            
+            reviewsList.innerHTML = reviews.map(review => {
+                const user = review.user || {};
+                const userName = user.name || 'Usuário Anônimo';
+                const userInitial = userName.charAt(0).toUpperCase();
+                const date = new Date(review.createdAt);
+                const timeAgo = getTimeAgo(date);
+                const starsHtml = window.renderStars(review.nota, false);
+                
+                return `
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="review-avatar">${userInitial}</div>
+                            <div class="review-info">
+                                <div class="review-author">${userName}</div>
+                                <div class="review-date">${timeAgo}</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">${starsHtml}</div>
+                        ${review.comentario ? `<div class="review-comment">${review.comentario}</div>` : ''}
+                    </div>
+                `;
+            }).join('');
+        } catch (error) {
+            console.error('Erro ao carregar avaliações:', error);
+            document.getElementById('modal-reviews-list').innerHTML = '<p class="text-sm text-red-500 text-center py-4">Erro ao carregar avaliações.</p>';
+        }
+    }
+
+    function getTimeAgo(date) {
+        const now = new Date();
+        const diffMs = now - date;
+        const diffMins = Math.floor(diffMs / 60000);
+        const diffHours = Math.floor(diffMs / 3600000);
+        const diffDays = Math.floor(diffMs / 86400000);
+        const diffMonths = Math.floor(diffDays / 30);
+        const diffYears = Math.floor(diffDays / 365);
+        
+        if (diffMins < 1) return 'Agora';
+        if (diffMins < 60) return `${diffMins} minuto${diffMins > 1 ? 's' : ''} atrás`;
+        if (diffHours < 24) return `${diffHours} hora${diffHours > 1 ? 's' : ''} atrás`;
+        if (diffDays < 30) return `${diffDays} dia${diffDays > 1 ? 's' : ''} atrás`;
+        if (diffMonths < 12) return `${diffMonths} mês${diffMonths > 1 ? 'es' : ''} atrás`;
+        return `${diffYears} ano${diffYears > 1 ? 's' : ''} atrás`;
+    }
+</script>
+
+<style>
+    .rating-stars{
+        display:inline-flex; gap:2px; font-size:18px; color:#d1d5db; cursor:pointer;
+    }
+    .rating-stars .star{
+        transition:color .15s ease; user-select:none;
+    }
+    .rating-stars .star.active{ color:#fbbf24; }
+    .rating-stars.interactive .star:hover{ color:#fbbf24; }
+
+    .reviews-modal{
+        position:fixed; inset:0; z-index:2000; display:flex; align-items:center; justify-content:center;
+    }
+    .reviews-modal.hidden{ display:none; }
+    .reviews-modal-overlay{
+        position:absolute; inset:0; background:rgba(0,0,0,.5); backdrop-filter:blur(2px);
+    }
+    .reviews-modal-content{
+        position:relative; background:#fff; border-radius:16px; max-width:600px; width:90%;
+        max-height:90vh; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 20px 40px rgba(0,0,0,.2);
+    }
+    .reviews-modal-header{
+        padding:20px; border-bottom:1px solid #E5E7EB; display:flex; justify-content:space-between; align-items:center;
+    }
+    .reviews-modal-body{
+        padding:20px; overflow-y:auto; flex:1;
+    }
+    .close-btn{
+        width:32px; height:32px; border:0; background:transparent; font-size:24px; cursor:pointer;
+        color:#6B7280; display:flex; align-items:center; justify-content:center; border-radius:50%;
+        transition:background .2s ease;
+    }
+    .close-btn:hover{ background:#f3f4f6; color:#111827; }
+
+    .reviews-list{ display:flex; flex-direction:column; gap:16px; }
+    .review-item{
+        padding:16px; background:#f9fafb; border-radius:10px; border:1px solid #E5E7EB;
+    }
+    .review-header{
+        display:flex; align-items:center; gap:12px; margin-bottom:8px;
+    }
+    .review-avatar{
+        width:40px; height:40px; border-radius:50%; background:#34A853; color:#fff;
+        display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:16px;
+    }
+    .review-info{ flex:1; }
+    .review-author{ font-weight:600; color:#111827; font-size:14px; }
+    .review-date{ font-size:12px; color:#6B7280; }
+    .review-rating{ margin:8px 0; }
+    .review-comment{ font-size:14px; color:#374151; line-height:1.5; }
+</style>
