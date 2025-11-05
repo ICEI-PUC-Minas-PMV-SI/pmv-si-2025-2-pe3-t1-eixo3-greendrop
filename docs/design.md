@@ -29,41 +29,47 @@
 
 ### Mapa de Empatia – Ana Souza  
 
-<img width="821" height="699" alt="image" src="https://github.com/user-attachments/assets/1c4dc572-b562-4bd7-89eb-654b2f51f064" />
+<img width="1159" height="944" alt="image" src="https://github.com/user-attachments/assets/6df043c0-53f2-4c3d-b757-b3e56bf9926f" />
+
   
 
 ---
 
 ### Mapa de Empatia – João Pereira  
 
-<img width="880" height="672" alt="image" src="https://github.com/user-attachments/assets/7c84429a-aa74-4790-8b99-649bea5de1fb" />
+<img width="1230" height="977" alt="image" src="https://github.com/user-attachments/assets/6db39020-a0f1-4fce-9d22-c2470c82405e" />
+
   
 
 ---
 
 ### Mapa de Empatia – Carla Nunes  
 
-<img width="911" height="708" alt="image" src="https://github.com/user-attachments/assets/7d397aed-6ee5-4035-9b1d-16509c313eef" />
+<img width="1274" height="965" alt="image" src="https://github.com/user-attachments/assets/9d1a0695-2c26-4399-9af7-8915ed1db55f" />
+
 
 
 ---
 
 ### Mapa de Empatia – Marcos Tanaka  
 
-<img width="821" height="659" alt="image" src="https://github.com/user-attachments/assets/6296dceb-0810-42fd-a532-4bc62a15c75c" />
+<img width="1100" height="932" alt="image" src="https://github.com/user-attachments/assets/887197db-2bc4-4e58-9b43-fc039b082559" />
+
   
 
 ---
 
 ### Mapa de Empatia – Lurdes Oliveira  
-<img width="839" height="651" alt="image" src="https://github.com/user-attachments/assets/363564ac-2722-4088-8d09-fce0358b65ce" />
+<img width="1155" height="923" alt="image" src="https://github.com/user-attachments/assets/7ca422be-d717-4def-9301-3caf25a5b182" />
+
   
 
 ---
 
 ### Mapa de Empatia – Grazielle Araujo  
 
-<img width="838" height="682" alt="image" src="https://github.com/user-attachments/assets/716e61bf-d06c-49b9-889d-1e698bae52c9" />
+<img width="1148" height="928" alt="image" src="https://github.com/user-attachments/assets/7294affe-bb93-47ef-a2fe-a549ff4289f0" />
+
   
 
 
