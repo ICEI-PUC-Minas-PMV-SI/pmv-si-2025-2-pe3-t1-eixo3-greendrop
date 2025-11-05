@@ -74,7 +74,7 @@ async function register(req, res) {
         });
 
         if (role === 'admin') {
-            return res.redirect('/admin/pontos');
+            return res.redirect('/admin');
         }
 
         res.redirect('/perfil');
@@ -137,7 +137,7 @@ async function login(req, res) {
         const isAdmin = user.role === 'admin';
         
         if (isAdmin) {
-            return res.redirect('/admin/pontos');
+            return res.redirect('/admin');
         }
 
         res.redirect('/perfil');

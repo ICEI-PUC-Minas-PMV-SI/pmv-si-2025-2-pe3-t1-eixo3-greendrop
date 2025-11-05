@@ -1,3 +1,317 @@
-<main class="min-h-screen flex items-center justify-center">
-  <h1>Painel Administrativo</h1>
-</main>
+<div class="min-h-screen bg-gray-50">
+  <!-- Header -->
+  <header id="site-header" class="bg-white shadow-md fixed top-0 left-0 right-0 z-[2000]">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <img src="/ico.png" alt="GreenDrop Logo" class="h-10 w-auto" />
+        <a href="/" class="text-2xl font-bold brand-dark-green">GreenDrop</a>
+      </div>
+
+      <!-- Links desktop -->
+      <ul class="hidden md:flex items-center space-x-8">
+        <li><a href="/" class="font-medium text-gray-600 hover:brand-green transition-colors">Início</a></li>
+        <li><a href="/ranking" class="font-medium text-gray-600 hover:brand-green transition-colors">Ranking</a></li>
+        <li><a href="/#contato" class="font-medium text-gray-600 hover:brand-green transition-colors">Contato</a></li>
+        <li>
+          <a href="/notificacoes" class="relative group" aria-label="Notificações">
+            <i data-feather="bell" class="h-6 w-6 text-gray-600 group-hover:text-green-800 transition"></i>
+            <span class="absolute bottom-0 right-0 flex items-center justify-center h-5 w-5 bg-red-600 text-white text-xs font-bold rounded-full shadow border border-white select-none translate-x-1/2 translate-y-1/2">3</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Avatar genérico -->
+      <div class="hidden md:flex items-center gap-3">
+        <div class="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-lg transition">
+          <div class="w-9 h-9 rounded-full bg-brand-green flex items-center justify-center text-white font-semibold text-lg">
+            G
+          </div>
+          <span class="font-medium text-gray-700">GreenDrop</span>
+        </div>
+      </div>
+
+      <!-- Menu mobile -->
+      <button class="md:hidden focus:outline-none" id="mobile-menu-button" aria-label="Abrir menu">
+        <i data-feather="menu" class="h-6 w-6 text-gray-600"></i>
+      </button>
+    </nav>
+
+    <!-- Drawer mobile -->
+    <div class="hidden md:hidden border-t border-gray-100" id="mobile-menu">
+      <ul class="px-4 py-3 space-y-1">
+        <li><a href="/" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Início</a></li>
+        <li><a href="/ranking" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Ranking</a></li>
+        <li><a href="/#contato" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Contato</a></li>
+        <li><a href="/notificacoes" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Notificações</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Métricas -->
+  <section class="container mx-auto px-6 py-2 mt-24">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl shadow p-5 text-center">
+        <h3 class="text-gray-500 text-sm mb-2">Descartes Validados</h3>
+        <p class="text-3xl font-bold text-green-700">128</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-5 text-center">
+        <h3 class="text-gray-500 text-sm mb-2">Pendentes de Validação</h3>
+        <p class="text-3xl font-bold text-yellow-500">7</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-5 text-center">
+        <h3 class="text-gray-500 text-sm mb-2">Pontos Atribuídos</h3>
+        <p class="text-3xl font-bold text-green-600">2.450</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabela -->
+  <section class="container mx-auto px-6 pb-12">
+    <div class="bg-white shadow rounded-xl overflow-hidden">
+      <div class="p-5 border-b bg-gray-100">
+        <h2 class="text-lg font-semibold text-gray-800">Descartes Pendentes</h2>
+        <p class="text-sm text-gray-500">Valide ou negue os descartes enviados pelos usuários</p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-left text-sm">
+          <thead class="bg-gray-50 text-gray-600 uppercase text-xs">
+            <tr>
+              <th class="px-6 py-3">Usuário</th>
+              <th class="px-6 py-3">Material</th>
+              <th class="px-6 py-3">Quantidade</th>
+              <th class="px-6 py-3">Data</th>
+              <th class="px-6 py-3">Status</th>
+              <th class="px-6 py-3 text-center">Ações</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="hover:bg-gray-50 transition">
+              <td class="px-6 py-4">João Silva</td>
+              <td class="px-6 py-4">Plástico</td>
+              <td class="px-6 py-4">3 kg</td>
+              <td class="px-6 py-4">02/11/2025</td>
+              <td class="px-6 py-4 text-yellow-500 font-medium">Pendente</td>
+              <td class="px-6 py-4 text-center space-x-2">
+                <button class="validar-btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Validar (+10 pts)
+                </button>
+                <button class="negar-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Negar
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition">
+              <td class="px-6 py-4">Maria Oliveira</td>
+              <td class="px-6 py-4">Vidro</td>
+              <td class="px-6 py-4">5 kg</td>
+              <td class="px-6 py-4">01/11/2025</td>
+              <td class="px-6 py-4 text-yellow-500 font-medium">Pendente</td>
+              <td class="px-6 py-4 text-center space-x-2">
+                <button class="validar-btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Validar (+15 pts)
+                </button>
+                <button class="negar-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Negar
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition">
+              <td class="px-6 py-4">Carlos Mendes</td>
+              <td class="px-6 py-4">Metal</td>
+              <td class="px-6 py-4">2 kg</td>
+              <td class="px-6 py-4">29/10/2025</td>
+              <td class="px-6 py-4 text-yellow-500 font-medium">Pendente</td>
+              <td class="px-6 py-4 text-center space-x-2">
+                <button class="validar-btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Validar (+8 pts)
+                </button>
+                <button class="negar-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Negar
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition">
+              <td class="px-6 py-4">Fernanda Costa</td>
+              <td class="px-6 py-4">Papel</td>
+              <td class="px-6 py-4">4 kg</td>
+              <td class="px-6 py-4">30/10/2025</td>
+              <td class="px-6 py-4 text-yellow-500 font-medium">Pendente</td>
+              <td class="px-6 py-4 text-center space-x-2">
+                <button class="validar-btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Validar (+12 pts)
+                </button>
+                <button class="negar-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Negar
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition">
+              <td class="px-6 py-4">Ricardo Lima</td>
+              <td class="px-6 py-4">Óleo de cozinha</td>
+              <td class="px-6 py-4">1 L</td>
+              <td class="px-6 py-4">28/10/2025</td>
+              <td class="px-6 py-4 text-yellow-500 font-medium">Pendente</td>
+              <td class="px-6 py-4 text-center space-x-2">
+                <button class="validar-btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Validar (+5 pts)
+                </button>
+                <button class="negar-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Negar
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition">
+              <td class="px-6 py-4">Patrícia Souza</td>
+              <td class="px-6 py-4">Pilhas</td>
+              <td class="px-6 py-4">12 unid.</td>
+              <td class="px-6 py-4">27/10/2025</td>
+              <td class="px-6 py-4 text-yellow-500 font-medium">Pendente</td>
+              <td class="px-6 py-4 text-center space-x-2">
+                <button class="validar-btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Validar (+6 pts)
+                </button>
+                <button class="negar-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Negar
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition">
+              <td class="px-6 py-4">Luiz Fernando</td>
+              <td class="px-6 py-4">Eletrônicos</td>
+              <td class="px-6 py-4">2 itens</td>
+              <td class="px-6 py-4">25/10/2025</td>
+              <td class="px-6 py-4 text-yellow-500 font-medium">Pendente</td>
+              <td class="px-6 py-4 text-center space-x-2">
+                <button class="validar-btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Validar (+20 pts)
+                </button>
+                <button class="negar-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Negar
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition">
+              <td class="px-6 py-4">Sofia Martins</td>
+              <td class="px-6 py-4">Baterias</td>
+              <td class="px-6 py-4">3 unid.</td>
+              <td class="px-6 py-4">24/10/2025</td>
+              <td class="px-6 py-4 text-yellow-500 font-medium">Pendente</td>
+              <td class="px-6 py-4 text-center space-x-2">
+                <button class="validar-btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Validar (+9 pts)
+                </button>
+                <button class="negar-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm transition">
+                  Negar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Modal de validação -->
+  <div id="modal-validacao" class="fixed inset-0 hidden bg-black/50 flex items-center justify-center z-[3000]">
+    <div class="bg-white rounded-2xl shadow-lg p-8 text-center w-80 animate-fade-in">
+      <div class="flex justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">Validação concluída!</h3>
+      <p class="text-gray-600 text-sm mb-5">O descarte foi validado com sucesso e os pontos foram atribuídos 🎉</p>
+      <button id="fechar-modal-validacao" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition">
+        Fechar
+      </button>
+    </div>
+  </div>
+
+  <!-- ❌ Modal de negação -->
+  <div id="modal-negacao" class="fixed inset-0 hidden bg-black/50 flex items-center justify-center z-[3000]">
+    <div class="bg-white rounded-2xl shadow-lg p-8 text-center w-80 animate-fade-in">
+      <div class="flex justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">Descarte negado</h3>
+      <p class="text-gray-600 text-sm mb-5">O descarte foi recusado e não gerou pontuação.</p>
+      <button id="fechar-modal-negacao" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition">
+        Fechar
+      </button>
+    </div>
+  </div>
+
+  <script>
+      feather.replace();
+
+      const btn = document.getElementById('mobile-menu-button');
+      const menu = document.getElementById('mobile-menu');
+      btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+      // Modais
+      const modalValidacao = document.getElementById('modal-validacao');
+      const modalNegacao = document.getElementById('modal-negacao');
+      const fecharValidacao = document.getElementById('fechar-modal-validacao');
+      const fecharNegacao = document.getElementById('fechar-modal-negacao');
+      const botoesValidar = document.querySelectorAll('.validar-btn');
+      const botoesNegar = document.querySelectorAll('.negar-btn');
+
+      botoesValidar.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const linha = btn.closest('tr');
+          const status = linha.querySelector('td:nth-child(5)');
+          status.textContent = 'Aprovado';
+          status.classList.remove('text-yellow-500');
+          status.classList.add('text-green-600', 'font-semibold');
+
+          // Remove os botões após ação
+          const celulaAcoes = linha.querySelector('td:last-child');
+          celulaAcoes.innerHTML = '<span class="text-green-600 font-semibold">✔️ Aprovado</span>';
+
+          modalValidacao.classList.remove('hidden');
+        });
+      });
+
+      botoesNegar.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const linha = btn.closest('tr');
+          const status = linha.querySelector('td:nth-child(5)');
+          status.textContent = 'Negado';
+          status.classList.remove('text-yellow-500');
+          status.classList.add('text-red-600', 'font-semibold');
+
+          // Remove os botões após ação
+          const celulaAcoes = linha.querySelector('td:last-child');
+          celulaAcoes.innerHTML = '<span class="text-red-600 font-semibold">❌ Negado</span>';
+
+          modalNegacao.classList.remove('hidden');
+        });
+      });
+
+      [fecharValidacao, fecharNegacao].forEach(botao => {
+        botao.addEventListener('click', () => {
+          modalValidacao.classList.add('hidden');
+          modalNegacao.classList.add('hidden');
+        });
+      });
+
+      [modalValidacao, modalNegacao].forEach(modal => {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) modal.classList.add('hidden');
+        });
+      });
+    </script>
+
+</div>
