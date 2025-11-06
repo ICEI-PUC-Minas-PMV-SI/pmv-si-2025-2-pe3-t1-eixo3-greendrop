@@ -21,6 +21,11 @@ const User = sequelize.define('User', {
     role: {
         type: DataTypes.ENUM('user', 'admin'),
         allowNull: true,
+    },
+    pontos: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
     }
 }, {
     timestamps: true,

@@ -22,6 +22,12 @@ const Residuo = sequelize.define('Residuo', {
         type: DataTypes.STRING,
         allowNull: true,
     },
+    pontosPorKg: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+        defaultValue: 1.0,
+        comment: 'Pontos atribuídos por kg/unidade do resíduo',
+    },
 }, {
     timestamps: true,
 });

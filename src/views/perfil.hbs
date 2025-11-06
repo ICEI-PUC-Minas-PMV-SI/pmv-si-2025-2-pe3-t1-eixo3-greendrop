@@ -141,6 +141,7 @@
       <section class="tabs">
         <div class="tab-nav" role="tablist">
           <button class="tab-btn active" data-tab="activity" role="tab" aria-selected="true">✔ Atividade</button>
+          <button class="tab-btn" data-tab="descartes" role="tab" aria-selected="false">♻️ Meus Descartes</button>
           <button class="tab-btn" data-tab="rewards" role="tab" aria-selected="false">🏆 Recompensas & Badges</button>
           <button class="tab-btn" data-tab="connections" role="tab" aria-selected="false">👥 Conexões</button>
         </div>
@@ -166,6 +167,60 @@
             <li class="empty">Nenhuma atividade recente.</li>
             {{/if}}
           </ul>
+        </div>
+
+        <!-- Histórico de Descartes -->
+        <div id="content-descartes" class="tab-panel hidden">
+          <h2 class="panel-title">♻️ Histórico de Descartes</h2>
+          <p class="text-sm text-gray-600 mb-4">Todos os materiais que você descartou e os pontos ganhos</p>
+          
+          {{#if historico.length}}
+          <div class="space-y-3">
+            {{#each historico}}
+            <div class="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+              <div class="flex justify-between items-start">
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-lg">♻️</span>
+                    <h3 class="font-semibold text-gray-800">{{this.material}}</h3>
+                    <span class="px-2 py-0.5 bg-green-100 text-green-700 text-xs rounded-full font-medium">{{this.categoria}}</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-2">
+                    <strong>{{this.quantidade}} {{this.unidade}}</strong> descartado(s)
+                  </p>
+                  <div class="flex items-center gap-2 text-xs text-gray-500">
+                    <span>📍 {{this.pontoColeta}}</span>
+                  </div>
+                  <p class="text-xs text-gray-400 mt-1">{{this.endereco}}</p>
+                </div>
+                <div class="text-right">
+                  <div class="flex items-center gap-1 mb-1">
+                    <span class="text-2xl font-bold text-green-600">+{{this.pontos}}</span>
+                    <span class="text-sm text-gray-500">pts</span>
+                  </div>
+                  <p class="text-xs text-gray-500">{{this.data}} às {{this.hora}}</p>
+                </div>
+              </div>
+            </div>
+            {{/each}}
+          </div>
+          
+          <div class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm text-gray-600">Total de Pontos Acumulados</p>
+                <p class="text-3xl font-bold text-green-700">{{user.pontos}}</p>
+              </div>
+              <div class="text-5xl">🌱</div>
+            </div>
+          </div>
+          {{else}}
+          <div class="text-center py-12">
+            <div class="text-6xl mb-4">♻️</div>
+            <p class="text-gray-500 mb-2">Você ainda não tem descartes registrados</p>
+            <p class="text-sm text-gray-400">Visite um ponto de coleta e comece a acumular pontos!</p>
+          </div>
+          {{/if}}
         </div>
 
         <!-- Recompensas -->

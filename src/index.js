@@ -10,11 +10,13 @@ const profileController = require('./controllers/profileController');
 const mapController = require('./controllers/mapController');
 const rankingController = require('./controllers/rankingController');
 const reviewController = require('./controllers/reviewController');
+const descarteController = require('./controllers/descarteController');
 // Importar modelos para garantir que sejam sincronizados
 require('./models/user');
 require('./models/pontoColeta');
 require('./models/residuo');
 require('./models/avaliacao');
+require('./models/descarte');
 const app = express();
 
 
@@ -100,6 +102,16 @@ app.get('/main-page', requireAuth, (req, res) => {
 
 // Rotas administrativas de pontos de coleta
 app.get('/admin', requireAuth, requireAdmin, pontoColetaController.renderAdminPage);
+
+// Rotas de descartes (admin)
+app.get('/api/usuarios', requireAuth, requireAdmin, descarteController.listarUsuarios);
+app.get('/api/residuos', requireAuth, requireAdmin, descarteController.listarResiduos);
+app.post('/api/admin/descartes', requireAuth, requireAdmin, descarteController.criarDescarte);
+app.get('/api/admin/descartes', requireAuth, requireAdmin, descarteController.listarDescartesPorPontoColeta);
+app.get('/api/admin/estatisticas', requireAuth, requireAdmin, descarteController.obterEstatisticas);
+
+// Rotas de descartes (usuário)
+app.get('/api/descartes/usuario/:userId', requireAuth, descarteController.listarDescartesPorUsuario);
 
 
 
