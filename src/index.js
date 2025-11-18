@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const { engine } = require('express-handlebars');
 const cookieParser = require('cookie-parser');
