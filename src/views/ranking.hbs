@@ -56,6 +56,21 @@
   </div>
 </header>
 
+<!-- Aviso de Recompensa Resgatada -->
+<div id="reward-alert" class="fixed top-24 left-1/2 transform -translate-x-1/2 z-[2001] hidden">
+  <div class="bg-green-500 text-white px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3 min-w-[320px] alert-animation">
+    <div class="flex-shrink-0">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+    </div>
+    <div>
+      <p class="font-bold text-lg">🎉 Recompensa Resgatada!</p>
+      <p class="text-sm opacity-90">Seu prêmio foi creditado com sucesso</p>
+    </div>
+  </div>
+</div>
+
 <main class="pt-20">
   <!-- Hero Section -->
   <section class="bg-brand-off-white py-12">
@@ -204,13 +219,13 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {{#each premios}}
-            <div class="border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
               <div class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-green text-white mx-auto mb-4">
                 <i data-feather="{{this.icone}}" class="h-8 w-8"></i>
               </div>
               <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">{{this.nome}}</h3>
-              <p class="text-sm text-gray-600 mb-4 text-center">{{this.descricao}}</p>
-              <div class="border-t border-gray-200 pt-4 mt-4">
+              <p class="text-sm text-gray-600 mb-4 text-center flex-grow">{{this.descricao}}</p>
+              <div class="border-t border-gray-200 pt-4 mt-auto">
                 <div class="flex items-center justify-between mb-3">
                   <span class="text-sm text-gray-600">Pontos necessários:</span>
                   <span class="text-lg font-bold text-green-600">{{this.pontosNecessarios}}</span>
@@ -268,46 +283,6 @@
     </div>
 </footer>
 
-<script>
-  // Tab switching
-  document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', () => {
-      const tabName = button.getAttribute('data-tab');
-      
-      // Remove classe
-      document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.classList.remove('active', 'bg-brand-green', 'text-white');
-        btn.classList.add('text-gray-600');
-      });
-      
-      // Adiciona classe
-      button.classList.add('active', 'bg-brand-green', 'text-white');
-      button.classList.remove('text-gray-600');
-      
-      // Hide 
-      document.querySelectorAll('.tab-content').forEach(content => {
-        content.classList.add('hidden');
-      });
-      
-      // Show selected content
-      document.getElementById(`${tabName}-content`).classList.remove('hidden');
-    });
-  });
-
-  // Botão Flutuante
-  document.getElementById('floating-rewards-btn').addEventListener('click', (e) => {
-    e.preventDefault();
-    document.querySelector('[data-tab="recompensas"]').click();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // Period filter (placeholder functionality)
-  document.getElementById('periodo-filter')?.addEventListener('change', (e) => {
-    console.log('Filtro alterado para:', e.target.value);
-    // Aqui você pode adicionar lógica para filtrar os dados
-  });
-</script>
-
 <style>
   .brand-dark-green {
     color: #065f46;
@@ -337,4 +312,196 @@
     background-color: #10b981;
     color: white;
   }
+
+  /* Animações do Aviso de Recompensa */
+  @keyframes slideDown {
+    from {
+      transform: translate(-50%, -100%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+    to {
+      transform: translate(-50%, -100%);
+      opacity: 0;
+    }
+  }
+  
+  .alert-animation.show {
+    animation: slideDown 0.4s ease-out;
+  }
+  
+  .alert-animation.hide {
+    animation: slideUp 0.4s ease-in;
+  }
+
+  /* Confetti Animation */
+  .confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #f0f;
+    position: absolute;
+    animation: confetti-fall 3s linear forwards;
+    z-index: 9999;
+  }
+
+  @keyframes confetti-fall {
+    to {
+      transform: translateY(100vh) translateX(var(--drift, 0)) rotate(720deg);
+      opacity: 0;
+    }
+  }
 </style>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', () => {
+      const tabName = button.getAttribute('data-tab');
+      
+      // Remove classe
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active', 'bg-brand-green', 'text-white');
+        btn.classList.add('text-gray-600');
+      });
+      
+      // Adiciona classe
+      button.classList.add('active', 'bg-brand-green', 'text-white');
+      button.classList.remove('text-gray-600');
+      
+      // Hide 
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.add('hidden');
+      });
+      
+      // Show selected content
+      document.getElementById(`${tabName}-content`).classList.remove('hidden');
+    });
+  });
+
+  // Botão Flutuante
+  const floatingBtn = document.getElementById('floating-rewards-btn');
+  
+  floatingBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('[data-tab="recompensas"]').click();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Esconde o botão flutuante quando estiver na aba de recompensas
+  document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', () => {
+      const tabName = button.getAttribute('data-tab');
+      
+      if (tabName === 'recompensas') {
+        floatingBtn.classList.add('hidden');
+      } else {
+        floatingBtn.classList.remove('hidden');
+      }
+    });
+  });
+
+  // Period filter (placeholder functionality)
+  document.getElementById('periodo-filter')?.addEventListener('change', (e) => {
+    console.log('Filtro alterado para:', e.target.value);
+    // Aqui você pode adicionar lógica para filtrar os dados
+  });
+
+  // Função para criar confetti
+  function createConfetti() {
+    const colors = ['#10b981', '#34d399', '#6ee7b7', '#a7f3d0', '#fbbf24', '#f59e0b', '#ef4444', '#ec4899', '#8b5cf6', '#3b82f6'];
+    const confettiCount = 500;
+    
+    for (let i = 0; i < confettiCount; i++) {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      
+      // Posição inicial aleatória no topo da tela
+      const startPositionX = Math.random() * window.innerWidth;
+      confetti.style.left = startPositionX + 'px';
+      confetti.style.top = '-10px';
+      
+      // Cor aleatória
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      
+      // Tamanho aleatório
+      const size = Math.random() * 8 + 5;
+      confetti.style.width = size + 'px';
+      confetti.style.height = size + 'px';
+      
+      // Delay aleatório
+      confetti.style.animationDelay = Math.random() * 0.5 + 's';
+      
+      // Duração aleatória
+      confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+      
+      // Movimento lateral aleatório
+      const drift = (Math.random() - 0.5) * 200;
+      confetti.style.setProperty('--drift', drift + 'px');
+      
+      document.body.appendChild(confetti);
+      
+      // Remove o confetti após a animação
+      setTimeout(() => {
+        confetti.remove();
+      }, 4000);
+    }
+  }
+
+  // Função para mostrar o aviso de recompensa resgatada
+  function showRewardAlert() {
+    const alert = document.getElementById('reward-alert');
+    
+    // Remove classes anteriores
+    alert.classList.remove('hidden', 'hide');
+    alert.classList.add('show');
+    
+    // Esconde o alerta após 3 segundos
+    setTimeout(() => {
+      alert.classList.remove('show');
+      alert.classList.add('hide');
+      
+      setTimeout(() => {
+        alert.classList.add('hidden');
+      }, 400);
+    }, 3000);
+  }
+
+  // Adiciona evento aos botões de resgatar prêmio
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('button') && e.target.textContent.includes('Resgatar Prêmio')) {
+      e.preventDefault();
+      
+      const button = e.target.closest('button');
+      const originalText = button.textContent;
+      
+      // Feedback visual no botão
+      button.textContent = '✓ Resgatado!';
+      button.classList.add('opacity-75', 'cursor-not-allowed');
+      button.disabled = true;
+      
+      // Cria o efeito de confetti
+      createConfetti();
+      
+      // Mostra o alerta
+      showRewardAlert();
+      
+      // Restaura o botão após 4 segundos
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove('opacity-75', 'cursor-not-allowed');
+        button.disabled = false;
+      }, 4000);
+    }
+  });
+</script>
