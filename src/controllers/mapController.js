@@ -1,3 +1,6 @@
+const Avaliacao = require('../models/avaliacao');
+const sequelize = require('../services/database');
+
 module.exports.fullscreen = async (req, res) => {
   // trocar por busca real no DB
   const points = [
@@ -64,6 +67,34 @@ module.exports.api = async (req, res) => {
     { id: 104, name:'E-Mile – Barreiro', address:'Av. Afonso Vaz de Melo, 640 - BH',
       lat:-19.9776, lng:-44.0102, materials:['eletronicos','baterias'],
       horario:'Seg–Sex 09:00–18:00' },
-  ]; // [] se preferir injetar pela view
-  res.json(points);
+  ];
+  
+  // Buscar médias de avaliações para cada ponto
+  try {
+    const pontosComMedia = await Promise.all(points.map(async (p) => {
+      const result = await Avaliacao.findAll({
+        where: { pontoColetaId: p.id },
+        attributes: [
+          [sequelize.fn('AVG', sequelize.col('nota')), 'media'],
+          [sequelize.fn('COUNT', sequelize.col('id')), 'total']
+        ],
+        raw: true
+      });
+      
+      const media = result[0]?.media ? parseFloat(result[0].media) : 0;
+      const total = result[0]?.total || 0;
+      
+      return {
+        ...p,
+        rating: media,
+        totalReviews: parseInt(total)
+      };
+    }));
+    
+    res.json(pontosComMedia);
+  } catch (error) {
+    console.error('Erro ao buscar avaliações:', error);
+    // Retorna os pontos sem avaliações em caso de erro
+    res.json(points.map(p => ({ ...p, rating: 0, totalReviews: 0 })));
+  }
 };

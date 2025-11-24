@@ -178,13 +178,26 @@
       .join(', ');
     const horario = p.horario ? `<br/><small><strong>Horário:</strong> ${p.horario}</small>` : '';
     const dist = Number.isFinite(p._distanceKm) ? `<br/><small><strong>Distância:</strong> ${kmLabel(p._distanceKm)}</small>` : '';
+    
+    // Adicionar avaliações
+    const rating = p.rating || 0;
+    const totalReviews = p.totalReviews || 0;
+    const starsHtml = renderStars(rating, false);
+    const ratingSection = rating > 0 
+      ? `<div style="margin: 8px 0; cursor: pointer;" onclick="event.stopPropagation(); window.openReviewsModal && window.openReviewsModal(${p.id}, '${(p.name || '').replace(/'/g, "\\'")}')">${starsHtml} <small style="color:#6B7280;">(${totalReviews} avaliação${totalReviews !== 1 ? 'ões' : ''})</small></div>`
+      : `<div style="margin: 8px 0; cursor: pointer;" onclick="event.stopPropagation(); window.openReviewsModal && window.openReviewsModal(${p.id}, '${(p.name || '').replace(/'/g, "\\'")}')">${starsHtml} <small style="color:#9CA3AF;">Sem avaliações</small></div>`;
+    
     return `
-      <strong>${p.name || 'Ponto de Descarte'}</strong><br/>
-      ${p.address || ''}<br/>
-      <small>Materiais: ${mats}</small>
-      ${horario}
-      ${dist}<br/>
-      <a href="/pontos/${p.id || ''}" style="color:#34A853;font-weight:800">Detalhes</a>
+      <div style="font-family: Inter, system-ui;">
+        <strong>${p.name || 'Ponto de Descarte'}</strong><br/>
+        ${p.address || ''}<br/>
+        <small>Materiais: ${mats}</small>
+        ${horario}
+        ${dist}
+        ${ratingSection}
+        <br/>
+        <a href="/pontos/${p.id || ''}" style="color:#34A853;font-weight:800">Detalhes</a>
+      </div>
     `;
   }
 
@@ -264,6 +277,23 @@
     renderCards(filtered); 
   }
 
+  // Função para renderizar estrelas
+  function renderStars(rating, interactive = false) {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 >= 0.5;
+    for (let i = 1; i <= 5; i++) {
+      let starClass = '';
+      if (i <= fullStars) {
+        starClass = 'active';
+      } else if (i === fullStars + 1 && hasHalfStar) {
+        starClass = 'active';
+      }
+      stars.push(`<span class="star ${starClass}" ${interactive ? `data-rating="${i}"` : ''}>★</span>`);
+    }
+    return `<div class="rating-stars ${interactive ? 'interactive' : ''}">${stars.join('')}</div>`;
+  }
+
   // ------ Cards (lista lateral) ------
   function renderCards(list){
     const box = $cardsBox();
@@ -289,14 +319,22 @@
         return `<span class="px-2 py-0.5 text-xs font-medium rounded-full" style="background:${c}22;color:#064e3b;border:1px solid ${c}66">${lbl}</span>`;
       }).join(' ') + ((p.materials||[]).length>4 ? ' <span class="text-xs text-gray-500">…</span>' : '');
 
+      const rating = p.rating || 0;
+      const totalReviews = p.totalReviews || 0;
+      const starsHtml = renderStars(rating, false);
+
       const card = document.createElement('div');
       card.className = 'p-4 rounded-lg cursor-pointer hover:bg-green-50 transition-colors border border-gray-100';
       card.innerHTML = `
         <div class="flex items-center justify-between gap-3">
-          <div>
+          <div class="flex-1">
             <h3 class="font-semibold brand-dark-green">${p.name || 'Ponto de Descarte'}</h3>
             <p class="text-sm text-gray-600">${p.address || ''}</p>
             ${p.horario ? `<p class="text-xs text-gray-500 mt-1"><strong>Horário:</strong> ${p.horario}</p>` : ''}
+            <div class="mt-2 flex items-center gap-2 cursor-pointer rating-clickable" data-point-id="${p.id}" data-point-name="${(p.name || '').replace(/"/g, '&quot;')}">
+              ${starsHtml}
+              ${totalReviews > 0 ? `<span class="text-xs text-gray-500">(${totalReviews})</span>` : '<span class="text-xs text-gray-400">Sem avaliações</span>'}
+            </div>
           </div>
           <div style="background:${mat.color}22;border:1px solid ${mat.color}77;border-radius:50%;width:30px;height:30px;"></div>
         </div>
@@ -308,6 +346,18 @@
       card.addEventListener('click', () => {
         if (leafletMap) leafletMap.flyTo([p.lat, p.lng], 15, { duration:0.5 });
       });
+      
+      // Adicionar evento de clique nas estrelas
+      const ratingDiv = card.querySelector('.rating-clickable');
+      if (ratingDiv) {
+        ratingDiv.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const pointId = parseInt(ratingDiv.dataset.pointId);
+          const pointName = ratingDiv.dataset.pointName || p.name || 'Ponto de Coleta';
+          openReviewsModal(pointId, pointName);
+        });
+      }
+      
       box.appendChild(card);
     });
   }
@@ -420,6 +470,156 @@
         setTimeout(()=> { mlMap && mlMap.resize(); }, 50);
       }
     }));
+  }
+
+  // ------ Modal de Avaliações ------
+  let currentPontoId = null;
+  let currentRating = 0;
+
+  window.openReviewsModal = async function(pontoId, pointName) {
+    currentPontoId = pontoId;
+    document.getElementById('modal-point-name').textContent = `${pointName} - Avaliações`;
+    document.getElementById('reviews-modal').classList.remove('hidden');
+    
+    // Resetar estrelas
+    const stars = document.querySelectorAll('#modal-rating-stars .star');
+    stars.forEach(s => s.classList.remove('active'));
+    currentRating = 0;
+    
+    // Carregar avaliações
+    await loadReviews(pontoId);
+    
+    // Bind eventos das estrelas
+    bindModalStarEvents();
+    bindSubmitReview();
+  };
+
+  window.closeReviewsModal = function() {
+    document.getElementById('reviews-modal').classList.add('hidden');
+    currentPontoId = null;
+    currentRating = 0;
+  };
+
+  function bindModalStarEvents() {
+    const stars = document.querySelectorAll('#modal-rating-stars .star');
+    stars.forEach((star, index) => {
+      star.onclick = () => {
+        const rating = index + 1;
+        currentRating = rating;
+        stars.forEach((s, i) => {
+          if (i < rating) s.classList.add('active');
+          else s.classList.remove('active');
+        });
+      };
+    });
+  }
+
+  function bindSubmitReview() {
+    document.getElementById('modal-submit-review').onclick = async () => {
+      if (!currentRating) {
+        alert('Por favor, selecione uma nota');
+        return;
+      }
+      
+      try {
+        const comentario = document.getElementById('modal-review-comment').value;
+        const response = await fetch('/api/reviews', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({
+            pontoColetaId: currentPontoId,
+            nota: currentRating,
+            comentario: comentario || null
+          })
+        });
+        
+        if (!response.ok) {
+          if (response.status === 401) {
+            alert('Você precisa estar logado para avaliar');
+            return;
+          }
+          throw new Error('Erro ao enviar avaliação');
+        }
+        
+        // Recarregar avaliações e atualizar lista de pontos
+        await loadReviews(currentPontoId);
+        document.getElementById('modal-review-comment').value = '';
+        currentRating = 0;
+        document.querySelectorAll('#modal-rating-stars .star').forEach(s => s.classList.remove('active'));
+        
+        // Recarregar pontos para atualizar médias
+        ALL = await loadPoints();
+        ALL = (ALL||[]).map(p => ({
+          ...p,
+          lat: parseFloat(p.lat),
+          lng: parseFloat(p.lng),
+          materials: Array.isArray(p.materials) ? p.materials : []
+        })).filter(p => Number.isFinite(p.lat) && Number.isFinite(p.lng));
+        
+        renderLeaflet(ALL);
+        if (mlMap) renderMapLibre(ALL);
+      } catch (error) {
+        console.error('Erro ao enviar avaliação:', error);
+        alert('Erro ao enviar avaliação. Tente novamente.');
+      }
+    };
+  }
+
+  async function loadReviews(pontoId) {
+    try {
+      const response = await fetch(`/api/reviews/ponto/${pontoId}`);
+      const reviews = await response.json();
+      
+      const reviewsList = document.getElementById('modal-reviews-list');
+      if (!reviews || reviews.length === 0) {
+        reviewsList.innerHTML = '<p class="text-sm text-gray-500 text-center py-4">Ainda não há avaliações para este ponto.</p>';
+        return;
+      }
+      
+      reviewsList.innerHTML = reviews.map(review => {
+        const user = review.user || {};
+        const userName = user.name || 'Usuário Anônimo';
+        const userInitial = userName.charAt(0).toUpperCase();
+        const date = new Date(review.createdAt);
+        const timeAgo = getTimeAgo(date);
+        const starsHtml = renderStars(review.nota, false);
+        
+        return `
+          <div class="review-item">
+            <div class="review-header">
+              <div class="review-avatar">${userInitial}</div>
+              <div class="review-info">
+                <div class="review-author">${userName}</div>
+                <div class="review-date">${timeAgo}</div>
+              </div>
+            </div>
+            <div class="review-rating">${starsHtml}</div>
+            ${review.comentario ? `<div class="review-comment">${review.comentario}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+    } catch (error) {
+      console.error('Erro ao carregar avaliações:', error);
+      document.getElementById('modal-reviews-list').innerHTML = '<p class="text-sm text-red-500 text-center py-4">Erro ao carregar avaliações.</p>';
+    }
+  }
+
+  function getTimeAgo(date) {
+    const now = new Date();
+    const diffMs = now - date;
+    const diffMins = Math.floor(diffMs / 60000);
+    const diffHours = Math.floor(diffMs / 3600000);
+    const diffDays = Math.floor(diffMs / 86400000);
+    const diffMonths = Math.floor(diffDays / 30);
+    const diffYears = Math.floor(diffDays / 365);
+    
+    if (diffMins < 1) return 'Agora';
+    if (diffMins < 60) return `${diffMins} minuto${diffMins > 1 ? 's' : ''} atrás`;
+    if (diffHours < 24) return `${diffHours} hora${diffHours > 1 ? 's' : ''} atrás`;
+    if (diffDays < 30) return `${diffDays} dia${diffDays > 1 ? 's' : ''} atrás`;
+    if (diffMonths < 12) return `${diffMonths} mês${diffMonths > 1 ? 'es' : ''} atrás`;
+    return `${diffYears} ano${diffYears > 1 ? 's' : ''} atrás`;
   }
 
   // ------ boot ------

@@ -71,9 +71,24 @@
   </div>
 </div>
 
-<main class="pt-20">
+<!-- Aviso de Recompensa Resgatada -->
+<div id="reward-alert" class="fixed top-24 left-1/2 transform -translate-x-1/2 z-[2001] hidden">
+  <div class="bg-green-500 text-white px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3 min-w-[320px] alert-animation">
+    <div class="flex-shrink-0">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+    </div>
+    <div>
+      <p class="font-bold text-lg">🎉 Recompensa Resgatada!</p>
+      <p class="text-sm opacity-90">Seu prêmio foi creditado com sucesso</p>
+    </div>
+  </div>
+</div>
+
+<main >
   <!-- Hero Section -->
-  <section class="bg-brand-off-white py-12">
+  <section class="bg-brand-off-white  py-12">
     <div class="container mx-auto px-6 text-center">
       <h1 class="text-4xl md:text-5xl font-bold brand-dark-green mb-4">
         Ranking de Reciclagem 🏆
@@ -85,7 +100,7 @@
   </section>
 
   <!-- Sub Navigation -->
-  <section class="bg-white border-b shadow-sm sticky top-[72px] z-[1999]">
+  <section class="bg-white border-b shadow-sm sticky top-[72px] z-[1999] mt-0">
     <div class="container mx-auto px-6">
       <nav class="flex items-center justify-center space-x-1 py-3">
         <button class="tab-button active px-6 py-2 rounded-lg font-medium transition-all" data-tab="diretrizes">
@@ -245,7 +260,7 @@
 </main>
 
 <!-- Footer -->
-<footer id="contato" class="bg-gray-800 text-gray-600 bg-white border border-t shadow-md">
+<footer id="contato" class="text-gray-600 bg-white border border-t shadow-md">
     <div class="container mx-auto px-6 py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <!-- About -->

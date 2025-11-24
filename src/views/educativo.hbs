@@ -12,6 +12,10 @@
             <li><a href="/" class="font-medium text-gray-600 hover:brand-green transition-colors">Início</a></li>
             <li><a href="/mapa" class="font-medium text-gray-600 hover:brand-green transition-colors">Mapa</a></li>
             <li><a href="/ods" class="font-medium text-gray-600 hover:brand-green transition-colors">ODS ONU</a></li>
+            <li><a href="/#mapa" class="font-medium text-gray-600 hover:brand-green transition-colors">Mapa</a></li>
+            <li><a href="/ods" class="font-medium text-gray-600 hover:brand-green transition-colors">ODS ONU</a></li>
+            <li><a href="/ranking" class="font-medium text-gray-600 hover:brand-green transition-colors">Ranking</a>
+            </li>
         </ul>
 
         <!-- Ações -->
@@ -39,7 +43,14 @@
                     class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Mapa</a>
             </li>
             <li><a href="/ods"
-                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">ODS ONU</a>
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">ODS
+                    ONU</a>
+            </li>
+            <li><a href="/ranking"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Ranking</a>
+            </li>
+            <li><a href="/notificacoes"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Notificações</a>
             </li>
             <li><a href="/login"
                     class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Entrar</a>
@@ -155,9 +166,43 @@
         </div>
     </section>
 
-    <footer class="text-gray-600 p-6 text-center bg-white border-t">
-        <p class="text-sm">&copy; 2024 GreenDrop Project. Todos os direitos reservados. | Desenvolvido com foco no
-            Planeta.</p>
+    <footer id="contato" class="text-gray-600 bg-white border border-t shadow-md">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div class="col-span-1 md:col-span-2">
+                    <h4 class="text-xl font-bold mb-4">GreenDrop</h4>
+                    <p class="text-gray-400">Promovendo a sustentabilidade através da tecnologia, conectando pessoas a
+                        soluções de reciclagem eficientes.</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#sobre-nos" class="text-gray-400 hover:text-green-800 transition-colors">Sobre</a>
+                        </li>
+                        <li><a href="#servicos"
+                                class="text-gray-400 hover:text-green-800 transition-colors">Serviços</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-800 transition-colors">FAQ</a></li>
+                        <li><a href="#contato" class="text-gray-400 hover:text-green-800 transition-colors">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Siga-nos</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+                &copy; 2025 GreenDrop. Todos os direitos reservados.
+            </div>
+        </div>
     </footer>
 
     <div id="modal-coleta" class="modal-sheet hidden">

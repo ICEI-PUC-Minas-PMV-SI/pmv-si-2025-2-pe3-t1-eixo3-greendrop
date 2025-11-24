@@ -222,7 +222,9 @@ document.addEventListener('DOMContentLoaded', () => {
           lat, lng,
           materials: mats,
           horario: p.horario || p.horarioFuncionamento || '',
-          telefone: p.telefone || ''
+          telefone: p.telefone || '',
+          rating: p.rating || 0,
+          totalReviews: p.totalReviews || 0
         };
       }).filter(Boolean);
 
@@ -272,26 +274,73 @@ document.addEventListener('DOMContentLoaded', () => {
       const distText = Number.isFinite(loc._distanceKm)
         ? `<br/><small>Distância: ${kmLabel(loc._distanceKm)}</small>` : '';
 
+      // Função para renderizar estrelas (se não existir globalmente)
+      const renderStars = window.renderStars || function(rating, interactive = false) {
+        const stars = [];
+        const fullStars = Math.floor(rating);
+        const hasHalfStar = rating % 1 >= 0.5;
+        for (let i = 1; i <= 5; i++) {
+          let starClass = '';
+          if (i <= fullStars) {
+            starClass = 'active';
+          } else if (i === fullStars + 1 && hasHalfStar) {
+            starClass = 'active';
+          }
+          stars.push(`<span class="star ${starClass}" ${interactive ? `data-rating="${i}"` : ''} style="color: ${starClass ? '#fbbf24' : '#d1d5db'}; font-size: 16px; cursor: ${interactive ? 'pointer' : 'default'};">★</span>`);
+        }
+        return `<div style="display: inline-flex; gap: 2px;">${stars.join('')}</div>`;
+      };
+      
+      const rating = loc.rating || 0;
+      const totalReviews = loc.totalReviews || 0;
+      const starsHtml = renderStars(rating, false);
+      const ratingSection = `<div style="margin: 8px 0; cursor: pointer;" onclick="event.stopPropagation(); window.openReviewsModal && window.openReviewsModal(${loc.id}, '${(loc.name || '').replace(/'/g, "\\'")}')">${starsHtml} <small style="color:#6B7280;">(${totalReviews} avaliação${totalReviews !== 1 ? 'ões' : ''})</small></div>`;
+      
       marker.bindPopup(`
         <div class="font-sans">
           <h3 class="font-bold text-lg brand-dark-green">${loc.name}</h3>
           <p class="text-gray-600">${loc.address}</p>
           <p class="text-sm text-gray-500 mt-1"><strong>Materiais:</strong> ${loc.materials.join(', ')}</p>
           ${loc.horario ? `<p class="text-sm"><strong>Horário:</strong> ${loc.horario}</p>` : ''}
+          ${ratingSection}
           ${distText}
         </div>
       `);
       markers.push(marker);
 
       if ($list) {
+        const renderStars = window.renderStars || function(rating, interactive = false) {
+          const stars = [];
+          const fullStars = Math.floor(rating);
+          const hasHalfStar = rating % 1 >= 0.5;
+          for (let i = 1; i <= 5; i++) {
+            let starClass = '';
+            if (i <= fullStars) {
+              starClass = 'active';
+            } else if (i === fullStars + 1 && hasHalfStar) {
+              starClass = 'active';
+            }
+            stars.push(`<span class="star ${starClass}" ${interactive ? `data-rating="${i}"` : ''} style="color: ${starClass ? '#fbbf24' : '#d1d5db'}; font-size: 14px; cursor: ${interactive ? 'pointer' : 'default'};">★</span>`);
+          }
+          return `<div style="display: inline-flex; gap: 2px;">${stars.join('')}</div>`;
+        };
+        
+        const rating = loc.rating || 0;
+        const totalReviews = loc.totalReviews || 0;
+        const starsHtml = renderStars(rating, false);
+        
         const item = document.createElement('div');
         item.className = 'p-4 rounded-lg cursor-pointer hover:bg-green-50 transition-colors';
         item.innerHTML = `
           <div class="flex items-center justify-between gap-3">
-            <div>
+            <div class="flex-1">
               <h3 class="font-semibold brand-dark-green">${loc.name}</h3>
               <p class="text-sm text-gray-600">${loc.address}</p>
               ${loc.horario ? `<p class="text-xs text-gray-500 mt-1"><strong>Horário:</strong> ${loc.horario}</p>` : ''}
+              <div class="mt-2 flex items-center gap-2 cursor-pointer rating-clickable" data-point-id="${loc.id}" data-point-name="${(loc.name || '').replace(/"/g, '&quot;')}">
+                ${starsHtml}
+                <span class="text-xs ${totalReviews > 0 ? 'text-gray-500' : 'text-gray-400'}">${totalReviews > 0 ? `(${totalReviews})` : 'Sem avaliações'}</span>
+              </div>
             </div>
             <span style="display:inline-block;width:14px;height:14px;border-radius:50%;
                          background:${color};border:1px solid ${color}88"></span>
@@ -305,6 +354,18 @@ document.addEventListener('DOMContentLoaded', () => {
             ${loc.materials.length > 4 ? '<span class="text-xs text-gray-500">…</span>' : ''}
           </div>
         `;
+        
+        // Adicionar evento de clique nas estrelas
+        const ratingDiv = item.querySelector('.rating-clickable');
+        if (ratingDiv && window.openReviewsModal) {
+          ratingDiv.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const pointId = parseInt(ratingDiv.dataset.pointId);
+            const pointName = ratingDiv.dataset.pointName || loc.name || 'Ponto de Coleta';
+            window.openReviewsModal(pointId, pointName);
+          });
+        }
+        
         item.addEventListener('click', () => {
           map.flyTo([loc.lat, loc.lng], 15);
           marker.openPopup();

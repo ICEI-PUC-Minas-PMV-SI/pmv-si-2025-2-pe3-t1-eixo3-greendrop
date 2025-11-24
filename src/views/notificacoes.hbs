@@ -10,7 +10,7 @@
     <!-- Links desktop -->
     <ul class="hidden md:flex items-center space-x-8">
       <li><a href="/" class="font-medium text-gray-600 hover:brand-green transition-colors">Início</a></li>
-      <li><a href="/#sobre-nos"" class="font-medium text-gray-600 hover:brand-green transition-colors">Sobre Nós</a></li>
+      <li><a href="/#sobre-nos" class="font-medium text-gray-600 hover:brand-green transition-colors">Sobre Nós</a></li>
       <li><a href="/#servicos" class="font-medium text-gray-600 hover:brand-green transition-colors">Serviços</a></li>
       <li><a href="/#mapa" class="font-medium text-gray-600 hover:brand-green transition-colors">Mapa</a></li>
       <li><a href="/ods" class="font-medium text-gray-600 hover:brand-green transition-colors">ODS ONU</a></li>
@@ -18,7 +18,8 @@
       <li>
         <a href="/notificacoes" class="relative group" aria-label="Notificações">
           <i data-feather="bell" class="h-6 w-6 text-gray-600 group-hover:text-green-800 transition"></i>
-          <span class="absolute bottom-0 right-0 flex items-center justify-center h-5 w-5 bg-red-600 text-white text-xs font-bold rounded-full shadow border border-white select-none translate-x-1/2 translate-y-1/2">3</span>
+          <span
+            class="absolute bottom-0 right-0 flex items-center justify-center h-5 w-5 bg-red-600 text-white text-xs font-bold rounded-full shadow border border-white select-none translate-x-1/2 translate-y-1/2">3</span>
         </a>
       </li>
     </ul>
@@ -27,7 +28,7 @@
     <div class="hidden md:flex items-center space-x-4">
       <a href="/login" class="font-medium text-gray-600 hover:brand-green transition-colors">Entrar</a>
       <a href="/register"
-         class="py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-transform duration-300 hover:scale-105">
+        class="py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-transform duration-300 hover:scale-105">
         Cadastre-se
       </a>
     </div>
@@ -37,13 +38,15 @@
       <i data-feather="menu" class="h-6 w-6 text-gray-600"></i>
     </button>
   </nav>
+</header>
 
-<main class="container mx-auto px-6 pt-28 pb-12">
+<main class="bg-brand-off-white border border-t shadow-md container px-6 pt-12 pb-12 mt-12">
   <h1 class="text-3xl md:text-4xl font-bold brand-dark-green mb-6 flex items-center gap-3">
     <i data-feather="bell" class="h-8 w-8 text-green-600"></i>
     Novos Pontos de Coleta
   </h1>
-  <p class="text-gray-700 mb-6">Confira os estabelecimentos recém-cadastrados e o que você pode descartar em cada um.</p>
+  <p class="text-gray-700 mb-6">Confira os estabelecimentos recém-cadastrados e o que você pode descartar em cada um.
+  </p>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {{#each pontos}}
@@ -52,7 +55,8 @@
       <p class="text-gray-600 text-sm mb-2">{{this.address}}</p>
       <div class="flex flex-wrap gap-2">
         {{#each this.materials}}
-        <span class="px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-xs font-medium">{{this}}</span>
+        <span
+          class="px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-xs font-medium">{{this}}</span>
         {{/each}}
       </div>
     </div>
@@ -60,7 +64,8 @@
   </div>
 
   <div class="flex justify-center mt-10">
-    <a href="/#mapa" class="py-3 px-8 rounded-lg font-semibold text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
+    <a href="/#mapa"
+      class="py-3 px-8 rounded-lg font-semibold text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
       Ver Todos os Pontos de Coleta
     </a>
   </div>
@@ -68,40 +73,40 @@
 
 
 <!-- Footer -->
-<footer id="contato" class="bg-gray-800 text-gray-600 bg-white border border-t shadow-md">
-    <div class="container mx-auto px-6 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <!-- About -->
-            <div class="col-span-1 md:col-span-2">
-                <h4 class="text-xl font-bold mb-4">GreenDrop</h4>
-                <p class="text-gray-400">Promovendo a sustentabilidade através da tecnologia, conectando pessoas a
-                    soluções de reciclagem eficientes.</p>
-            </div>
-            <!-- Links -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
-                <ul class="space-y-2">
-                    <li><a href="#sobre-nos" class="text-gray-400 hover:text-green-800 transition-colors">Sobre</a>
-                    </li>
-                    <li><a href="#servicos" class="text-gray-400 hover:text-green-800 transition-colors">Serviços</a>
-                    </li>
-                    <li><a href="#" class="text-gray-400 hover:text-green-800 transition-colors">FAQ</a></li>
-                    <li><a href="#contato" class="text-gray-400 hover:text-green-800 transition-colors">Contato</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- Social -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4">Siga-nos</h4>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="facebook"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="twitter"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="instagram"></i></a>
-                </div>
-            </div>
+<footer id="contato" class="text-gray-600 bg-white fixed bottom-0 left-0 right-0 border border-t shadow-md">
+  <div class="container mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- About -->
+      <div class="col-span-1 md:col-span-2">
+        <h4 class="text-xl font-bold mb-4">GreenDrop</h4>
+        <p class="text-gray-400">Promovendo a sustentabilidade através da tecnologia, conectando pessoas a
+          soluções de reciclagem eficientes.</p>
+      </div>
+      <!-- Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+        <ul class="space-y-2">
+          <li><a href="#sobre-nos" class="text-gray-400 hover:text-green-800 transition-colors">Sobre</a>
+          </li>
+          <li><a href="#servicos" class="text-gray-400 hover:text-green-800 transition-colors">Serviços</a>
+          </li>
+          <li><a href="#" class="text-gray-400 hover:text-green-800 transition-colors">FAQ</a></li>
+          <li><a href="#contato" class="text-gray-400 hover:text-green-800 transition-colors">Contato</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Social -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Siga-nos</h4>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="instagram"></i></a>
         </div>
-        <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
-            &copy; 2025 GreenDrop. Todos os direitos reservados.
-        </div>
+      </div>
     </div>
+    <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+      &copy; 2025 GreenDrop. Todos os direitos reservados.
+    </div>
+  </div>
 </footer>
