@@ -46,14 +46,14 @@ const premios = [
     },
     {
         id: 5,
-        nome: 'Plano de Gestão de Resíduos',
+        nome: 'Plano de Gestão de Resaproximadamenteíduos',
         descricao: 'Desenvolvimento de plano personalizado de gestão de resíduos',
         pontosNecessarios: 15000,
         icone: 'trending-up'
     },
     {
         id: 6,
-        nome: '1 crédito de carbono (aproximadamente US 15.00)',
+        nome: '1 crédito de carbono (≈  US 15.00)',
         descricao: 'Selo de reconhecimento para uso em marketing e comunicação',
         pontosNecessarios: 9000,
         icone: 'check-circle'
