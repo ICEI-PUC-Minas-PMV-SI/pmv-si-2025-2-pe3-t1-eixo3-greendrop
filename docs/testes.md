@@ -9,8 +9,12 @@ Ao final, os relatórios gerados por cada membro deverão ser disponibilizados a
 Material de apoio para esta etapa:
 
 
-[Avaliação_Heurística.xlsx](https://github.com/user-attachments/files/16501461/Avaliacao_Heuristica.xlsx) 
+[Avaliacao_Heuristica - GreenDrop.xlsx](https://github.com/user-attachments/files/23839721/Avaliacao_Heuristica.-.GreenDrop.xlsx)
 
-[Relatório_de_Testes_com_Usuário.docx](https://github.com/user-attachments/files/16501456/Relatorio_de_Testes_com_Usuario.docx)
 
-[Relatório_de_Testes_com_Usuário_exemplo.docx](https://github.com/user-attachments/files/16501459/Relatorio_de_Testes_com_Usuario_exemplo.docx)
+[Relatório Yuri.docx](https://github.com/user-attachments/files/23839789/Relatorio.Yuri.docx)
+[Relatório Matheus.docx](https://github.com/user-attachments/files/23839777/Relatorio.Matheus.docx)
+[Relatório Marcos.docx](https://github.com/user-attachments/files/23839774/Relatorio.Marcos.docx)
+[Relatório Lucas Oue.docx](https://github.com/user-attachments/files/23839772/Relatorio.Lucas.Oue.docx)
+[Relatório Lucas Gontijo.docx](https://github.com/user-attachments/files/23839770/Relatorio.Lucas.Gontijo.docx)
+[Relatório Joseph.docx](https://github.com/user-attachments/files/23839769/Relatorio.Joseph.docx)
