@@ -13,13 +13,14 @@
       <li><a href="/#sobre-nos" class="font-medium text-gray-600 hover:brand-green transition-colors">Sobre Nós</a></li>
       <li><a href="/#servicos" class="font-medium text-gray-600 hover:brand-green transition-colors">Serviços</a></li>
       <li><a href="/#mapa" class="font-medium text-gray-600 hover:brand-green transition-colors">Mapa</a></li>
-      <li><a href="/ods" class="font-medium text-gray-600 hover:brand-green transition-colors">ODS ONU</a></li>
+      <li><a href="/ods" class="font-medium text-gray-600 hover:brand-green transition-colors">Metas da ONU</a></li>
       <li><a href="/ranking" class="font-medium text-green-800 hover:brand-green transition-colors">Ranking</a></li>
       <li><a href="/#contato" class="font-medium text-gray-600 hover:brand-green transition-colors">Contato</a></li>
       <li>
         <a href="/notificacoes" class="relative group" aria-label="Notificações">
           <i data-feather="bell" class="h-6 w-6 text-gray-600 group-hover:text-green-800 transition"></i>
-          <span class="absolute bottom-0 right-0 flex items-center justify-center h-5 w-5 bg-red-600 text-white text-xs font-bold rounded-full shadow border border-white select-none translate-x-1/2 translate-y-1/2">3</span>
+          <span
+            class="absolute bottom-0 right-0 flex items-center justify-center h-5 w-5 bg-red-600 text-white text-xs font-bold rounded-full shadow border border-white select-none translate-x-1/2 translate-y-1/2">3</span>
         </a>
       </li>
     </ul>
@@ -28,7 +29,7 @@
     <div class="hidden md:flex items-center space-x-4">
       <a href="/login" class="font-medium text-gray-600 hover:brand-green transition-colors">Entrar</a>
       <a href="/register"
-         class="py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-transform duration-300 hover:scale-105">
+        class="py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-transform duration-300 hover:scale-105">
         Cadastre-se
       </a>
     </div>
@@ -42,26 +43,46 @@
   <!-- Drawer mobile -->
   <div class="hidden md:hidden border-t border-gray-100" id="mobile-menu">
     <ul class="px-4 py-3 space-y-1">
-      <li><a href="/" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Início</a></li>
-      <li><a href="/#sobre-nos" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Sobre Nós</a></li>
-      <li><a href="/#servicos" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Serviços</a></li>
-      <li><a href="/#mapa" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Mapa</a></li>
-      <li><a href="/#contato" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Contato</a></li>
-      <li><a href="/ods" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">ODS ONU</a></li>
+      <li><a href="/"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Início</a>
+      </li>
+      <li><a href="/#sobre-nos"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Sobre
+          Nós</a></li>
+      <li><a href="/#servicos"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Serviços</a>
+      </li>
+      <li><a href="/#mapa"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Mapa</a>
+      </li>
+      <li><a href="/#contato"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Contato</a>
+      </li>
+      <li><a href="/ods"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Metas da
+          ONU</a></li>
       <li><a href="/ranking" class="block px-3 py-2 rounded-md font-medium text-white bg-brand-green">Ranking</a></li>
-      <li><a href="/notificacoes" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Notificações</a></li>
-      <li><a href="/login" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Entrar</a></li>
-      <li><a href="/register" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Cadastre-se</a></li>
+      <li><a href="/notificacoes"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Notificações</a>
+      </li>
+      <li><a href="/login"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Entrar</a>
+      </li>
+      <li><a href="/register"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Cadastre-se</a>
+      </li>
     </ul>
   </div>
 </header>
 
 <!-- Aviso de Recompensa Resgatada -->
 <div id="reward-alert" class="fixed top-24 left-1/2 transform -translate-x-1/2 z-[2001] hidden">
-  <div class="bg-green-500 text-white px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3 min-w-[320px] alert-animation">
+  <div
+    class="bg-green-500 text-white px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3 min-w-[320px] alert-animation">
     <div class="flex-shrink-0">
       <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
       </svg>
     </div>
     <div>
@@ -73,10 +94,12 @@
 
 <!-- Aviso de Recompensa Resgatada -->
 <div id="reward-alert" class="fixed top-24 left-1/2 transform -translate-x-1/2 z-[2001] hidden">
-  <div class="bg-green-500 text-white px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3 min-w-[320px] alert-animation">
+  <div
+    class="bg-green-500 text-white px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3 min-w-[320px] alert-animation">
     <div class="flex-shrink-0">
       <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
       </svg>
     </div>
     <div>
@@ -86,7 +109,7 @@
   </div>
 </div>
 
-<main >
+<main>
   <!-- Hero Section -->
   <section class="bg-brand-off-white  py-12">
     <div class="container mx-auto px-6 text-center">
@@ -120,13 +143,14 @@
   </section>
 
   <!-- Botão Flutuante para Recompensas -->
-  <a href="#" id="floating-rewards-btn" class="fixed top-1/2 right-0 transform -translate-y-1/2 bg-brand-green text-white px-4 py-3 rounded-l-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center gap-2 z-50">
+  <a href="#" id="floating-rewards-btn"
+    class="fixed top-1/2 right-0 transform -translate-y-1/2 bg-brand-green text-white px-4 py-3 rounded-l-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center gap-2 z-50">
     <i data-feather="gift" class="h-5 w-5"></i> Recompensas
   </a>
 
   <!-- Content Sections -->
   <div class="container mx-auto px-6 py-12">
-    
+
     <!-- Diretrizes Tab -->
     <div id="diretrizes-content" class="tab-content">
       <div class="max-w-5xl mx-auto">
@@ -135,7 +159,7 @@
           <p class="text-gray-600 mb-8">
             Confira a pontuação de cada material reciclável. Quanto mais você recicla, mais pontos acumula!
           </p>
-          
+
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             {{#each diretrizes}}
             <div class="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
@@ -170,7 +194,8 @@
               <p class="text-gray-600">Top 25 empresas que mais reciclaram</p>
             </div>
             <div class="flex gap-2">
-              <select id="periodo-filter" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-brand-green">
+              <select id="periodo-filter"
+                class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-brand-green">
                 <option value="mes">Este Mês</option>
                 <option value="ano">Este Ano</option>
               </select>
@@ -193,13 +218,13 @@
                   <td class="px-6 py-4">
                     <div class="flex items-center gap-3">
                       {{#if (eq @index 0)}}
-                        <span class="text-2xl">🥇</span>
+                      <span class="text-2xl">🥇</span>
                       {{else if (eq @index 1)}}
-                        <span class="text-2xl">🥈</span>
+                      <span class="text-2xl">🥈</span>
                       {{else if (eq @index 2)}}
-                        <span class="text-2xl">🥉</span>
+                      <span class="text-2xl">🥉</span>
                       {{else}}
-                        <span class="text-lg font-semibold text-gray-600">{{@index}}</span>
+                      <span class="text-lg font-semibold text-gray-600">{{@index}}</span>
                       {{/if}}
                     </div>
                   </td>
@@ -207,7 +232,8 @@
                     <span class="font-medium text-gray-800">{{this.empresa}}</span>
                   </td>
                   <td class="px-6 py-4 text-center">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-green-100 text-green-800">
+                    <span
+                      class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-green-100 text-green-800">
                       {{this.pontos}} pts
                     </span>
                   </td>
@@ -234,8 +260,10 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {{#each premios}}
-            <div class="border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
-              <div class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-green text-white mx-auto mb-4">
+            <div
+              class="border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
+              <div
+                class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-green text-white mx-auto mb-4">
                 <i data-feather="{{this.icone}}" class="h-8 w-8"></i>
               </div>
               <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">{{this.nome}}</h3>
@@ -245,7 +273,8 @@
                   <span class="text-sm text-gray-600">Pontos necessários:</span>
                   <span class="text-lg font-bold text-green-600">{{this.pontosNecessarios}}</span>
                 </div>
-                <button class="w-full py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">
+                <button
+                  class="w-full py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105">
                   Resgatar Prêmio
                 </button>
               </div>
@@ -261,68 +290,68 @@
 
 <!-- Footer -->
 <footer id="contato" class="text-gray-600 bg-white border border-t shadow-md">
-    <div class="container mx-auto px-6 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <!-- About -->
-            <div class="col-span-1 md:col-span-2">
-                <h4 class="text-xl font-bold mb-4">GreenDrop</h4>
-                <p class="text-gray-400">Promovendo a sustentabilidade através da tecnologia, conectando pessoas a
-                    soluções de reciclagem eficientes.</p>
-            </div>
-            <!-- Links -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
-                <ul class="space-y-2">
-                    <li><a href="/#sobre-nos" class="text-gray-400 hover:text-green-800 transition-colors">Sobre</a>
-                    </li>
-                    <li><a href="/#servicos" class="text-gray-400 hover:text-green-800 transition-colors">Serviços</a>
-                    </li>
-                    <li><a href="#" class="text-gray-400 hover:text-green-800 transition-colors">FAQ</a></li>
-                    <li><a href="#contato" class="text-gray-400 hover:text-green-800 transition-colors">Contato</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- Social -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4">Siga-nos</h4>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="facebook"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="twitter"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="instagram"></i></a>
-                </div>
-            </div>
+  <div class="container mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- About -->
+      <div class="col-span-1 md:col-span-2">
+        <h4 class="text-xl font-bold mb-4">GreenDrop</h4>
+        <p class="text-gray-400">Promovendo a sustentabilidade através da tecnologia, conectando pessoas a
+          soluções de reciclagem eficientes.</p>
+      </div>
+      <!-- Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+        <ul class="space-y-2">
+          <li><a href="/#sobre-nos" class="text-gray-400 hover:text-green-800 transition-colors">Sobre</a>
+          </li>
+          <li><a href="/#servicos" class="text-gray-400 hover:text-green-800 transition-colors">Serviços</a>
+          </li>
+          <li><a href="#" class="text-gray-400 hover:text-green-800 transition-colors">FAQ</a></li>
+          <li><a href="#contato" class="text-gray-400 hover:text-green-800 transition-colors">Contato</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Social -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Siga-nos</h4>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="instagram"></i></a>
         </div>
-        <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
-            &copy; 2025 GreenDrop. Todos os direitos reservados.
-        </div>
+      </div>
     </div>
+    <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+      &copy; 2025 GreenDrop. Todos os direitos reservados.
+    </div>
+  </div>
 </footer>
 
 <style>
   .brand-dark-green {
     color: #065f46;
   }
-  
+
   .brand-green {
     background-color: #10b981;
   }
-  
+
   .brand-green-dark {
     background-color: #059669;
   }
-  
+
   .brand-off-white {
     background-color: #f9fafb;
   }
-  
+
   .tab-button {
     transition: all 0.3s ease;
   }
-  
+
   .tab-button:hover {
     background-color: #d1fae5;
   }
-  
+
   .tab-button.active {
     background-color: #10b981;
     color: white;
@@ -334,27 +363,29 @@
       transform: translate(-50%, -100%);
       opacity: 0;
     }
+
     to {
       transform: translate(-50%, 0);
       opacity: 1;
     }
   }
-  
+
   @keyframes slideUp {
     from {
       transform: translate(-50%, 0);
       opacity: 1;
     }
+
     to {
       transform: translate(-50%, -100%);
       opacity: 0;
     }
   }
-  
+
   .alert-animation.show {
     animation: slideDown 0.4s ease-out;
   }
-  
+
   .alert-animation.hide {
     animation: slideUp 0.4s ease-in;
   }
@@ -383,22 +414,22 @@
   document.querySelectorAll('.tab-button').forEach(button => {
     button.addEventListener('click', () => {
       const tabName = button.getAttribute('data-tab');
-      
+
       // Remove classe
       document.querySelectorAll('.tab-button').forEach(btn => {
         btn.classList.remove('active', 'bg-brand-green', 'text-white');
         btn.classList.add('text-gray-600');
       });
-      
+
       // Adiciona classe
       button.classList.add('active', 'bg-brand-green', 'text-white');
       button.classList.remove('text-gray-600');
-      
+
       // Hide 
       document.querySelectorAll('.tab-content').forEach(content => {
         content.classList.add('hidden');
       });
-      
+
       // Show selected content
       document.getElementById(`${tabName}-content`).classList.remove('hidden');
     });
@@ -406,7 +437,7 @@
 
   // Botão Flutuante
   const floatingBtn = document.getElementById('floating-rewards-btn');
-  
+
   floatingBtn.addEventListener('click', (e) => {
     e.preventDefault();
     document.querySelector('[data-tab="recompensas"]').click();
@@ -417,7 +448,7 @@
   document.querySelectorAll('.tab-button').forEach(button => {
     button.addEventListener('click', () => {
       const tabName = button.getAttribute('data-tab');
-      
+
       if (tabName === 'recompensas') {
         floatingBtn.classList.add('hidden');
       } else {
@@ -436,36 +467,36 @@
   function createConfetti() {
     const colors = ['#10b981', '#34d399', '#6ee7b7', '#a7f3d0', '#fbbf24', '#f59e0b', '#ef4444', '#ec4899', '#8b5cf6', '#3b82f6'];
     const confettiCount = 500;
-    
+
     for (let i = 0; i < confettiCount; i++) {
       const confetti = document.createElement('div');
       confetti.classList.add('confetti');
-      
+
       // Posição inicial aleatória no topo da tela
       const startPositionX = Math.random() * window.innerWidth;
       confetti.style.left = startPositionX + 'px';
       confetti.style.top = '-10px';
-      
+
       // Cor aleatória
       confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-      
+
       // Tamanho aleatório
       const size = Math.random() * 8 + 5;
       confetti.style.width = size + 'px';
       confetti.style.height = size + 'px';
-      
+
       // Delay aleatório
       confetti.style.animationDelay = Math.random() * 0.5 + 's';
-      
+
       // Duração aleatória
       confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-      
+
       // Movimento lateral aleatório
       const drift = (Math.random() - 0.5) * 200;
       confetti.style.setProperty('--drift', drift + 'px');
-      
+
       document.body.appendChild(confetti);
-      
+
       // Remove o confetti após a animação
       setTimeout(() => {
         confetti.remove();
@@ -476,16 +507,16 @@
   // Função para mostrar o aviso de recompensa resgatada
   function showRewardAlert() {
     const alert = document.getElementById('reward-alert');
-    
+
     // Remove classes anteriores
     alert.classList.remove('hidden', 'hide');
     alert.classList.add('show');
-    
+
     // Esconde o alerta após 3 segundos
     setTimeout(() => {
       alert.classList.remove('show');
       alert.classList.add('hide');
-      
+
       setTimeout(() => {
         alert.classList.add('hidden');
       }, 400);
@@ -496,21 +527,21 @@
   document.addEventListener('click', (e) => {
     if (e.target.closest('button') && e.target.textContent.includes('Resgatar Prêmio')) {
       e.preventDefault();
-      
+
       const button = e.target.closest('button');
       const originalText = button.textContent;
-      
+
       // Feedback visual no botão
       button.textContent = '✓ Resgatado!';
       button.classList.add('opacity-75', 'cursor-not-allowed');
       button.disabled = true;
-      
+
       // Cria o efeito de confetti
       createConfetti();
-      
+
       // Mostra o alerta
       showRewardAlert();
-      
+
       // Restaura o botão após 4 segundos
       setTimeout(() => {
         button.textContent = originalText;

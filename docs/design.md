@@ -227,7 +227,7 @@ A tela de mapa tem como objetivo permitir que o usuário localize pontos de cole
 #### **3. Recomendações Ergonômicas**
 **Visibilidade:** os marcadores no mapa são claramente visíveis, com tamanhos adequados e cores contrastantes que facilitam a identificação rápida dos pontos de coleta.
 
-**Consistência:** o menu superior mantém o mesmo padrão de navegação da tela inicial, com links claros para "Início", "Sobre Nós", "Serviços", "Mapa", "ODS ONU", "Ranking" e "Contato".
+**Consistência:** o menu superior mantém o mesmo padrão de navegação da tela inicial, com links claros para "Início", "Sobre Nós", "Serviços", "Mapa", "Metas da ONU", "Ranking" e "Contato".
 
 **Feedback:** ao selecionar um filtro de material, os marcadores correspondentes são destacados no mapa em tempo real. O hover sobre os marcadores exibe informações básicas do local.
 
@@ -259,10 +259,10 @@ A tela de mapa tem como objetivo permitir que o usuário localize pontos de cole
 **Fechar o ciclo de diálogo:** cada ação (busca, filtro, seleção de marcador) leva a um resultado claro e imediato: atualização do mapa, exibição de detalhes do local ou restrição de visualização conforme o filtro aplicado.
 <img width="1711" height="945" alt="image" src="https://github.com/user-attachments/assets/c51afa69-0bb5-4ddb-bd27-8c28d669a7c6" />
 
-### **5 - Protótipo Tela ODS ONU – GreenDrop**
+### **5 - Protótipo Tela Metas da ONU – GreenDrop**
 
 #### **1. Objetivo da Tela**
-A tela ODS ONU tem como objetivo apresentar a conexão da plataforma **GreenDrop** com os **Objetivos de Desenvolvimento Sustentável (ODS)** da Agenda 2030 das Nações Unidas. Ela explica como a plataforma contribui diretamente para cinco ODS específicos (11, 12, 13, 14 e 15), detalhando as ações práticas que os usuários podem realizar através do sistema. A seção "Como usar a GreenDrop para contribuir" orienta o usuário sobre os passos necessários para participar ativamente da sustentabilidade urbana, educação ambiental e descarte consciente de resíduos.
+A tela Metas da ONU tem como objetivo apresentar a conexão da plataforma **GreenDrop** com os **Objetivos de Desenvolvimento Sustentável (ODS)** da Agenda 2030 das Nações Unidas. Ela explica como a plataforma contribui diretamente para cinco ODS específicos (11, 12, 13, 14 e 15), detalhando as ações práticas que os usuários podem realizar através do sistema. A seção "Como usar a GreenDrop para contribuir" orienta o usuário sobre os passos necessários para participar ativamente da sustentabilidade urbana, educação ambiental e descarte consciente de resíduos.
 
 #### **2. Princípios Gestálticos**
 **Proximidade:** cada ODS está agrupado em um card individual contendo ícone, título e lista de ações relacionadas, criando unidades visuais distintas e organizadas.
@@ -280,7 +280,7 @@ A tela ODS ONU tem como objetivo apresentar a conexão da plataforma **GreenDrop
 #### **3. Recomendações Ergonômicas**
 **Visibilidade:** ícones oficiais dos ODS com cores institucionais da ONU facilitam o reconhecimento imediato de cada objetivo, aproveitando a familiaridade visual dos usuários com a identidade da Agenda 2030.
 
-**Consistência:** manutenção do cabeçalho padrão com menu de navegação ("Início", "Sobre Nós", "Serviços", "Mapa", "ODS ONU", "Ranking", "Contato"), garantindo coerência com as demais telas da plataforma.
+**Consistência:** manutenção do cabeçalho padrão com menu de navegação ("Início", "Sobre Nós", "Serviços", "Mapa", "Metas da ONU", "Ranking", "Contato"), garantindo coerência com as demais telas da plataforma.
 
 **Feedback:** link sublinhado para "sdgs.un.org/goals" indica interatividade, e o hover sobre os cards pode destacar visualmente cada ODS selecionado.
 
@@ -562,13 +562,13 @@ Esta seção apresenta os testes de usabilidade realizados com usuários reais u
 
 **Tarefas Executadas:**
 1. Realizar cadastro na plataforma
-2. Explorar a seção ODS ONU
+2. Explorar a seção Metas da ONU
 3. Verificar a conexão da plataforma com os objetivos de sustentabilidade
 4. Compartilhar informações sobre um ponto de coleta
 
 **Observações Durante o Teste:**
 - **Cadastro:** João clicou em "Cadastre-se" e preencheu o formulário rapidamente. Comentou: "Gostei que é simples e não pede informações desnecessárias". Tempo para completar cadastro: ~1 minuto e 30 segundos.
-- **Tela ODS ONU:** Navegou até a seção através do menu superior. Leu atentamente o texto introdutório e comentou: "Legal ver que vocês realmente se importam com a Agenda 2030". Explorou cada card dos ODS. Tempo de leitura: ~3 minutos.
+- **Tela Metas da ONU:** Navegou até a seção através do menu superior. Leu atentamente o texto introdutório e comentou: "Legal ver que vocês realmente se importam com a Agenda 2030". Explorou cada card dos ODS. Tempo de leitura: ~3 minutos.
 - **Conexão com ODS:** Leu as contribuições específicas de cada ODS e comentou: "Está muito bem explicado como a plataforma ajuda cada objetivo. Vou usar isso no meu TCC". Tirou print da tela.
 - **Compartilhamento:** Tentou copiar o link do ponto de coleta mas não encontrou botão específico. Comentou: "Seria legal ter um botão de compartilhar direto para WhatsApp ou copiar link".
 
@@ -673,7 +673,7 @@ Esta seção apresenta os testes de usabilidade realizados com usuários reais u
 
 **Observações Durante o Teste:**
 - **Login:** Grazielle fez login rapidamente usando credenciais institucionais da ONG. Comentou: "Simples e direto". Tempo: ~15 segundos.
-- **ODS ONU:** Navegou diretamente para a seção "ODS ONU" através do menu superior. Leu atentamente o texto introdutório sobre apoio à Agenda 2030. Comentou: "Adorei que vocês colocaram o link oficial da ONU. Isso mostra seriedade". Tempo de leitura inicial: ~1 minuto.
+- **Metas da ONU:** Navegou diretamente para a seção "Metas da ONU" através do menu superior. Leu atentamente o texto introdutório sobre apoio à Agenda 2030. Comentou: "Adorei que vocês colocaram o link oficial da ONU. Isso mostra seriedade". Tempo de leitura inicial: ~1 minuto.
 - **Análise dos ODS:** Leu detalhadamente cada um dos cinco ODS apresentados (11, 12, 13, 14 e 15). Comentou: "Perfeito! A ONG trabalha especialmente com o ODS 11 e 12. Vocês estão totalmente alinhados com as diretrizes que seguimos". Tirou screenshots dos cards. Tempo: ~4 minutos.
 - **Avaliação de Parceria:** Explorou a seção "Como usar a GreenDrop para contribuir" e comentou: "A plataforma pode ser muito útil para os projetos da ONG. Vou apresentar na próxima reunião de diretoria". Tentou encontrar seção de "Parcerias Institucionais" mas não localizou. Tempo: ~2 minutos.
 - **Diretrizes e Ranking:** Verificou como funciona o sistema de pontuação e recompensas para entender se poderia cadastrar a ONG. Comentou: "Seria interessante ter recompensas específicas para ONGs, não apenas empresas". Tempo: ~3 minutos.
