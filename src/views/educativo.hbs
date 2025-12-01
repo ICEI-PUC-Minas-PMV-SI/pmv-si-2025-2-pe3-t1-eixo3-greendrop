@@ -56,8 +56,7 @@
                     class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Mapa</a>
             </li>
             <li><a href="/ods"
-                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Metas da ONU
-                    ONU</a>
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Metas da ONU</a>
             </li>
             <li><a href="/ranking"
                     class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Ranking de Reciclagem</a>
@@ -111,429 +110,714 @@
                 diferença, passo a passo, em cinco lições essenciais para um futuro mais sustentável.</p>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <button onclick="toggleModal('modal-coleta')"
-                    class="text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-green-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-green-300">
+                <!-- Botões agora usam data-modal em vez de onclick para melhor acessibilidade -->
+                <button data-modal="modal-coleta"
+                    class="modal-trigger text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-green-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-green-300">
                     <div class="flex justify-center mb-4">
-                        <div class="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center"><i
-                                data-feather="map-pin" class="h-8 w-8 text-green-600"></i></div>
+                        <div class="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Coleta Inteligente</h3>
                     <p class="text-gray-600 text-sm text-center">Encontre rapidamente o ponto de coleta ideal para cada
                         material. Visualize opções no mapa em tempo real.</p>
                 </button>
 
-                <button onclick="toggleModal('modal-reciclagem')"
-                    class="text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-blue-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                <button data-modal="modal-reciclagem"
+                    class="modal-trigger text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-blue-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-blue-300">
                     <div class="flex justify-center mb-4">
-                        <div class="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center"><i
-                                data-feather="refresh-cw" class="h-8 w-8 text-blue-600"></i></div>
+                        <div class="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                        </div>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Reciclagem Eficiente</h3>
                     <p class="text-gray-600 text-sm text-center">Direcionamos seus resíduos para destinos adequados, com
                         informações claras sobre o que cada ponto aceita.</p>
                 </button>
 
-                <button onclick="toggleModal('modal-impacto')"
-                    class="text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-purple-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-purple-300">
+                <button data-modal="modal-impacto"
+                    class="modal-trigger text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-purple-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-purple-300">
                     <div class="flex justify-center mb-4">
-                        <div class="h-16 w-16 rounded-full bg-purple-100 flex items-center justify-center"><i
-                                data-feather="bar-chart-2" class="h-8 w-8 text-purple-600"></i></div>
+                        <div class="h-16 w-16 rounded-full bg-purple-100 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Relatório de Impacto</h3>
                     <p class="text-gray-600 text-sm text-center">Acompanhe quanto você já reciclou e veja métricas do
                         seu impacto positivo na sua rotina sustentável.</p>
                 </button>
 
-                <button onclick="toggleModal('modal-especial')"
-                    class="text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-yellow-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-yellow-300">
+                <button data-modal="modal-especial"
+                    class="modal-trigger text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-yellow-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-yellow-300">
                     <div class="flex justify-center mb-4">
-                        <div class="h-16 w-16 rounded-full bg-yellow-100 flex items-center justify-center"><i
-                                data-feather="book-open" class="h-8 w-8 text-yellow-600"></i></div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Descarte Especial</h3>
-                    <p class="text-gray-600 text-sm text-center">Acesse dicas, listas do que pode ou não reciclar e
-                        orientações para descarte especial (eletrônicos, óleo, pilhas).</p>
-                </button>
-
-                <button onclick="toggleModal('modal-rejeito')"
-                    class="text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-brand-slate transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-gray-400">
-                    <div class="flex justify-center mb-4">
-                        <div class="h-16 w-16 rounded-full bg-gray-200 flex items-center justify-center"><i
-                                data-feather="box" class="h-8 w-8 text-brand-slate"></i></div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Resíduos Comuns (Rejeito)</h3>
-                    <p class="text-gray-600 text-sm text-center">Entenda o que são os 'rejeitos', o que não pode ser
-                        reciclado, e qual o destino final deste material.</p>
-                </button>
-
-                <button onclick="toggleModal('modal-medicamentos')"
-                    class="text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-red-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-red-300">
-                    <div class="flex justify-center mb-4">
-                        <div class="h-16 w-16 rounded-full bg-red-100 flex items-center justify-center">
-                            <i data-feather="alert-octagon" class="h-8 w-8 text-red-600"></i>
+                        <div class="h-16 w-16 rounded-full bg-yellow-100 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
                         </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Descarte de Medicamentos</h3>
-                    <p class="text-gray-600 text-sm text-center">Aprenda como separar e onde entregar remédios vencidos
-                        ou sobras, sem poluir solo e água.</p>
+                    <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Descarte Especial</h3>
+                    <p class="text-gray-600 text-sm text-center">Eletrônicos, baterias, óleo de cozinha: saiba onde e
+                        como descartar itens que exigem cuidado especial.</p>
                 </button>
 
+                <button data-modal="modal-rejeito"
+                    class="modal-trigger text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-red-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-red-300">
+                    <div class="flex justify-center mb-4">
+                        <div class="h-16 w-16 rounded-full bg-red-100 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Reciclável vs. Rejeito</h3>
+                    <p class="text-gray-600 text-sm text-center">Entenda a diferença entre lixo reciclável e rejeito.
+                        Saiba o que NÃO pode ser reciclado e por quê.</p>
+                </button>
+
+                <button data-modal="modal-medicamentos"
+                    class="modal-trigger text-left bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-t-pink-500 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-pink-300">
+                    <div class="flex justify-center mb-4">
+                        <div class="h-16 w-16 rounded-full bg-pink-100 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 text-center mb-2">Medicamentos Vencidos</h3>
+                    <p class="text-gray-600 text-sm text-center">Medicamentos no lixo comum contaminam água e solo.
+                        Descubra os locais corretos para descartá-los.</p>
+                </button>
             </div>
         </div>
     </section>
 
-    <footer id="contato" class="text-gray-600 bg-white border border-t shadow-md">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- About -->
-                <div class="col-span-1 md:col-span-2">
-                    <h4 class="text-xl font-bold mb-4">GreenDrop</h4>
-                    <p class="text-gray-400">Promovendo a sustentabilidade através da tecnologia, conectando pessoas a
-                        soluções de reciclagem eficientes.</p>
-                </div>
-                <!-- Links -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#sobre-nos" class="text-gray-400 hover:text-green-800 transition-colors">Sobre</a>
-                        </li>
-                        <li><a href="#servicos"
-                                class="text-gray-400 hover:text-green-800 transition-colors">Serviços</a>
-                        </li>
-                        <li><a href="#" class="text-gray-400 hover:text-green-800 transition-colors">FAQ</a></li>
-                        <li><a href="#contato" class="text-gray-400 hover:text-green-800 transition-colors">Contato</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Social -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Siga-nos</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="facebook"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
-                &copy; 2025 GreenDrop. Todos os direitos reservados.
-            </div>
-        </div>
-    </footer>
+    <!-- Nova seção: Guia Visual de Reciclagem com imagens geradas por IA -->
+    <section id="guia-visual" class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-green-50 to-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4 text-center">Guia Visual de Reciclagem</h2>
+            <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">Veja como separar e descartar cada tipo de material corretamente</p>
 
-    <div id="modal-coleta" class="modal-sheet hidden">
-        <div class="w-full h-full bg-gray-900 bg-opacity-75">
-            <div class="flex items-start justify-center h-full">
-                <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 my-6 p-8 transform transition-all duration-300 scale-95 opacity-0"
-                    id="content-modal-coleta">
-                    <div class="flex justify-between items-start border-b pb-3 mb-4">
-                        <h3 class="text-3xl font-bold text-brand-green flex items-center"><i data-feather="map-pin"
-                                class="mr-3 h-8 w-8"></i> Lição 1: Coleta Inteligente</h3>
-                        <button onclick="toggleModal('modal-coleta')"
-                            class="text-gray-400 hover:text-gray-600 transition duration-150"><i data-feather="x"
-                                class="h-6 w-6"></i></button>
+            <!-- Cores da Reciclagem com imagens geradas por IA -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <div class="h-40 bg-blue-500 flex items-center justify-center p-4">
+                        <img src="/recicle.jpg" alt="Lixeira Azul - Papel" class="h-28 w-28 object-contain rounded-lg" />
                     </div>
-                    <p class="text-xl text-gray-600 mb-6 text-justify">A <strong>Coleta Inteligente</strong> significa
-                        descarte preciso. O erro mais comum é misturar materiais recicláveis com orgânicos ou rejeitos,
-                        o que contamina o lote e o torna impróprio para reciclagem. A solução é usar o GreenDrop para
-                        localizar o Ponto de Entrega Voluntária (PEV) mais próximo, filtrando pelo tipo de material
-                        (plástico, vidro, metal, papel).</p>
-                    <h4 class="text-2xl font-semibold text-brand-green-dark mb-3 flex items-center"><i
-                            data-feather="check-square" class="mr-2 h-6 w-6"></i> Regra de Ouro: Preparação Básica</h4>
-                    <ul class="space-y-3 text-gray-700 list-disc pl-5 mb-8">
-                        <li><strong>Limpeza:</strong> Remova o máximo de resíduo orgânico ou gordura possível. Uma
-                            lavagem rápida (água de reuso, se possível) ou apenas limpar com um papel já faz uma grande
-                            diferença. Isso impede mau cheiro e contaminação.</li>
-                        <li><strong>Secagem:</strong> Materiais secos são essenciais. O papel molhado, por exemplo, não
-                            pode ser reciclado. Deixe os plásticos e vidros secarem ao ar antes de guardar.</li>
-                        <li><strong>Compactação:</strong> Amasse latas de metal e garrafas PET. Isso reduz o volume e
-                            otimiza o transporte e o espaço nas cooperativas. Caixas de papelão devem ser desmontadas e
-                            dobradas.</li>
-                    </ul>
-                    <div class="bg-green-50 p-6 rounded-xl border border-green-200">
-                        <p class="font-semibold text-lg text-green-700">Ação Próxima:</p>
-                        <p class="text-green-600">Em um app real, aqui estaria um mapa interativo que permite a você
-                            filtrar por material e encontrar o ponto exato de coleta!</p>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-blue-600 text-lg">AZUL</h3>
+                        <p class="text-sm text-gray-600">Papel e Papelão</p>
+                        <p class="text-xs text-gray-500 mt-1">Jornais, revistas, caixas</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <div class="h-40 bg-red-500 flex items-center justify-center p-4">
+                        <img src="/recicle.jpg" alt="Lixeira Vermelha - Plástico" class="h-28 w-28 object-contain rounded-lg" />
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-red-600 text-lg">VERMELHO</h3>
+                        <p class="text-sm text-gray-600">Plásticos</p>
+                        <p class="text-xs text-gray-500 mt-1">Garrafas PET, sacolas, potes</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <div class="h-40 bg-green-600 flex items-center justify-center p-4">
+                        <img src="/recicle.jpg" alt="Lixeira Verde - Vidro" class="h-28 w-28 object-contain rounded-lg" />
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-green-600 text-lg">VERDE</h3>
+                        <p class="text-sm text-gray-600">Vidros</p>
+                        <p class="text-xs text-gray-500 mt-1">Garrafas, potes, frascos</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <div class="h-40 bg-yellow-400 flex items-center justify-center p-4">
+                        <img src="/recicle.jpg" alt="Lixeira Amarela - Metal" class="h-28 w-28 object-contain rounded-lg" />
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-yellow-600 text-lg">AMARELO</h3>
+                        <p class="text-sm text-gray-600">Metais</p>
+                        <p class="text-xs text-gray-500 mt-1">Latas, alumínio, ferragens</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 col-span-2 md:col-span-1">
+                    <div class="h-40 bg-amber-700 flex items-center justify-center p-4">
+                        <img src="/recicle.jpg" alt="Lixeira Marrom - Orgânicos" class="h-28 w-28 object-contain rounded-lg" />
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-amber-700 text-lg">MARROM</h3>
+                        <p class="text-sm text-gray-600">Orgânicos</p>
+                        <p class="text-xs text-gray-500 mt-1">Restos de comida, cascas</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div id="modal-reciclagem" class="modal-sheet hidden">
-        <div class="w-full h-full bg-gray-900 bg-opacity-75">
-            <div class="flex items-start justify-center h-full">
-                <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 my-6 p-8 transform transition-all duration-300 scale-95 opacity-0"
-                    id="content-modal-reciclagem">
-                    <div class="flex justify-between items-start border-b pb-3 mb-4">
-                        <h3 class="text-3xl font-bold text-brand-blue flex items-center"><i data-feather="refresh-cw"
-                                class="mr-3 h-8 w-8"></i> Lição 2: Reciclagem Eficiente</h3>
-                        <button onclick="toggleModal('modal-reciclagem')"
-                            class="text-gray-400 hover:text-gray-600 transition duration-150"><i data-feather="x"
-                                class="h-6 w-6"></i></button>
-                    </div>
-                    <p class="text-xl text-gray-600 mb-6 text-justify">A <strong>Reciclagem Eficiente</strong>
-                        transforma seu lixo em recurso, economizando recursos naturais e energia (reciclar alumínio usa
-                        95% menos energia do que produzi-lo do zero). O segredo é separar corretamente o lixo seco do
-                        rejeito, garantindo que seus materiais cheguem às cooperativas em condições ideais de
-                        processamento.</p>
-                    <h4 class="text-2xl font-semibold text-brand-blue mb-4 flex items-center"><i data-feather="tool"
-                            class="mr-2"></i> Preparação Detalhada por Material</h4>
-                    <div class="grid md:grid-cols-2 gap-6 mb-8">
-                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                            <p class="font-bold text-lg text-brand-blue">Plásticos</p>
-                            <ul class="text-sm text-gray-700 list-disc pl-5 mt-1">
-                                <li><strong>Recicle:</strong> Garrafas PET, potes, embalagens de limpeza (limpos).</li>
-                                <li><strong>Prepare:</strong> Lave rapidamente. Retire rótulos quando possível. Tampe as
-                                    garrafas.</li>
-                            </ul>
+            <!-- Guia de Materiais Detalhado com imagens IA -->
+            <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Como Descartar Cada Material</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Plásticos -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-2/5 h-48 md:h-auto bg-red-50 flex items-center justify-center p-4">
+                            <img src="/plastico.png" alt="Como reciclar plásticos - pessoa lavando garrafas" class="w-full h-full object-cover rounded-lg" />
                         </div>
-                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                            <p class="font-bold text-lg text-brand-blue">Metais</p>
-                            <ul class="text-sm text-gray-700 list-disc pl-5 mt-1">
-                                <li><strong>Recicle:</strong> Latas de alumínio, latas de conserva, ferragens.</li>
-                                <li><strong>Prepare:</strong> Lave as latas de conserva. Amasse latas de bebida. Proteja
-                                    pontiagudos.</li>
-                            </ul>
-                        </div>
-                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                            <p class="font-bold text-lg text-brand-blue">Papéis</p>
-                            <ul class="text-sm text-gray-700 list-disc pl-5 mt-1">
-                                <li><strong>Recicle:</strong> Jornais, revistas, caixas de papelão, envelopes.</li>
-                                <li><strong>Prepare:</strong> Desmonte caixas. Não molhe. Junte em maços ou sacos.</li>
-                            </ul>
-                        </div>
-                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                            <p class="font-bold text-lg text-brand-blue">Vidros</p>
-                            <ul class="text-sm text-gray-700 list-disc pl-5 mt-1">
-                                <li><strong>Recicle:</strong> Garrafas, potes de geleia, frascos de perfume.</li>
-                                <li><strong>Prepare:</strong> Lave, remova tampas. Vidro quebrado deve ser embalado e
-                                    identificado.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
-                        <p class="font-semibold text-lg text-brand-blue">Lembrete Importante:</p>
-                        <p class="text-gray-700">O resíduo deve estar o mais limpo e seco possível para garantir que a
-                            cooperativa consiga utilizá-lo.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-impacto" class="modal-sheet hidden">
-        <div class="w-full h-full bg-gray-900 bg-opacity-75">
-            <div class="flex items-start justify-center h-full">
-                <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 my-6 p-8 transform transition-all duration-300 scale-95 opacity-0"
-                    id="content-modal-impacto">
-                    <div class="flex justify-between items-start border-b pb-3 mb-4">
-                        <h3 class="text-3xl font-bold text-purple-600 flex items-center"><i data-feather="bar-chart-2"
-                                class="mr-3 h-8 w-8"></i> Lição 3: Relatório de Impacto</h3>
-                        <button onclick="toggleModal('modal-impacto')"
-                            class="text-gray-400 hover:text-gray-600 transition duration-150"><i data-feather="x"
-                                class="h-6 w-6"></i></button>
-                    </div>
-                    <p class="text-xl text-gray-600 mb-8 text-justify">O <strong>Relatório de Impacto</strong>
-                        quantifica sua sustentabilidade. Ele mostra exatamente quantos quilogramas você desviou do
-                        aterro sanitário e o que isso representa em termos ambientais: litros de água economizados,
-                        árvores salvas e dióxido de carbono evitado.</p>
-                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-200">
-                        <p class="font-semibold text-lg text-purple-700">Métricas de Conscientização:</p>
-                        <p class="text-purple-600">Cada 1kg de alumínio reciclado salva energia equivalente a manter uma
-                            TV ligada por 3 horas.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-especial" class="modal-sheet hidden">
-        <div class="w-full h-full bg-gray-900 bg-opacity-75">
-            <div class="flex items-start justify-center h-full">
-                <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 my-6 p-8 transform transition-all duration-300 scale-95 opacity-0"
-                    id="content-modal-especial">
-                    <div class="flex justify-between items-start border-b pb-3 mb-4">
-                        <h3 class="text-3xl font-bold text-yellow-600 flex items-center"><i data-feather="book-open"
-                                class="mr-3 h-8 w-8"></i> Lição 4: Descarte Especial</h3>
-                        <button onclick="toggleModal('modal-especial')"
-                            class="text-gray-400 hover:text-gray-600 transition duration-150"><i data-feather="x"
-                                class="h-6 w-6"></i></button>
-                    </div>
-                    <p class="text-xl text-gray-600 mb-6 text-justify">O <strong>Descarte Especial</strong> lida com
-                        resíduos perigosos que nunca devem ir para o lixo comum. Pilhas, baterias, lâmpadas
-                        fluorescentes, medicamentos vencidos e óleo de cozinha contêm químicos que contaminam solo e
-                        água.</p>
-                    <h4 class="text-2xl font-semibold text-yellow-600 mb-4 flex items-center"><i data-feather="shield"
-                            class="mr-2"></i> Manuseio e Preparação de Resíduos Perigosos</h4>
-                    <div
-                        class="grid md:grid-cols-1 gap-4 bg-gray-100 p-6 rounded-xl shadow-md border border-yellow-200">
-                        <div class="border-l-4 border-yellow-500 pl-4">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Lixo Eletrônico (Pilhas, Baterias)</h3>
-                            <p class="text-gray-600 text-sm">Armazene em recipiente plástico fechado. Não desmonte. Leve
-                                a pontos de coleta específicos.</p>
-                        </div>
-                        <div class="border-l-4 border-yellow-500 pl-4">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Óleo de Cozinha Usado</h3>
-                            <p class="text-gray-600 text-sm">Guarde em garrafa PET fechada. Não descarte no ralo.
-                                Entregue a PEVs ou ONGs.</p>
-                        </div>
-                        <div class="border-l-4 border-yellow-500 pl-4">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Medicamentos Vencidos ou Sobras</h3>
-                            <p class="text-gray-600 text-sm">Descarte em farmácias ou postos de saúde. Evite retirar da
-                                cartela. Não jogue no lixo ou vaso sanitário.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-rejeito" class="modal-sheet hidden">
-        <div class="w-full h-full bg-gray-900 bg-opacity-75">
-            <div class="flex items-start justify-center h-full">
-                <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 my-6 p-8 transform transition-all duration-300 scale-95 opacity-0"
-                    id="content-modal-rejeito">
-                    <div class="flex justify-between items-start border-b pb-3 mb-4">
-                        <h3 class="text-3xl font-bold text-brand-slate flex items-center"><i data-feather="box"
-                                class="mr-3 h-8 w-8"></i> Lição 5: Resíduos Comuns (Rejeito)</h3>
-                        <button onclick="toggleModal('modal-rejeito')"
-                            class="text-gray-400 hover:text-gray-600 transition duration-150"><i data-feather="x"
-                                class="h-6 w-6"></i></button>
-                    </div>
-                    <p class="text-xl text-gray-600 mb-6 text-justify">Os <strong>Resíduos Comuns</strong>, ou rejeitos,
-                        são todo lixo que não pode ser reciclado por composição ou contaminação. Devem ser separados do
-                        lixo seco.</p>
-                    <h4 class="text-2xl font-semibold text-brand-slate mb-4 flex items-center"><i
-                            data-feather="alert-triangle" class="mr-2"></i> Como Descartar Rejeitos e Evitar
-                        Contaminação</h4>
-                    <div class="bg-gray-100 p-6 rounded-xl border border-gray-200 shadow-md">
-                        <ul class="space-y-2 text-gray-700 list-disc pl-5">
-                            <li><strong>Lixo de Banheiro/Higiene:</strong> Sempre descarte em sacos fechados.</li>
-                            <li><strong>Lixo Orgânico Pesado:</strong> Mantenha separado do lixo seco.</li>
-                            <li><strong>Materiais Cortantes:</strong> Embale e identifique como frágil.</li>
-                            <li><strong>Embalagens Mistas:</strong> Plástico metalizado e caixas de pizza engorduradas
-                                são rejeitos.</li>
-                        </ul>
-                    </div>
-                    <p class="text-lg text-gray-600 mt-6 text-center">Lembre-se: reduzir o rejeito que você produz é a
-                        maior lição de todas!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-medicamentos" class="modal-sheet hidden">
-        <div class="w-full h-full bg-gray-900 bg-opacity-75">
-            <div class="flex items-start justify-center h-full">
-                <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 my-6 p-8 transform transition-all duration-300 scale-95 opacity-0"
-                    id="content-modal-medicamentos" role="dialog" aria-modal="true"
-                    aria-labelledby="title-modal-medicamentos">
-                    <div class="flex justify-between items-start border-b pb-3 mb-4">
-                        <h3 id="title-modal-medicamentos" class="text-3xl font-bold text-red-600 flex items-center">
-                            <i data-feather="alert-octagon" class="mr-3 h-8 w-8"></i> Lição 6: Descarte de Medicamentos
-                        </h3>
-                        <button onclick="toggleModal('modal-medicamentos')"
-                            class="text-gray-400 hover:text-gray-600 transition duration-150" aria-label="Fechar modal">
-                            <i data-feather="x" class="h-6 w-6"></i>
-                        </button>
-                    </div>
-
-                    <p class="text-xl text-gray-600 mb-6 text-justify">
-                        Medicamentos vencidos, sobras de comprimidos/cápsulas, xaropes, pomadas e frascos contaminados
-                        <strong>não devem ir para o lixo comum nem para o vaso sanitário</strong>. O descarte incorreto
-                        pode
-                        contaminar água e solo. Utilize pontos de coleta em <strong>farmácias, drogarias e unidades de
-                            saúde</strong>
-                        participantes de logística reversa.
-                    </p>
-
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                            <p class="font-bold text-lg text-red-600">Como preparar</p>
-                            <ul class="text-sm text-gray-700 list-disc pl-5 mt-1 space-y-1">
-                                <li><strong>Mantenha</strong> comprimidos na cartela quando possível.</li>
-                                <li><strong>Feche</strong> frascos/xaropes originais e acondicione em saco bem fechado.
+                        <div class="md:w-3/5 p-6">
+                            <h4 class="text-xl font-bold text-red-600 mb-3 flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center mr-2 text-sm">1</span>
+                                Plásticos
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Lave rapidamente para remover resíduos
                                 </li>
-                                <li><strong>Remova dados pessoais</strong> de rótulos/receitas antes do descarte.</li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Amasse garrafas PET para economizar espaço
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Retire tampas se forem de material diferente
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-red-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    Evite: isopor, embalagens metalizadas
+                                </li>
                             </ul>
                         </div>
-                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                            <p class="font-bold text-lg text-red-600">Nunca faça</p>
-                            <ul class="text-sm text-gray-700 list-disc pl-5 mt-1 space-y-1">
-                                <li>Não jogue no vaso sanitário ou pia.</li>
-                                <li>Não misture com lixo orgânico/rejeito.</li>
-                                <li>Não queime nem abra cápsulas/comprimidos.</li>
+                    </div>
+                </div>
+
+                <!-- Papel -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-2/5 h-48 md:h-auto bg-blue-50 flex items-center justify-center p-4">
+                            <img src="/papel.png" alt="Como reciclar papel - pessoa dobrando caixas" class="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div class="md:w-3/5 p-6">
+                            <h4 class="text-xl font-bold text-blue-600 mb-3 flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center mr-2 text-sm">2</span>
+                                Papel e Papelão
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Mantenha seco e limpo
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Desmonte caixas de papelão
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Retire grampos e clipes metálicos
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-red-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    Evite: papel higiênico, guardanapos usados
+                                </li>
                             </ul>
                         </div>
                     </div>
+                </div>
 
-                    <div class="bg-red-50 p-6 rounded-xl border border-red-200 mb-6">
-                        <p class="font-semibold text-lg text-red-700">Onde levar?</p>
-                        <p class="text-gray-700">
-                            Procure <strong>farmácias/drogarias</strong> e <strong>postos de saúde</strong> que recebem
-                            medicamentos.
-                            No GreenDrop, use o filtro “Medicamentos” no mapa para encontrar um ponto autorizado
-                            próximo.
-                        </p>
-                    </div>
-
-                    <!-- NOVO BLOCO: Embalagens e Recipientes de Medicamentos -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-6">
-                        <h4 class="text-2xl font-semibold text-red-600 mb-3 flex items-center">
-                            <i data-feather="package" class="mr-2"></i> Embalagens e Recipientes de Medicamentos
-                        </h4>
-                        <p class="text-gray-700 mb-4 text-justify">
-                            As embalagens também precisam de cuidado: algumas podem ser recicladas, outras não.
-                            Frascos plásticos, cartuchos de papel e bulas geralmente <strong>podem ser encaminhados para
-                                reciclagem</strong>,
-                            mas apenas se <strong>não estiverem contaminados com resíduos do medicamento</strong>.
-                        </p>
-
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="bg-white p-4 rounded-lg border border-green-200">
-                                <p class="font-bold text-green-700 mb-1">Recipientes recicláveis</p>
-                                <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1">
-                                    <li>Caixas de papelão e bulas (papel limpo e seco).</li>
-                                    <li>Frascos plásticos de vitaminas/cosméticos (bem lavados e secos).</li>
-                                    <li>Cartuchos de medicamentos vazios e limpos.</li>
-                                </ul>
-                            </div>
-                            <div class="bg-white p-4 rounded-lg border border-red-200">
-                                <p class="font-bold text-red-700 mb-1">Recipientes que exigem descarte especial</p>
-                                <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1">
-                                    <li>Blisters (cartelas de alumínio + plástico) — em geral não recicláveis no lixo
-                                        comum.</li>
-                                    <li>Frascos com resíduos de medicamento líquido ou pomada.</li>
-                                    <li>Seringas, agulhas, ampolas e qualquer perfurocortante.</li>
-                                </ul>
-                            </div>
+                <!-- Vidro -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-2/5 h-48 md:h-auto bg-green-50 flex items-center justify-center p-4">
+                            <img src="/vidro.png" alt="Como reciclar vidro - pessoa colocando garrafas" class="w-full h-full object-cover rounded-lg" />
                         </div>
-
-                        <p class="text-gray-600 mt-4 text-justify">
-                            O ideal é <strong>devolver embalagens contaminadas junto com os medicamentos</strong> nos
-                            pontos de coleta.
-                            Já as <strong>embalagens limpas</strong> podem ir para a reciclagem convencional,
-                            respeitando a separação do material
-                            (papel, plástico etc.).
-                        </p>
+                        <div class="md:w-3/5 p-6">
+                            <h4 class="text-xl font-bold text-green-600 mb-3 flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center mr-2 text-sm">3</span>
+                                Vidros
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Lave para remover restos de alimentos
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Não precisa remover rótulos
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Embale vidros quebrados com segurança
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-red-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    Evite: espelhos, lâmpadas, cerâmica
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <!-- FIM DO NOVO BLOCO -->
+                </div>
 
-                    <p class="text-sm text-gray-500">
-                        Observação: perfurocortantes domiciliares (agulhas/seringas) exigem acondicionamento rígido e
-                        entrega
-                        conforme orientação da rede de saúde local.
-                    </p>
+                <!-- Metal -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-2/5 h-48 md:h-auto bg-yellow-50 flex items-center justify-center p-4">
+                            <img src="/metais.png" alt="Como reciclar metal - pessoa amassando latas" class="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div class="md:w-3/5 p-6">
+                            <h4 class="text-xl font-bold text-yellow-600 mb-3 flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-yellow-500 text-white flex items-center justify-center mr-2 text-sm">4</span>
+                                Metais
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Lave e seque as latas
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Amasse para reduzir volume
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Separe tampas metálicas de outros materiais
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-red-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    Evite: latas de tinta, aerossóis cheios
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eletrônicos -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-2/5 h-48 md:h-auto bg-purple-50 flex items-center justify-center p-4">
+                            <img src="/eletronico.png" alt="Como descartar eletrônicos - pessoa levando equipamentos" class="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div class="md:w-3/5 p-6">
+                            <h4 class="text-xl font-bold text-purple-600 mb-3 flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center mr-2 text-sm">5</span>
+                                Eletrônicos
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Leve a pontos de coleta especializados
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Remova dados pessoais de dispositivos
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Mantenha baterias separadas
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-red-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    Nunca jogue no lixo comum!
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Óleo de Cozinha -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-2/5 h-48 md:h-auto bg-amber-50 flex items-center justify-center p-4">
+                            <img src="/oleo.png" alt="Como descartar óleo de cozinha - pessoa despejando óleo em garrafa" class="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div class="md:w-3/5 p-6">
+                            <h4 class="text-xl font-bold text-amber-600 mb-3 flex items-center">
+                                <span class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center mr-2 text-sm">6</span>
+                                Óleo de Cozinha
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Espere esfriar completamente
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Armazene em garrafa PET fechada
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Leve a postos de coleta ou supermercados
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-red-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    Nunca jogue na pia ou ralo!
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Seção Quiz -->
+    <section id="quiz-reciclagem" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Teste Seus Conhecimentos</h2>
+            <p class="text-lg text-gray-600 text-center mb-8">Responda o quiz e descubra o quanto você sabe sobre reciclagem!</p>
+            
+            <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl shadow-xl p-8">
+                <div id="quiz-question" class="mb-6">
+                    <p class="text-sm text-gray-500 mb-2">Pergunta <span id="quiz-current">1</span> de <span id="quiz-total">5</span></p>
+                    <h3 id="quiz-text" class="text-xl font-semibold text-gray-800"></h3>
+                </div>
+                
+                <div id="quiz-options" class="space-y-3"></div>
+                
+                <div id="quiz-feedback" class="hidden mt-6 p-4 rounded-lg"></div>
+                
+                <button id="quiz-next" class="hidden mt-6 w-full py-3 px-6 bg-brand-green text-white rounded-lg font-semibold hover:bg-brand-green-dark transition">
+                    Próxima Pergunta
+                </button>
+                
+                <div id="quiz-result" class="hidden text-center">
+                    <div class="text-6xl mb-4">🎉</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Quiz Completo!</h3>
+                    <p id="quiz-score" class="text-lg text-gray-600 mb-6"></p>
+                </div>
+                
+                <button id="quiz-restart" class="hidden mt-4 w-full py-3 px-6 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition">
+                    Refazer Quiz
+                </button>
+            </div>
+        </div>
+    </section>
 
 </main>
 
+<!-- MODAIS COMPLETAMENTE REESCRITOS - Sistema de modais funcional -->
+<div id="modal-coleta" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-coleta-title">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-container">
+        <div class="modal-content">
+            <div class="flex justify-between items-start border-b pb-3 mb-4">
+                <h3 id="modal-coleta-title" class="text-2xl md:text-3xl font-bold text-green-600 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Lição 1: Coleta Inteligente
+                </h3>
+                <button class="modal-close-btn text-gray-400 hover:text-gray-600 transition p-2" aria-label="Fechar">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <p class="text-lg text-gray-600 mb-6 text-justify">A <strong>Coleta Inteligente</strong> significa descarte preciso. O erro mais comum é misturar materiais recicláveis com orgânicos ou rejeitos, o que contamina o lote e o torna impróprio para reciclagem. A solução é usar o GreenDrop para localizar o Ponto de Entrega Voluntária (PEV) mais próximo, filtrando pelo tipo de material.</p>
+            <h4 class="text-xl font-semibold text-green-700 mb-3 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Regra de Ouro: Preparação Básica
+            </h4>
+            <ul class="space-y-3 text-gray-700 list-disc pl-5 mb-8">
+                <li><strong>Limpeza:</strong> Remova o máximo de resíduo orgânico ou gordura possível.</li>
+                <li><strong>Secagem:</strong> Materiais secos são essenciais. Papel molhado não pode ser reciclado.</li>
+                <li><strong>Compactação:</strong> Amasse latas e garrafas PET para otimizar espaço.</li>
+            </ul>
+            <div class="bg-green-50 p-6 rounded-xl border border-green-200">
+                <p class="font-semibold text-lg text-green-700">Ação Próxima:</p>
+                <p class="text-green-600">Acesse nosso <a href="/mapa" class="underline font-bold">Mapa Interativo</a> para encontrar o ponto de coleta mais próximo!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-reciclagem" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-reciclagem-title">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-container">
+        <div class="modal-content">
+            <div class="flex justify-between items-start border-b pb-3 mb-4">
+                <h3 id="modal-reciclagem-title" class="text-2xl md:text-3xl font-bold text-blue-600 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    Lição 2: Reciclagem Eficiente
+                </h3>
+                <button class="modal-close-btn text-gray-400 hover:text-gray-600 transition p-2" aria-label="Fechar">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <p class="text-lg text-gray-600 mb-6 text-justify">A <strong>Reciclagem Eficiente</strong> transforma seu lixo em recurso, economizando recursos naturais e energia. Reciclar alumínio usa 95% menos energia do que produzi-lo do zero!</p>
+            <h4 class="text-xl font-semibold text-blue-600 mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Preparação por Material
+            </h4>
+            <div class="grid md:grid-cols-2 gap-4 mb-6">
+                <div class="p-4 bg-red-50 rounded-lg border border-red-200">
+                    <p class="font-bold text-lg text-red-600">Plásticos</p>
+                    <p class="text-sm text-gray-700">Lave, amasse e retire rótulos quando possível.</p>
+                </div>
+                <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-bold text-lg text-blue-600">Papel e Papelão</p>
+                    <p class="text-sm text-gray-700">Mantenha seco, retire grampos e desmonte caixas.</p>
+                </div>
+                <div class="p-4 bg-green-50 rounded-lg border border-green-200">
+                    <p class="font-bold text-lg text-green-600">Vidros</p>
+                    <p class="text-sm text-gray-700">Lave e não misture com espelhos ou cerâmica.</p>
+                </div>
+                <div class="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                    <p class="font-bold text-lg text-yellow-600">Metais</p>
+                    <p class="text-sm text-gray-700">Lave, seque e amasse para otimizar espaço.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-impacto" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-impacto-title">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-container">
+        <div class="modal-content">
+            <div class="flex justify-between items-start border-b pb-3 mb-4">
+                <h3 id="modal-impacto-title" class="text-2xl md:text-3xl font-bold text-purple-600 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                    Lição 3: Relatório de Impacto
+                </h3>
+                <button class="modal-close-btn text-gray-400 hover:text-gray-600 transition p-2" aria-label="Fechar">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <p class="text-lg text-gray-600 mb-6 text-justify">Acompanhe seu progresso e veja o impacto real das suas ações sustentáveis. Com o GreenDrop, você pode visualizar métricas como quilos reciclados, CO2 evitado e árvores preservadas.</p>
+            <div class="grid md:grid-cols-3 gap-4 mb-6">
+                <div class="text-center p-4 bg-purple-50 rounded-xl">
+                    <p class="text-4xl font-bold text-purple-600">1kg</p>
+                    <p class="text-sm text-gray-600">de alumínio = 5kg de CO2 evitado</p>
+                </div>
+                <div class="text-center p-4 bg-green-50 rounded-xl">
+                    <p class="text-4xl font-bold text-green-600">50kg</p>
+                    <p class="text-sm text-gray-600">de papel = 1 árvore preservada</p>
+                </div>
+                <div class="text-center p-4 bg-blue-50 rounded-xl">
+                    <p class="text-4xl font-bold text-blue-600">1L</p>
+                    <p class="text-sm text-gray-600">de óleo = 20.000L de água protegida</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-especial" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-especial-title">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-container">
+        <div class="modal-content">
+            <div class="flex justify-between items-start border-b pb-3 mb-4">
+                <h3 id="modal-especial-title" class="text-2xl md:text-3xl font-bold text-yellow-600 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    Lição 4: Descarte Especial
+                </h3>
+                <button class="modal-close-btn text-gray-400 hover:text-gray-600 transition p-2" aria-label="Fechar">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <p class="text-lg text-gray-600 mb-6 text-justify">Alguns materiais exigem cuidado especial no descarte por conterem substâncias tóxicas ou perigosas. Eletrônicos, pilhas, baterias, lâmpadas e óleo de cozinha precisam ir para pontos de coleta específicos.</p>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                    <h4 class="font-bold text-yellow-700 mb-2">Eletrônicos</h4>
+                    <p class="text-sm text-gray-700">Celulares, computadores, TVs - leve a assistências técnicas ou pontos de coleta de e-lixo.</p>
+                </div>
+                <div class="p-4 bg-orange-50 rounded-lg border border-orange-200">
+                    <h4 class="font-bold text-orange-700 mb-2">Pilhas e Baterias</h4>
+                    <p class="text-sm text-gray-700">Supermercados e lojas de eletrônicos geralmente têm coletores específicos.</p>
+                </div>
+                <div class="p-4 bg-amber-50 rounded-lg border border-amber-200">
+                    <h4 class="font-bold text-amber-700 mb-2">Óleo de Cozinha</h4>
+                    <p class="text-sm text-gray-700">Armazene em garrafa PET e leve a supermercados ou postos de coleta.</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <h4 class="font-bold text-gray-700 mb-2">Lâmpadas</h4>
+                    <p class="text-sm text-gray-700">Lâmpadas fluorescentes contêm mercúrio - descarte em pontos específicos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-rejeito" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-rejeito-title">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-container">
+        <div class="modal-content">
+            <div class="flex justify-between items-start border-b pb-3 mb-4">
+                <h3 id="modal-rejeito-title" class="text-2xl md:text-3xl font-bold text-red-600 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    Lição 5: Reciclável vs. Rejeito
+                </h3>
+                <button class="modal-close-btn text-gray-400 hover:text-gray-600 transition p-2" aria-label="Fechar">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <p class="text-lg text-gray-600 mb-6 text-justify">Nem tudo que parece reciclável pode ser reciclado. Rejeito é o lixo que não tem como ser reaproveitado e vai para aterros sanitários.</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-4 bg-green-50 rounded-lg border border-green-200">
+                    <h4 class="font-bold text-green-700 mb-2 flex items-center">
+                        <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Reciclável
+                    </h4>
+                    <ul class="text-sm text-gray-700 list-disc pl-5">
+                        <li>Garrafas PET limpas</li>
+                        <li>Latas de alumínio</li>
+                        <li>Papelão seco</li>
+                        <li>Vidros de conserva</li>
+                    </ul>
+                </div>
+                <div class="p-4 bg-red-50 rounded-lg border border-red-200">
+                    <h4 class="font-bold text-red-700 mb-2 flex items-center">
+                        <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Rejeito (não recicla)
+                    </h4>
+                    <ul class="text-sm text-gray-700 list-disc pl-5">
+                        <li>Papel higiênico usado</li>
+                        <li>Fraldas descartáveis</li>
+                        <li>Esponjas de cozinha</li>
+                        <li>Espelhos e cerâmica</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-medicamentos" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-medicamentos-title">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-container">
+        <div class="modal-content">
+            <div class="flex justify-between items-start border-b pb-3 mb-4">
+                <h3 id="modal-medicamentos-title" class="text-2xl md:text-3xl font-bold text-pink-600 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                    Lição 6: Medicamentos Vencidos
+                </h3>
+                <button class="modal-close-btn text-gray-400 hover:text-gray-600 transition p-2" aria-label="Fechar">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <p class="text-lg text-gray-600 mb-6 text-justify">Medicamentos vencidos ou em desuso contaminam o solo e a água se descartados incorretamente. Nunca jogue na pia, vaso sanitário ou lixo comum!</p>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-pink-50 p-6 rounded-xl border border-pink-200">
+                    <h4 class="font-bold text-pink-700 mb-2">Onde descartar?</h4>
+                    <ul class="text-sm text-gray-700 list-disc pl-5">
+                        <li>Farmácias e drogarias</li>
+                        <li>Unidades Básicas de Saúde (UBS)</li>
+                        <li>Hospitais e clínicas</li>
+                        <li>Pontos de coleta no mapa GreenDrop</li>
+                    </ul>
+                </div>
+                <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
+                    <h4 class="font-bold text-yellow-700 mb-2">Como preparar?</h4>
+                    <ul class="text-sm text-gray-700 list-disc pl-5">
+                        <li>Mantenha na embalagem original</li>
+                        <li>Não misture diferentes medicamentos</li>
+                        <li>Separe bulas e caixas para reciclagem</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Estilos CSS para os modais -->
+<style>
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    transition: opacity 0.3s ease;
+}
+
+.modal-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 56rem;
+    margin: 2rem auto;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 1.5rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-content {
+        padding: 2rem;
+    }
+}
+
+.modal-close-btn:focus {
+    outline: 2px solid #22c55e;
+    outline-offset: 2px;
+}
+</style>
+
+<!-- Script completamente reescrito para modais funcionais -->
 <script>
+    // Sincronizar altura do header
     function syncHeaderHeight() {
         const header = document.getElementById('site-header') || document.querySelector('header');
         const h = header ? header.offsetHeight : 72;
@@ -543,26 +827,225 @@
     window.addEventListener('load', syncHeaderHeight);
     window.addEventListener('resize', () => requestAnimationFrame(syncHeaderHeight));
 
-    function toggleModal(modalId) {
-        const modal = document.getElementById(modalId);
-        const content = document.getElementById(`content-${modalId}`);
-        const open = modal.classList.contains('hidden');
-        if (open) {
-            modal.classList.remove('hidden');
-            modal.classList.add('is-open');
-            setTimeout(() => {
-                content.classList.remove('opacity-0', 'scale-95');
-                content.classList.add('opacity-100', 'scale-100');
-                document.documentElement.style.overflow = 'hidden';
-            }, 10);
-        } else {
-            content.classList.remove('opacity-100', 'scale-100');
-            content.classList.add('opacity-0', 'scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                modal.classList.remove('is-open');
-                document.documentElement.style.overflow = '';
-            }, 300);
+    // Toggle menu mobile
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
         }
-    }
+
+        // Sistema de Modais
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                // Foco no botão de fechar para acessibilidade
+                const closeBtn = modal.querySelector('.modal-close-btn');
+                if (closeBtn) {
+                    setTimeout(() => closeBtn.focus(), 100);
+                }
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function closeAllModals() {
+            document.querySelectorAll('.modal-overlay').forEach(modal => {
+                modal.classList.add('hidden');
+            });
+            document.body.style.overflow = '';
+        }
+
+        // Event listeners para botões que abrem modais
+        document.querySelectorAll('.modal-trigger').forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                const modalId = this.getAttribute('data-modal');
+                if (modalId) {
+                    openModal(modalId);
+                }
+            });
+        });
+
+        // Event listeners para fechar modais
+        document.querySelectorAll('.modal-close-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const modal = this.closest('.modal-overlay');
+                if (modal) {
+                    closeModal(modal.id);
+                }
+            });
+        });
+
+        // Fechar ao clicar no backdrop
+        document.querySelectorAll('[data-close-modal]').forEach(backdrop => {
+            backdrop.addEventListener('click', function() {
+                const modal = this.closest('.modal-overlay');
+                if (modal) {
+                    closeModal(modal.id);
+                }
+            });
+        });
+
+        // Fechar com tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeAllModals();
+            }
+        });
+
+        // Quiz de Reciclagem
+        const quizQuestions = [
+            {
+                question: "Em qual lixeira deve ser descartada uma garrafa PET?",
+                options: ["Azul (Papel)", "Vermelho (Plástico)", "Verde (Vidro)", "Amarelo (Metal)"],
+                correct: 1
+            },
+            {
+                question: "Papel higiênico usado pode ser reciclado?",
+                options: ["Sim, vai na lixeira azul", "Não, é considerado rejeito", "Sim, se estiver seco", "Depende do material"],
+                correct: 1
+            },
+            {
+                question: "Onde devem ser descartados medicamentos vencidos?",
+                options: ["Lixo comum", "Lixeira de plásticos", "Farmácias ou postos de saúde", "Privada"],
+                correct: 2
+            },
+            {
+                question: "Qual destes materiais NÃO pode ir na lixeira de vidro?",
+                options: ["Garrafas de vidro", "Espelhos", "Potes de conserva", "Frascos de perfume"],
+                correct: 1
+            },
+            {
+                question: "Por que é importante lavar as embalagens antes de reciclar?",
+                options: ["Para deixar mais bonito", "Para evitar contaminar outros materiais", "Não é necessário lavar", "Apenas para metais"],
+                correct: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function initQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            const resultEl = document.getElementById('quiz-result');
+            const questionEl = document.getElementById('quiz-question');
+            const optionsEl = document.getElementById('quiz-options');
+            const restartEl = document.getElementById('quiz-restart');
+            
+            if (resultEl) resultEl.classList.add('hidden');
+            if (questionEl) questionEl.classList.remove('hidden');
+            if (optionsEl) optionsEl.classList.remove('hidden');
+            if (restartEl) restartEl.classList.add('hidden');
+            
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = quizQuestions[currentQuestion];
+            const currentEl = document.getElementById('quiz-current');
+            const totalEl = document.getElementById('quiz-total');
+            const textEl = document.getElementById('quiz-text');
+            const optionsDiv = document.getElementById('quiz-options');
+            const feedbackEl = document.getElementById('quiz-feedback');
+            const nextEl = document.getElementById('quiz-next');
+            
+            if (currentEl) currentEl.textContent = currentQuestion + 1;
+            if (totalEl) totalEl.textContent = quizQuestions.length;
+            if (textEl) textEl.textContent = q.question;
+            
+            if (optionsDiv) {
+                optionsDiv.innerHTML = q.options.map((opt, i) => `
+                    <button onclick="selectAnswer(${i})" class="quiz-option w-full text-left p-4 rounded-lg border-2 border-gray-200 hover:border-green-500 hover:bg-green-50 transition font-medium">
+                        ${opt}
+                    </button>
+                `).join('');
+            }
+            
+            if (feedbackEl) feedbackEl.classList.add('hidden');
+            if (nextEl) nextEl.classList.add('hidden');
+        }
+
+        window.selectAnswer = function(index) {
+            const q = quizQuestions[currentQuestion];
+            const isCorrect = index === q.correct;
+            const feedbackEl = document.getElementById('quiz-feedback');
+            const nextEl = document.getElementById('quiz-next');
+            const options = document.querySelectorAll('.quiz-option');
+            
+            if (isCorrect) score++;
+            
+            options.forEach((opt, i) => {
+                opt.disabled = true;
+                if (i === q.correct) {
+                    opt.classList.add('bg-green-100', 'border-green-500');
+                } else if (i === index && !isCorrect) {
+                    opt.classList.add('bg-red-100', 'border-red-500');
+                }
+            });
+            
+            if (feedbackEl) {
+                feedbackEl.classList.remove('hidden');
+                feedbackEl.className = `mt-6 p-4 rounded-lg ${isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`;
+                feedbackEl.textContent = isCorrect ? 'Correto! Muito bem!' : `Incorreto. A resposta certa é: ${q.options[q.correct]}`;
+            }
+            
+            if (nextEl) {
+                nextEl.classList.remove('hidden');
+                nextEl.textContent = currentQuestion < quizQuestions.length - 1 ? 'Próxima Pergunta' : 'Ver Resultado';
+            }
+        }
+
+        const nextBtn = document.getElementById('quiz-next');
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function() {
+                currentQuestion++;
+                if (currentQuestion < quizQuestions.length) {
+                    showQuestion();
+                } else {
+                    showResult();
+                }
+            });
+        }
+
+        function showResult() {
+            const questionEl = document.getElementById('quiz-question');
+            const optionsEl = document.getElementById('quiz-options');
+            const feedbackEl = document.getElementById('quiz-feedback');
+            const nextEl = document.getElementById('quiz-next');
+            const resultEl = document.getElementById('quiz-result');
+            const scoreEl = document.getElementById('quiz-score');
+            const restartEl = document.getElementById('quiz-restart');
+            
+            if (questionEl) questionEl.classList.add('hidden');
+            if (optionsEl) optionsEl.classList.add('hidden');
+            if (feedbackEl) feedbackEl.classList.add('hidden');
+            if (nextEl) nextEl.classList.add('hidden');
+            if (resultEl) resultEl.classList.remove('hidden');
+            if (restartEl) restartEl.classList.remove('hidden');
+            
+            if (scoreEl) {
+                scoreEl.textContent = `Você acertou ${score} de ${quizQuestions.length} perguntas!`;
+            }
+        }
+
+        const restartBtn = document.getElementById('quiz-restart');
+        if (restartBtn) {
+            restartBtn.addEventListener('click', initQuiz);
+        }
+
+        // Inicializar quiz
+        initQuiz();
+    });
 </script>
