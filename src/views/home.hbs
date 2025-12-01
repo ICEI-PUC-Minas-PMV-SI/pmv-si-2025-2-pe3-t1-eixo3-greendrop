@@ -1,84 +1,59 @@
 <!-- Header / Navbar -->
 <header id="site-header" class="bg-white shadow-md fixed top-0 left-0 right-0 z-[2000]">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <!-- Logo -->
-        <div class="flex items-center gap-3">
-            <img src="/ico.png" alt="GreenDrop Logo" class="h-10 w-auto" />
-            <a href="/" class="text-2xl font-bold brand-dark-green">GreenDrop</a>
-        </div>
-
-        <!-- Links desktop -->
-        <ul class="hidden md:flex items-center space-x-8">
-            <li><a href="/" class="font-medium text-gray-600 hover:brand-green transition-colors">Início</a></li>
-            <li><a href="/#sobre-nos" class="font-medium text-gray-600 hover:brand-green transition-colors">Sobre
-                    Nós</a></li>
-            <li><a href="/#servicos" class="font-medium text-gray-600 hover:brand-green transition-colors">Serviços</a>
-            </li>
-            <li><a href="/#mapa" class="font-medium text-gray-600 hover:brand-green transition-colors">Mapa</a></li>
-            <li><a href="/ods" class="font-medium text-gray-600 hover:brand-green transition-colors">ODS ONU</a></li>
-            <li><a href="/ranking" class="font-medium text-gray-600 hover:brand-green transition-colors">Ranking</a>
-            </li>
-            <li><a href="/#contato" class="font-medium text-gray-600 hover:brand-green transition-colors">Contato</a>
-            </li>
-            <li>
-                <a href="/notificacoes" class="relative group" aria-label="Notificações">
-                    <i data-feather="bell" class="h-6 w-6 text-gray-600 group-hover:text-green-800 transition"></i>
-                    <span
-                        class="absolute bottom-0 right-0 flex items-center justify-center h-5 w-5 bg-red-600 text-white text-xs font-bold rounded-full shadow border border-white select-none translate-x-1/2 translate-y-1/2">3</span>
-                </a>
-            </li>
-        </ul>
-
-        <!-- Ações -->
-        <div class="hidden md:flex items-center space-x-4">
-            <a href="/login" class="font-medium text-gray-600 hover:brand-green transition-colors">Entrar</a>
-            <a href="/register"
-                class="py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-transform duration-300 hover:scale-105">
-                Cadastre-se
-            </a>
-        </div>
-
-        <!-- Menu mobile -->
-        <button class="md:hidden focus:outline-none" id="mobile-menu-button" aria-label="Abrir menu">
-            <i data-feather="menu" class="h-6 w-6 text-gray-600"></i>
-        </button>
-    </nav>
-
-    <!-- Drawer mobile -->
-    <div class="hidden md:hidden border-t border-gray-100" id="mobile-menu">
-        <ul class="px-4 py-3 space-y-1">
-            <li><a href="/"
-                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Início</a>
-            </li>
-            <li><a href="/#sobre-nos"
-                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Sobre
-                    Nós</a></li>
-            <li><a href="/#servicos"
-                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Serviços</a>
-            </li>
-            <li><a href="/#mapa"
-                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Mapa</a>
-            </li>
-            <li><a href="/#contato"
-                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Contato</a>
-            </li>
-            <li><a href="/ods"
-                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Metas da ONU
-                    ONU</a></li>
-            <li><a href="/ranking"
-                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Ranking de Reciclagem</a>
-            </li>
-            <li><a href="/notificacoes"
-                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Notificações</a>
-            </li>
-            <li><a href="/login"
-                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Entrar</a>
-            </li>
-            <li><a href="/register"
-                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Cadastre-se</a>
-            </li>
-        </ul>
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <img src="/ico.png" alt="GreenDrop Logo" class="h-10 w-auto" />
+      <a href="/" class="text-2xl font-bold brand-dark-green">GreenDrop</a>
     </div>
+
+    <!-- Links desktop -->
+    <ul class="hidden md:flex items-center space-x-8">
+      <li><a href="/" class="font-medium text-gray-600 hover:brand-green transition-colors">Início</a></li>
+      <li><a href="/#sobre-nos" class="font-medium text-gray-600 hover:brand-green transition-colors">Sobre Nós</a></li>
+      <li><a href="/#servicos" class="font-medium text-gray-600 hover:brand-green transition-colors">Serviços</a></li>
+      <li><a href="/#mapa" class="font-medium text-gray-600 hover:brand-green transition-colors">Mapa</a></li>
+      <li><a href="/ods" class="font-medium text-gray-600 hover:brand-green transition-colors">ODS ONU</a></li>
+      <li><a href="/ranking" class="font-medium text-gray-600 hover:brand-green transition-colors">Ranking</a></li>
+      <li><a href="/#contato" class="font-medium text-gray-600 hover:brand-green transition-colors">Contato</a></li>
+      <li>
+        <a href="/notificacoes" class="relative group" aria-label="Notificações">
+          <i data-feather="bell" class="h-6 w-6 text-gray-600 group-hover:text-green-800 transition"></i>
+          <span class="absolute bottom-0 right-0 flex items-center justify-center h-5 w-5 bg-red-600 text-white text-xs font-bold rounded-full shadow border border-white select-none translate-x-1/2 translate-y-1/2">3</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Ações -->
+    <div class="hidden md:flex items-center space-x-4">
+      <a href="/login" class="font-medium text-gray-600 hover:brand-green transition-colors">Entrar</a>
+      <a href="/register"
+         class="py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-transform duration-300 hover:scale-105">
+        Cadastre-se
+      </a>
+    </div>
+
+    <!-- Menu mobile -->
+    <button class="md:hidden focus:outline-none" id="mobile-menu-button" aria-label="Abrir menu">
+      <i data-feather="menu" class="h-6 w-6 text-gray-600"></i>
+    </button>
+  </nav>
+
+  <!-- Drawer mobile -->
+  <div class="hidden md:hidden border-t border-gray-100" id="mobile-menu">
+    <ul class="px-4 py-3 space-y-1">
+      <li><a href="/" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Início</a></li>
+      <li><a href="/#sobre-nos" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Sobre Nós</a></li>
+      <li><a href="/#servicos" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Serviços</a></li>
+      <li><a href="/#mapa" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Mapa</a></li>
+      <li><a href="/#contato" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Contato</a></li>
+      <li><a href="/ods" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">ODS ONU</a></li>
+      <li><a href="/ranking" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Ranking</a></li>
+      <li><a href="/notificacoes" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Notificações</a></li>
+      <li><a href="/login" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Entrar</a></li>
+      <li><a href="/register" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Cadastre-se</a></li>
+    </ul>
+  </div>
 </header>
 
 
@@ -164,7 +139,7 @@
             </div>
             <a href="./educativo"
                 class="fixed top-1/2 right-0 transform -translate-y-1/2 bg-brand-green text-white px-4 py-3 rounded-l-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center gap-2 z-50">
-                <i data-feather="globe" class="h-5 w-5"></i> Guia de Reciclagem
+                <i data-feather="globe" class="h-5 w-5"></i> Escolinha
             </a>
 
         </div>
@@ -356,11 +331,8 @@
                         <span class="star" data-rating="5">★</span>
                     </div>
                 </div>
-                <textarea id="modal-review-comment" class="w-full p-2 border border-gray-300 rounded-md text-sm"
-                    rows="3" placeholder="Deixe um comentário (opcional)"></textarea>
-                <button id="modal-submit-review"
-                    class="mt-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 text-sm font-semibold">Enviar
-                    Avaliação</button>
+                <textarea id="modal-review-comment" class="w-full p-2 border border-gray-300 rounded-md text-sm" rows="3" placeholder="Deixe um comentário (opcional)"></textarea>
+                <button id="modal-submit-review" class="mt-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 text-sm font-semibold">Enviar Avaliação</button>
             </div>
             <div id="modal-reviews-list" class="reviews-list"></div>
         </div>
@@ -369,7 +341,7 @@
 
 <script>
     // Função global para renderizar estrelas
-    window.renderStars = function (rating, interactive = false) {
+    window.renderStars = function(rating, interactive = false) {
         const stars = [];
         const fullStars = Math.floor(rating);
         const hasHalfStar = rating % 1 >= 0.5;
@@ -389,11 +361,11 @@
     let currentPontoId = null;
     let currentRating = 0;
 
-    window.openReviewsModal = async function (pontoId, pointName) {
+    window.openReviewsModal = async function(pontoId, pointName) {
         currentPontoId = pontoId;
         document.getElementById('modal-point-name').textContent = `${pointName} - Avaliações`;
         document.getElementById('reviews-modal').classList.remove('hidden');
-
+        
         // Resetar estrelas
         const stars = document.querySelectorAll('#modal-rating-stars .star');
         stars.forEach(s => {
@@ -401,16 +373,16 @@
             s.style.color = '#d1d5db';
         });
         currentRating = 0;
-
+        
         // Carregar avaliações
         await loadReviews(pontoId);
-
+        
         // Bind eventos das estrelas
         bindModalStarEvents();
         bindSubmitReview();
     };
 
-    window.closeReviewsModal = function () {
+    window.closeReviewsModal = function() {
         document.getElementById('reviews-modal').classList.add('hidden');
         currentPontoId = null;
         currentRating = 0;
@@ -438,13 +410,13 @@
     function bindSubmitReview() {
         const submitBtn = document.getElementById('modal-submit-review');
         if (submitBtn.onclick) return; // Já bindado
-
+        
         submitBtn.onclick = async () => {
             if (!currentRating) {
                 alert('Por favor, selecione uma nota');
                 return;
             }
-
+            
             try {
                 const comentario = document.getElementById('modal-review-comment').value;
                 const response = await fetch('/api/reviews', {
@@ -457,7 +429,7 @@
                         comentario: comentario || null
                     })
                 });
-
+                
                 if (!response.ok) {
                     if (response.status === 401) {
                         alert('Você precisa estar logado para avaliar');
@@ -465,7 +437,7 @@
                     }
                     throw new Error('Erro ao enviar avaliação');
                 }
-
+                
                 // Recarregar avaliações e atualizar lista de pontos
                 await loadReviews(currentPontoId);
                 document.getElementById('modal-review-comment').value = '';
@@ -475,7 +447,7 @@
                     s.classList.remove('active');
                     s.style.color = '#d1d5db';
                 });
-
+                
                 // Recarregar página ou atualizar mapa
                 if (typeof renderLocations === 'function') {
                     // Recarregar pontos se a função existir
@@ -512,13 +484,13 @@
         try {
             const response = await fetch(`/api/reviews/ponto/${pontoId}`);
             const reviews = await response.json();
-
+            
             const reviewsList = document.getElementById('modal-reviews-list');
             if (!reviews || reviews.length === 0) {
                 reviewsList.innerHTML = '<p class="text-sm text-gray-500 text-center py-4">Ainda não há avaliações para este ponto.</p>';
                 return;
             }
-
+            
             reviewsList.innerHTML = reviews.map(review => {
                 const user = review.user || {};
                 const userName = user.name || 'Usuário Anônimo';
@@ -526,7 +498,7 @@
                 const date = new Date(review.createdAt);
                 const timeAgo = getTimeAgo(date);
                 const starsHtml = window.renderStars(review.nota, false);
-
+                
                 return `
                     <div class="review-item">
                         <div class="review-header">
@@ -555,7 +527,7 @@
         const diffDays = Math.floor(diffMs / 86400000);
         const diffMonths = Math.floor(diffDays / 30);
         const diffYears = Math.floor(diffDays / 365);
-
+        
         if (diffMins < 1) return 'Agora';
         if (diffMins < 60) return `${diffMins} minuto${diffMins > 1 ? 's' : ''} atrás`;
         if (diffHours < 24) return `${diffHours} hora${diffHours > 1 ? 's' : ''} atrás`;
@@ -566,149 +538,53 @@
 </script>
 
 <style>
-    .rating-stars {
-        display: inline-flex;
-        gap: 2px;
-        font-size: 18px;
-        color: #d1d5db;
-        cursor: pointer;
+    .rating-stars{
+        display:inline-flex; gap:2px; font-size:18px; color:#d1d5db; cursor:pointer;
     }
+    .rating-stars .star{
+        transition:color .15s ease; user-select:none;
+    }
+    .rating-stars .star.active{ color:#fbbf24; }
+    .rating-stars.interactive .star:hover{ color:#fbbf24; }
 
-    .rating-stars .star {
-        transition: color .15s ease;
-        user-select: none;
+    .reviews-modal{
+        position:fixed; inset:0; z-index:2000; display:flex; align-items:center; justify-content:center;
     }
+    .reviews-modal.hidden{ display:none; }
+    .reviews-modal-overlay{
+        position:absolute; inset:0; background:rgba(0,0,0,.5); backdrop-filter:blur(2px);
+    }
+    .reviews-modal-content{
+        position:relative; background:#fff; border-radius:16px; max-width:600px; width:90%;
+        max-height:90vh; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 20px 40px rgba(0,0,0,.2);
+    }
+    .reviews-modal-header{
+        padding:20px; border-bottom:1px solid #E5E7EB; display:flex; justify-content:space-between; align-items:center;
+    }
+    .reviews-modal-body{
+        padding:20px; overflow-y:auto; flex:1;
+    }
+    .close-btn{
+        width:32px; height:32px; border:0; background:transparent; font-size:24px; cursor:pointer;
+        color:#6B7280; display:flex; align-items:center; justify-content:center; border-radius:50%;
+        transition:background .2s ease;
+    }
+    .close-btn:hover{ background:#f3f4f6; color:#111827; }
 
-    .rating-stars .star.active {
-        color: #fbbf24;
+    .reviews-list{ display:flex; flex-direction:column; gap:16px; }
+    .review-item{
+        padding:16px; background:#f9fafb; border-radius:10px; border:1px solid #E5E7EB;
     }
-
-    .rating-stars.interactive .star:hover {
-        color: #fbbf24;
+    .review-header{
+        display:flex; align-items:center; gap:12px; margin-bottom:8px;
     }
-
-    .reviews-modal {
-        position: fixed;
-        inset: 0;
-        z-index: 2000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .review-avatar{
+        width:40px; height:40px; border-radius:50%; background:#34A853; color:#fff;
+        display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:16px;
     }
-
-    .reviews-modal.hidden {
-        display: none;
-    }
-
-    .reviews-modal-overlay {
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, .5);
-        backdrop-filter: blur(2px);
-    }
-
-    .reviews-modal-content {
-        position: relative;
-        background: #fff;
-        border-radius: 16px;
-        max-width: 600px;
-        width: 90%;
-        max-height: 90vh;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
-    }
-
-    .reviews-modal-header {
-        padding: 20px;
-        border-bottom: 1px solid #E5E7EB;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .reviews-modal-body {
-        padding: 20px;
-        overflow-y: auto;
-        flex: 1;
-    }
-
-    .close-btn {
-        width: 32px;
-        height: 32px;
-        border: 0;
-        background: transparent;
-        font-size: 24px;
-        cursor: pointer;
-        color: #6B7280;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        transition: background .2s ease;
-    }
-
-    .close-btn:hover {
-        background: #f3f4f6;
-        color: #111827;
-    }
-
-    .reviews-list {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .review-item {
-        padding: 16px;
-        background: #f9fafb;
-        border-radius: 10px;
-        border: 1px solid #E5E7EB;
-    }
-
-    .review-header {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 8px;
-    }
-
-    .review-avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: #34A853;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 16px;
-    }
-
-    .review-info {
-        flex: 1;
-    }
-
-    .review-author {
-        font-weight: 600;
-        color: #111827;
-        font-size: 14px;
-    }
-
-    .review-date {
-        font-size: 12px;
-        color: #6B7280;
-    }
-
-    .review-rating {
-        margin: 8px 0;
-    }
-
-    .review-comment {
-        font-size: 14px;
-        color: #374151;
-        line-height: 1.5;
-    }
+    .review-info{ flex:1; }
+    .review-author{ font-weight:600; color:#111827; font-size:14px; }
+    .review-date{ font-size:12px; color:#6B7280; }
+    .review-rating{ margin:8px 0; }
+    .review-comment{ font-size:14px; color:#374151; line-height:1.5; }
 </style>
