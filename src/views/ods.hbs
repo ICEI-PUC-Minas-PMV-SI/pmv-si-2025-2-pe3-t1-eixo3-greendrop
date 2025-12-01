@@ -8,26 +8,45 @@
     </div>
 
     <!-- Links desktop -->
-    <ul class="hidden md:flex items-center space-x-8">
-      <li><a href="/" class="font-medium text-gray-600 hover:brand-green transition-colors">Início</a></li>
-      <li><a href="/#sobre-nos" class="font-medium text-gray-600 hover:brand-green transition-colors">Sobre Nós</a></li>
-      <li><a href="/#servicos" class="font-medium text-gray-600 hover:brand-green transition-colors">Serviços</a></li>
-      <li><a href="/mapa" class="font-medium text-gray-600 hover:brand-green transition-colors">Mapa</a></li>
-      <li><a href="/educativo" class="font-medium text-gray-600 hover:brand-green transition-colors">Escolinha do Planeta</a></li>
-      <li><a href="/#contato" class="font-medium text-gray-600 hover:brand-green transition-colors">Contato</a></li>
-      <li>
-        <a href="/notificacoes" class="relative group" aria-label="Notificações">
-          <i data-feather="bell" class="h-6 w-6 text-gray-600 group-hover:text-green-800 transition"></i>
-          <span class="absolute bottom-0 right-0 flex items-center justify-center h-5 w-5 bg-red-600 text-white text-xs font-bold rounded-full shadow border border-white select-none translate-x-1/2 translate-y-1/2">3</span>
-        </a>
-      </li>
-    </ul>
-
+    <div class="hidden md:hidden border-t border-gray-100" id="mobile-menu">
+        <ul class="px-4 py-3 space-y-1">
+            <li><a href="/"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Início</a>
+            </li>
+            <li><a href="/#sobre-nos"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Sobre
+                    Nós</a></li>
+            <li><a href="/#servicos"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Serviços</a>
+            </li>
+            <li><a href="/#mapa"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Mapa</a>
+            </li>
+            <li><a href="/#contato"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Contato</a>
+            </li>
+            <li><a href="/ods"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Metas da ONU
+                    ONU</a></li>
+            <li><a href="/ranking"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Ranking de Reciclagem</a>
+            </li>
+            <li><a href="/notificacoes"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Notificações</a>
+            </li>
+            <li><a href="/login"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Entrar</a>
+            </li>
+            <li><a href="/register"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Cadastre-se</a>
+            </li>    <ul class="hidden md:flex items-center space-x-8">
+  
+    </div>
     <!-- Ações -->
     <div class="hidden md:flex items-center space-x-4">
       <a href="/login" class="font-medium text-gray-600 hover:brand-green transition-colors">Entrar</a>
       <a href="/register"
-         class="py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-transform duration-300 hover:scale-105">
+        class="py-2 px-4 rounded-lg font-medium text-white bg-brand-green hover:bg-brand-green-dark transition-transform duration-300 hover:scale-105">
         Cadastre-se
       </a>
     </div>
@@ -41,16 +60,36 @@
   <!-- Drawer mobile -->
   <div class="hidden md:hidden border-t border-gray-100" id="mobile-menu">
     <ul class="px-4 py-3 space-y-1">
-      <li><a href="/" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Início</a></li>
-      <li><a href="/#sobre-nos" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Sobre Nós</a></li>
-      <li><a href="/#servicos" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Serviços</a></li>
-      <li><a href="/educativo" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">escolinha do Planeta</a></li>
-      <li><a href="/mapa" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Mapa</a></li>
-      <li><a href="/#contato" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Contato</a></li>
-      <li><a href="/ods" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">ODS ONU</a></li>
-      <li><a href="/notificacoes" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Notificações</a></li>
-      <li><a href="/login" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Entrar</a></li>
-      <li><a href="/register" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Cadastre-se</a></li>
+      <li><a href="/"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Início</a>
+      </li>
+      <li><a href="/#sobre-nos"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Sobre
+          Nós</a></li>
+      <li><a href="/#servicos"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Serviços</a>
+      </li>
+      <li><a href="/educativo"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Guia de
+          Reciclagem do Planeta</a></li>
+      <li><a href="/mapa"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Mapa</a>
+      </li>
+      <li><a href="/#contato"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Contato</a>
+      </li>
+      <li><a href="/ods"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">ODS ONU</a>
+      </li>
+      <li><a href="/notificacoes"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Notificações</a>
+      </li>
+      <li><a href="/login"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Entrar</a>
+      </li>
+      <li><a href="/register"
+          class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:text-white hover:bg-brand-green">Cadastre-se</a>
+      </li>
     </ul>
   </div>
 </header>
@@ -58,17 +97,21 @@
 <main class="min-h-screen">
   <section class="container mx-auto px-6 pt-28 pb-12">
     <h1 class="text-4xl md:text-5xl font-bold brand-dark-green mb-4">ODS ONU</h1>
-    <p class="text-gray-600 text-lg mb-8">Como a GreenDrop contribui para os Objetivos de Desenvolvimento Sustentável.</p>
+    <p class="text-gray-600 text-lg mb-8">Como a GreenDrop contribui para os Objetivos de Desenvolvimento Sustentável.
+    </p>
 
     <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 md:p-10">
       <div class="prose max-w-none">
         <h2 class="text-2xl font-bold brand-dark-green mb-2">Conexão com os ODS</h2>
-        <p class="text-gray-700 mb-6">A GreenDrop apoia a Agenda 2030 ao promover o descarte correto de resíduos, educação ambiental e cidades mais sustentáveis. Referência oficial: <a class="text-brand-green underline" href="https://sdgs.un.org/goals" target="_blank" rel="noopener noreferrer">sdgs.un.org/goals</a>.</p>
+        <p class="text-gray-700 mb-6">A GreenDrop apoia a Agenda 2030 ao promover o descarte correto de resíduos,
+          educação ambiental e cidades mais sustentáveis. Referência oficial: <a class="text-brand-green underline"
+            href="https://sdgs.un.org/goals" target="_blank" rel="noopener noreferrer">sdgs.un.org/goals</a>.</p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <article class="p-5 rounded-xl border border-green-100 bg-emerald-50">
             <div class="flex items-center gap-3 mb-2">
-              <img src="/ods/SDG-11.svg" alt="ODS 11 - Cidades e Comunidades Sustentáveis" class="h-20 w-20 rounded" loading="lazy">
+              <img src="/ods/SDG-11.svg" alt="ODS 11 - Cidades e Comunidades Sustentáveis" class="h-20 w-20 rounded"
+                loading="lazy">
               <h3 class="text-xl font-semibold text-emerald-800">ODS 11 · Cidades e Comunidades Sustentáveis</h3>
             </div>
             <ul class="list-disc list-inside text-emerald-900 text-sm leading-6">
@@ -80,7 +123,8 @@
 
           <article class="p-5 rounded-xl border border-yellow-100 bg-yellow-50">
             <div class="flex items-center gap-3 mb-2">
-              <img src="/ods/SDG-12.svg" alt="ODS 12 - Consumo e Produção Responsáveis" class="h-20 w-20 rounded" loading="lazy">
+              <img src="/ods/SDG-12.svg" alt="ODS 12 - Consumo e Produção Responsáveis" class="h-20 w-20 rounded"
+                loading="lazy">
               <h3 class="text-xl font-semibold text-yellow-800">ODS 12 · Consumo e Produção Responsáveis</h3>
             </div>
             <ul class="list-disc list-inside text-yellow-900 text-sm leading-6">
@@ -92,7 +136,8 @@
 
           <article class="p-5 rounded-xl border border-sky-100 bg-sky-50">
             <div class="flex items-center gap-3 mb-2">
-              <img src="/ods/SDG-13.svg" alt="ODS 13 - Ação Contra a Mudança Global do Clima" class="h-20 w-20 rounded" loading="lazy">
+              <img src="/ods/SDG-13.svg" alt="ODS 13 - Ação Contra a Mudança Global do Clima" class="h-20 w-20 rounded"
+                loading="lazy">
               <h3 class="text-xl font-semibold text-sky-800">ODS 13 · Ação Contra a Mudança Global do Clima</h3>
             </div>
             <ul class="list-disc list-inside text-sky-900 text-sm leading-6">
@@ -110,7 +155,8 @@
             <ul class="list-disc list-inside text-blue-900 text-sm leading-6">
               <li>Promove a redução do descarte inadequado de resíduos que poluem rios e mares.</li>
               <li>Conscientiza sobre impacto dos resíduos sólidos nos ecossistemas aquáticos.</li>
-              <li>Orienta usuários a recolher e encaminhar corretamente resíduos perigosos (baterias, óleo e eletrônicos).</li>
+              <li>Orienta usuários a recolher e encaminhar corretamente resíduos perigosos (baterias, óleo e
+                eletrônicos).</li>
             </ul>
           </article>
 
@@ -120,8 +166,10 @@
               <h3 class="text-xl font-semibold text-green-800">ODS 15 · Vida Terrestre</h3>
             </div>
             <ul class="list-disc list-inside text-green-900 text-sm leading-6">
-              <li>Ajuda a evitar descarte inadequado de resíduos que levam à degradação do solo, perda de biodiversidade e contaminação de habitats naturais.</li>
-              <li>Promove a conscientização sobre a importância do descarte correto para a proteção de florestas e áreas naturais.</li>
+              <li>Ajuda a evitar descarte inadequado de resíduos que levam à degradação do solo, perda de biodiversidade
+                e contaminação de habitats naturais.</li>
+              <li>Promove a conscientização sobre a importância do descarte correto para a proteção de florestas e áreas
+                naturais.</li>
               <li>Estimula práticas de preservação e recuperação de ecossistemas terrestres entre os usuários.</li>
             </ul>
           </article>
@@ -130,8 +178,10 @@
         <div class="mt-8 p-5 rounded-xl border border-gray-200 bg-gray-50">
           <h4 class="text-lg font-semibold text-gray-800 mb-2">Como usar a GreenDrop para contribuir</h4>
           <ol class="list-decimal list-inside text-gray-700 space-y-1 text-sm">
-            <li>Busque pontos de coleta por material no <a href="/mapa" class="text-brand-green underline">Mapa</a>.</li>
-            <li>Consulte o que pode ser reciclado em <a href="/educativo" class="text-brand-green underline">Escolinha do Planeta</a>.</li>
+            <li>Busque pontos de coleta por material no <a href="/mapa" class="text-brand-green underline">Mapa</a>.
+            </li>
+            <li>Consulte o que pode ser reciclado em <a href="/educativo" class="text-brand-green underline">Guia de
+                Reciclagem do Planeta</a>.</li>
             <li>Organize sua rota e faça o descarte com segurança.</li>
           </ol>
         </div>
@@ -143,39 +193,39 @@
 
 <!-- Footer -->
 <footer id="contato" class="text-gray-600 bg-white border border-t shadow-md">
-    <div class="container mx-auto px-6 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <!-- About -->
-            <div class="col-span-1 md:col-span-2">
-                <h4 class="text-xl font-bold mb-4">GreenDrop</h4>
-                <p class="text-gray-400">Promovendo a sustentabilidade através da tecnologia, conectando pessoas a
-                    soluções de reciclagem eficientes.</p>
-            </div>
-            <!-- Links -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
-                <ul class="space-y-2">
-                    <li><a href="#sobre-nos" class="text-gray-400 hover:text-green-800 transition-colors">Sobre</a>
-                    </li>
-                    <li><a href="#servicos" class="text-gray-400 hover:text-green-800 transition-colors">Serviços</a>
-                    </li>
-                    <li><a href="#" class="text-gray-400 hover:text-green-800 transition-colors">FAQ</a></li>
-                    <li><a href="#contato" class="text-gray-400 hover:text-green-800 transition-colors">Contato</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- Social -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4">Siga-nos</h4>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="facebook"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="twitter"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="instagram"></i></a>
-                </div>
-            </div>
+  <div class="container mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- About -->
+      <div class="col-span-1 md:col-span-2">
+        <h4 class="text-xl font-bold mb-4">GreenDrop</h4>
+        <p class="text-gray-400">Promovendo a sustentabilidade através da tecnologia, conectando pessoas a
+          soluções de reciclagem eficientes.</p>
+      </div>
+      <!-- Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+        <ul class="space-y-2">
+          <li><a href="#sobre-nos" class="text-gray-400 hover:text-green-800 transition-colors">Sobre</a>
+          </li>
+          <li><a href="#servicos" class="text-gray-400 hover:text-green-800 transition-colors">Serviços</a>
+          </li>
+          <li><a href="#" class="text-gray-400 hover:text-green-800 transition-colors">FAQ</a></li>
+          <li><a href="#contato" class="text-gray-400 hover:text-green-800 transition-colors">Contato</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Social -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Siga-nos</h4>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-green-800"><i data-feather="instagram"></i></a>
         </div>
-        <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
-            &copy; 2025 GreenDrop. Todos os direitos reservados.
-        </div>
+      </div>
     </div>
+    <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+      &copy; 2025 GreenDrop. Todos os direitos reservados.
+    </div>
+  </div>
 </footer>

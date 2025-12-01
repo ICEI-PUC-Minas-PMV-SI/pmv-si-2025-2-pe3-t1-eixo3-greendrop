@@ -82,7 +82,7 @@ Esta seção apresenta os mapas de empatia desenvolvidos para compreender profun
 
 ## 4.3 Protótipos das Interfaces
 
-Esta seção apresenta os protótipos de alta fidelidade desenvolvidos para a plataforma GreenDrop, representando visualmente as principais interfaces do sistema. Os protótipos foram elaborados seguindo princípios de design de interação, usabilidade e experiência do usuário, incorporando as necessidades identificadas nas personas e nos mapas de empatia. Cada interface foi projetada considerando os Princípios Gestálticos de percepção visual, as Recomendações Ergonômicas de usabilidade e as Regras de Ouro de Shneiderman para design de interfaces. As telas apresentadas incluem a página inicial, mapa interativo de pontos de coleta, seção de ODS da ONU, área de ranking e gamificação, escolinha educacional e sistema de recompensas. Cada protótipo é acompanhado de análise detalhada que justifica as escolhas de design e demonstra o alinhamento com as melhores práticas de interface humano-computador.
+Esta seção apresenta os protótipos de alta fidelidade desenvolvidos para a plataforma GreenDrop, representando visualmente as principais interfaces do sistema. Os protótipos foram elaborados seguindo princípios de design de interação, usabilidade e experiência do usuário, incorporando as necessidades identificadas nas personas e nos mapas de empatia. Cada interface foi projetada considerando os Princípios Gestálticos de percepção visual, as Recomendações Ergonômicas de usabilidade e as Regras de Ouro de Shneiderman para design de interfaces. As telas apresentadas incluem a página inicial, mapa interativo de pontos de coleta, seção de ODS da ONU, área de ranking e gamificação, Guia de Reciclagem educacional e sistema de recompensas. Cada protótipo é acompanhado de análise detalhada que justifica as escolhas de design e demonstra o alinhamento com as melhores práticas de interface humano-computador.
 
 ---
 ### **1 - Protótipo Login - GreenDrop**
@@ -312,10 +312,10 @@ A tela ODS ONU tem como objetivo apresentar a conexão da plataforma **GreenDrop
 **Fechar o ciclo de diálogo:** cada ODS apresentado resulta em compreensão clara de como a plataforma contribui para aquele objetivo específico, e a seção final "Como usar a GreenDrop para contribuir" fecha o ciclo conectando informação à ação prática no Mapa.
 <img width="1512" height="861" alt="image" src="https://github.com/user-attachments/assets/c220fd7f-aa8b-4a6f-a141-8ee53255f041" />
 
-### **6 - Protótipo Tela Escolinha do Planeta – GreenDrop**
+### **6 - Protótipo Tela Guia de Reciclagem do Planeta – GreenDrop**
 
 #### **1. Objetivo da Tela**
-A tela "Escolinha do Planeta" tem como objetivo educar e conscientizar os usuários sobre práticas sustentáveis de descarte de resíduos através de cinco lições essenciais. Ela funciona como um centro educacional da plataforma, oferecendo orientações práticas sobre coleta inteligente, reciclagem eficiente, acompanhamento de impacto pessoal, descarte especial de materiais críticos, compreensão de resíduos não recicláveis e descarte adequado de medicamentos. A interface pedagógica incentiva o aprendizado progressivo e a adoção de hábitos mais conscientes no dia a dia.
+A tela "Guia de Reciclagem do Planeta" tem como objetivo educar e conscientizar os usuários sobre práticas sustentáveis de descarte de resíduos através de cinco lições essenciais. Ela funciona como um centro educacional da plataforma, oferecendo orientações práticas sobre coleta inteligente, reciclagem eficiente, acompanhamento de impacto pessoal, descarte especial de materiais críticos, compreensão de resíduos não recicláveis e descarte adequado de medicamentos. A interface pedagógica incentiva o aprendizado progressivo e a adoção de hábitos mais conscientes no dia a dia.
 
 #### **2. Princípios Gestálticos**
 **Proximidade:** cada lição está agrupada em um card individual contendo ícone, título e descrição explicativa, criando unidades informacionais claras e independentes.
@@ -326,7 +326,7 @@ A tela "Escolinha do Planeta" tem como objetivo educar e conscientizar os usuár
 
 **Continuidade:** layout em grid de três colunas por duas linhas conduz o olhar do usuário naturalmente da esquerda para a direita, de cima para baixo, seguindo o fluxo de leitura ocidental.
 
-**Foco:** o título principal "Escolinha do Planeta" e o subtítulo explicativo capturam a atenção inicial, estabelecendo o propósito educacional antes de apresentar as lições específicas.
+**Foco:** o título principal "Guia de Reciclagem do Planeta" e o subtítulo explicativo capturam a atenção inicial, estabelecendo o propósito educacional antes de apresentar as lições específicas.
 
 **Equilíbrio:** distribuição simétrica dos seis cards em duas linhas (3+3), com espaçamento uniforme e proporções idênticas, criando harmonia visual e evitando sobrecarga cognitiva.
 
@@ -640,13 +640,13 @@ Esta seção apresenta os testes de usabilidade realizados com usuários reais u
 
 **Tarefas Executadas:**
 1. Acessar a plataforma com ajuda do neto
-2. Navegar até a "Escolinha do Planeta"
+2. Navegar até a "Guia de Reciclagem do Planeta"
 3. Ler sobre separação correta de materiais
 4. Localizar centro de coleta próximo à residência
 
 **Observações Durante o Teste:**
 - **Acesso Inicial:** Lurdes abriu a plataforma no tablet com ajuda do neto. Comentou: "As letras estão num tamanho bom, consigo ler sem óculos". Tempo de compreensão inicial: ~30 segundos.
-- **Escolinha do Planeta:** O neto a ajudou a clicar no menu "Serviços" (não mostrado explicitamente nas telas, mas assumido como acesso à Escolinha). Lurdes leu atentamente cada card. Comentou: "Que interessante! Não sabia que tinha jeito certo de descartar remédio vencido". Tempo de leitura: ~5 minutos.
+- **Guia de Reciclagem do Planeta:** O neto a ajudou a clicar no menu "Serviços" (não mostrado explicitamente nas telas, mas assumido como acesso à Guia de Reciclagem). Lurdes leu atentamente cada card. Comentou: "Que interessante! Não sabia que tinha jeito certo de descartar remédio vencido". Tempo de leitura: ~5 minutos.
 - **Lição sobre Descarte Especial:** Clicou no card "Descarte Especial" (amarelo) e leu as orientações. Comentou: "Vou guardar esse site nos favoritos. Tem muita informação útil aqui". Tempo: ~2 minutos.
 - **Mapa:** Navegou até o mapa com ajuda. O neto digitou o endereço para ela. Lurdes visualizou os pontos e comentou: "Que bom que tem um perto da farmácia que eu vou sempre". Tempo total: ~3 minutos (com auxílio).
 
@@ -755,7 +755,7 @@ Esta seção apresenta os testes de usabilidade realizados com usuários reais u
 2. Adicionar opções de acessibilidade (tamanho de fonte, alto contraste)
 3. Criar dashboard personalizado para empresas e ONGs
 4. Implementar sistema de favoritos e histórico de buscas
-5. Adicionar vídeos tutoriais com legendas na Escolinha do Planeta
+5. Adicionar vídeos tutoriais com legendas na Guia de Reciclagem do Planeta
 
 **Prioridade Baixa (Futuras Versões):**
 1. Desenvolver programa de recompensas específico para ONGs
